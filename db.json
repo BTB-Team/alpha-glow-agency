@@ -1,0 +1,68 @@
+{
+  "homepage": {
+    " scene1_hero": {
+      "headline": {
+        "fa": "جایی که برندها شروع به درخشیدن می‌کنند",
+        "en": "Where Brands Start to Glow"
+      },
+      "subheadline": {
+        "fa": "ما با تلفیق هنر، خلاقیت و تکنولوژی مدرن وب، هویتی متمایز و پیشرو برای کسب‌وکار شما خلق می‌کنیم.",
+        "en": "Merging artistry, creative vision, and modern web tech to build distinctive, progressive brand identities."
+      },
+      "primaryCta": {
+        "label": {
+          "fa": "مشاهده پروژه‌ها",
+          "en": "Explore Portfolio"
+        },
+        "link": "/services"
+      },
+      "secondaryCta": {
+        "label": {
+          "fa": "شروع پروژه",
+          "en": "Start a Project"
+        },
+        "link": "/contact"
+      }
+    }
+  },
+  "services": [
+    {
+      "id": "branding",
+      "title": { "fa": "هویت بصری و برندینگ", "en": "Branding & Visual Identity" },
+      "slug": "branding",
+      "description": {
+        "fa": "خلق زبان بصری پایدار، لوگو و استراتژی ارتباطی برند.",
+        "en": "Creating enduring visual language, logos, and brand strategy."
+      }
+    },
+    {
+      "id": "web-development",
+      "title": { "fa": "طراحی و توسعه وب", "en": "Website Design & Development" },
+      "slug": "web-development",
+      "description": {
+        "fa": "وب‌سایت‌های تعاملی با عملکرد عالی و معماری واکنش‌گرا.",
+        "en": "Interactive, high-performance websites with responsive architecture."
+      }
+    },
+    {
+      "id": "3d-design",
+      "title": { "fa": "طراحی گرافیک و سه‌بعدی", "en": "Graphic & 3D Design" },
+      "slug": "3d-design",
+      "description": {
+        "fa": "رندرهای واقع‌گرایانه، جلوه‌های حرکتی و المان‌های تعاملی.",
+        "en": "Photorealistic renders, motion dynamics, and interactive assets."
+      }
+    },
+    {
+      "id": "printing",
+      "title": { "fa": "چاپ و تبلیغات", "en": "Printing & Advertising" },
+      "slug": "printing",
+      "description": {
+        "fa": "ست اداری باکیفیت، بسته‌بندی و متریال‌های تبلیغاتی ملموس.",
+        "en": "Premium stationery, bespoke packaging, and tangible print collateral."
+      }
+    }
+  ],
+  "portfolio": [],
+  "testimonials": []
+}

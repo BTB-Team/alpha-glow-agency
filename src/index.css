@@ -1,0 +1,144 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Vazirmatn:wght@100..900&display=swap');
+@variant dark (&:where(.dark, .dark *)); 
+
+/* ۱. تعریف فونت‌های محلی متغیر */
+@font-face {
+  font-family: 'Vazirmatn Local';
+  src: url('/src/assets/fonts/Qs_Iranyekan.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter Local';
+  src: url('/src/assets/fonts/inter/Inter-Variable.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ۲. دیزاین‌توکن‌ها در Tailwind v4 */
+@theme {
+  --font-vazir: 'Vazirmatn Local', system-ui, sans-serif;
+  --font-inter: 'Inter Local', system-ui, sans-serif;
+
+  --color-alpha-blue: #213668;
+  --color-alpha-light: #f8fafc;
+}
+
+/* ۳. استایل‌های پس‌زمینه لایت مد و دارک مد */
+body {
+  margin: 0;
+  min-height: 100vh;
+  transition: background 0.4s ease, color 0.3s ease;
+
+  /* استایل اختصاصی لایت مد: زمینه روشن و ملایم با هاله نوری آبی بسیار کمرنگ در مرکز */
+  background-color: #f8fafc;
+  background-image: radial-gradient(circle at 50% 20%, rgba(123, 176, 240, 0.8) 0%, rgb(225, 235, 246) 70%);
+  background-attachment: fixed;
+  color: #0f172a;
+}
+
+/* استایل دارک مد: خروج از تاریکی مطلق با گرادینت شعاعی؛ مرکز صفحه نوری و روشن‌تر با حاشیه‌های سرمه‌ای عمیق */
+.dark body {
+  background-color: #111e3b;
+  background-image: radial-gradient(circle at 50% 25%, #253f7f 0%, #071536 45%, #9bb1e5 100%);
+  background-attachment: fixed;
+  color: #f1f5f9;
+}
+
+/* ۴. مدیریت فونت بر اساس جهت صفحه و اجبار ارث‌بری در تمام المان‌ها */
+html[dir="rtl"],
+[dir="rtl"],
+[dir="rtl"] button,
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] select {
+  font-family: var(--font-vazir);
+}
+
+html[dir="ltr"],
+[dir="ltr"],
+[dir="ltr"] button,
+[dir="ltr"] input,
+[dir="ltr"] textarea,
+[dir="ltr"] select {
+  font-family: var(--font-inter);
+}
+
+/* ۵. کانتینر اختصاصی و استاندارد (۱۲۲۰ پیکسل) */
+.container-custom {
+  width: 100%;
+  max-width: min(76.25rem, 90rem);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2.5rem);
+}
+
+/* ۶. کلاس‌های تایپوگرافی ریسپانسیو */
+.font-display {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.font-heading {
+  font-weight: 700;
+  line-height: 1.25;
+  font-size: clamp(1.25rem, 2.5vw, 2.25rem);
+}
+
+.font-body {
+  font-weight: 400;
+  line-height: 1.7;
+  font-size: clamp(0.9rem, 1vw, 1.1rem);
+}
+
+/* ۷. افکت شیشه‌ای تفکیک‌شده برای لایت و دارک */
+.glass-panel {
+  /* تنظیمات لایت مد: کنتراست شفاف و تمیز روی پس‌زمینه روشن */
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 30px -10px rgba(33, 54, 104, 0.08);
+}
+
+.dark .glass-panel {
+  /* تنظیمات دارک مد: شیشه لاجوردی شفاف هماهنگ با روشنایی مرکزی */
+  background: rgba(33, 54, 104, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 35px -10px rgba(0, 0, 0, 0.45);
+}
+
+@keyframes menuEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-menu-enter {
+  animation: menuEnter 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* پنل بازشونده کاملاً مات جهت جلوگیری از دیده‌شدن المان‌های زیرین */
+.menu-solid-panel {
+  background-color: #ffffff;
+  border: 1px solid rgba(33, 54, 104, 0.15);
+  box-shadow: 0 15px 35px -5px rgba(33, 54, 104, 0.18);
+}
+
+.dark .menu-solid-panel {
+  background-color: #17274d;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+}

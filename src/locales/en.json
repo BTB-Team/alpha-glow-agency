@@ -1,0 +1,22 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About Us",
+    "contact": "Contact Us"
+  },
+  "common": {
+    "search": "Search...",
+    "switchLang": "فا"
+  },
+  "footer": {
+    "slogan": "Where brands start to glow. Modern web development, brand identity, and interactive 3D digital experiences.",
+    "quickLinks": "Quick Links",
+    "servicesTitle": "Our Services",
+    "contactTitle": "Get In Touch",
+    "address": "Tech & Innovation District",
+    "email": "info@alphaglow.agency",
+    "phone": "+1 (555) 019-2834",
+    "rights": "All rights reserved. Powered by Alpha Glow Agency."
+  }
+}
