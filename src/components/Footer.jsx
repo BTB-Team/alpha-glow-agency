@@ -78,11 +78,11 @@ export default function Footer() {
             <div className="flex flex-col gap-4">
               <Link to={`/${currentLang}`} className="inline-block">
                 <img
-                  src={theme === 'dark' ? '/logo-white.svg' : '/logo-blue.svg'}
+                  src={`${import.meta.env.BASE_URL}${theme === 'dark' ? 'logo-white.svg' : 'logo-blue.svg'}`}
                   alt="Alpha Glow Agency"
                   className="h-10 md:h-12 w-auto object-contain"
                   onError={(e) => {
-                    e.currentTarget.src = '/logo-white.svg';
+                    e.currentTarget.src = `${import.meta.env.BASE_URL}logo.svg`;
                   }}
                 />
               </Link>
@@ -108,7 +108,6 @@ export default function Footer() {
 
             {/* لینک‌های سریع */}
             <div>
-              {/* به جای font-heading قبلی */}
               <h3 className="text-[20px] font-black font-bold text-[#213668] dark:text-white mb-3 leading-[100%] tracking-normal">
                 {t.footer?.quickLinks}
               </h3>
@@ -129,8 +128,7 @@ export default function Footer() {
 
             {/* خدمات */}
             <div>
-              {/* به جای font-heading قبلی */}
-              <h3 className="text-[20px] font-black font-bold text-[#213668] dark:text-white mb-3 text-[20px] font-black font-bold">
+              <h3 className="text-[20px] font-black font-bold text-[#213668] dark:text-white mb-3">
                 {t.footer?.servicesTitle}
               </h3>
               <ul className="flex flex-col gap-2.5">
@@ -150,8 +148,7 @@ export default function Footer() {
 
             {/* تماس */}
             <div>
-              {/* به جای font-heading قبلی */}
-              <h3 className="text-[20px] font-black font-bold text-[#213668] dark:text-white mb-3 text-[20px] font-black font-bold">
+              <h3 className="text-[20px] font-black font-bold text-[#213668] dark:text-white mb-3">
                 {t.footer?.contactTitle}
               </h3>
               <div className="flex flex-col gap-3 text-xs md:text-sm text-slate-600 dark:text-slate-300">
