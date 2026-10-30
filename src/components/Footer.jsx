@@ -2,6 +2,8 @@ import { Link, useParams } from 'react-router-dom';
 import { useStore } from '../store/useStore';
 import fa from '../locales/fa.json';
 import en from '../locales/en.json';
+import logoWhite from '../assets/logo-white.svg';
+import logoBlue from '../assets/logo-blue.svg';
 
 // فقط آیکون‌های قطعی و سیستمی lucide-react
 import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
@@ -78,11 +80,11 @@ export default function Footer() {
             <div className="flex flex-col gap-4">
               <Link to={`/${currentLang}`} className="inline-block">
                 <img
-                  src={`${import.meta.env.BASE_URL}${theme === 'dark' ? 'logo-white.svg' : 'logo-blue.svg'}`}
+                  src={theme === 'dark' ? logoWhite : logoBlue}
                   alt="Alpha Glow Agency"
                   className="h-10 md:h-12 w-auto object-contain"
                   onError={(e) => {
-                    e.currentTarget.src = `${import.meta.env.BASE_URL}logo-white.svg`;
+                    e.currentTarget.src = logoWhite;
                   }}
                 />
               </Link>
