@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate, Outlet, useParams, useNavigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate, Outlet, useParams, useNavigate } from 'react-router-dom';
 import { useStore } from './store/useStore';
 
 // کامپوننت‌های مشترک از روت پوشه components
@@ -69,7 +69,7 @@ function AdminLayout() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         {/* هدایت مسیر ریشه به زبان پیش‌فرض فارسی */}
         <Route path="/" element={<Navigate to="/fa" replace />} />
@@ -95,6 +95,6 @@ export default function App() {
         {/* هدایت مسیرهای نامعتبر */}
         <Route path="*" element={<Navigate to="/fa" replace />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   ); 
 }
