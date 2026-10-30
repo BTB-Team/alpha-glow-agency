@@ -78,11 +78,11 @@ export default function Footer() {
             <div className="flex flex-col gap-4">
               <Link to={`/${currentLang}`} className="inline-block">
                 <img
-                  src={theme === 'dark' ? '/logo-white.svg' : '/logo-blue.svg'}
+                  src={`${import.meta.env.BASE_URL}${theme === 'dark' ? 'logo-white.svg' : 'logo-blue.svg'}`}
                   alt="Alpha Glow Agency"
                   className="h-10 md:h-12 w-auto object-contain"
                   onError={(e) => {
-                    e.currentTarget.src = '/logo-white.svg';
+                    e.currentTarget.src = `${import.meta.env.BASE_URL}logo-white.svg`;
                   }}
                 />
               </Link>
