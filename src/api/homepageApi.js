@@ -1,6 +1,5 @@
 export async function fetchHomepageData() {
   try {
-    // استفاده از BASE_URL برای خواندن فایل db.json از پوشه public در گیت‌هاب پیجز و لوکال
     const response = await fetch(`${import.meta.env.BASE_URL}db.json`);
     if (!response.ok) {
       throw new Error(`HTTP Error: ${response.status}`);
