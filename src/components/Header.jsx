@@ -53,14 +53,13 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full py-4">
       <div className="container-custom">
         <div dir="ltr" className="flex items-center justify-between px-5 py-3 rounded-2xl glass-panel border border-blue-500/20 dark:border-white/10 transition-colors duration-300">
-          
           {/* لوگو */}
           <Link to={`/${currentLang}`} className="flex items-center gap-3 group">
             <img
               src={`${import.meta.env.BASE_URL}${theme === 'dark' ? 'logo-white.svg' : 'logo-blue.svg'}`}
               alt="Alpha Glow Agency"
               className="h-11 md:h-13 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-              onError={(e) => { e.currentTarget.src = '/logo.svg'; }}
+              onError={(e) => { e.currentTarget.src = `${import.meta.env.BASE_URL}logo.svg`; }}
             />
           </Link>
 
