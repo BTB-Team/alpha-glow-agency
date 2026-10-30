@@ -57,7 +57,7 @@ export default function Header() {
           {/* لوگو */}
           <Link to={`/${currentLang}`} className="flex items-center gap-3 group">
             <img
-              src={theme === 'dark' ? '/logo-white.svg' : '/logo-blue.svg'}
+              src={`${import.meta.env.BASE_URL}${theme === 'dark' ? 'logo-white.svg' : 'logo-blue.svg'}`}
               alt="Alpha Glow Agency"
               className="h-11 md:h-13 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               onError={(e) => { e.currentTarget.src = '/logo.svg'; }}
