@@ -1,18 +1,26 @@
-name: CI/CD Pipeline (Develop & Main)
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
     branches:
       - develop
       - main
-  pull_request:
-    branches:
-      - develop
-      - main
+  workflow_dispatch:
+
+# مجوزهای لازم برای دیپلوی روی GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# جلوگیری از تداخل دو دیپلوی هم‌زمان
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
 
 jobs:
-  build-and-verify:
-    name: Build & Verify (${{ github.ref_name }})
+  build:
+    name: Build (${{ github.ref_name }})
     runs-on: ubuntu-latest
 
     steps:
@@ -37,9 +45,26 @@ jobs:
       - name: Run Production Build
         run: pnpm run build
 
-      - name: Upload Build Artifact (Optional Preview)
-        uses: actions/upload-artifact@v4
+      - name: Create 404.html for React Router SPA support
+        run: cp dist/index.html dist/404.html
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: dist-${{ github.ref_name }}
-          path: dist/
-          retention-days: 5
+          path: './dist'
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
