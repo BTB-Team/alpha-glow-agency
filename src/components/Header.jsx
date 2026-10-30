@@ -4,9 +4,6 @@ import { useStore } from '../store/useStore';
 import fa from '../locales/fa.json';
 import en from '../locales/en.json';
 import { Sun, Moon, Search, Menu, X, ChevronDown, Home, Briefcase, Info, Mail, ArrowLeft, ArrowRight, Languages } from 'lucide-react';
-import logoWhite from '../assets/images/logo-white.svg';
-import logoBlue from '../assets/images/logo-blue.svg';
-// import logoDefault from '../assets/logo.svg';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,7 +40,6 @@ export default function Header() {
     setIsMenuOpen(false);
   };
   
-
   const serviceSubItems = [
     { to: `/${currentLang}/services/branding`, label: currentLang === 'fa' ? 'طراحی هویت برند' : 'Brand Identity' },
     { to: `/${currentLang}/services/web-development`, label: currentLang === 'fa' ? 'طراحی و توسعه وب' : 'Web Development' },
@@ -55,12 +51,14 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full py-4">
       <div className="container-custom">
         <div dir="ltr" className="flex items-center justify-between px-5 py-3 rounded-2xl glass-panel border border-blue-500/20 dark:border-white/10 transition-colors duration-300">
-          <img
-            src={theme === 'dark' ? logoWhite : logoBlue}
-            alt="Alpha Glow Agency"
-            className="h-11 md:h-13 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-            // onError={(e) => { e.currentTarget.src = logoDefault; }}
-          />
+          <Link to={`/${currentLang}`} className="flex items-center">
+            <img
+              src={`${import.meta.env.BASE_URL}${theme === 'dark' ? 'logo-white.svg' : 'logo-blue.svg'}`}
+              alt="Alpha Glow Agency"
+              className="h-11 md:h-13 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              onError={(e) => { e.currentTarget.src = `${import.meta.env.BASE_URL}logo.svg`; }}
+            />
+          </Link>
 
           {/* ابزارها و دکمه‌ها */}
           <div className="flex items-center gap-2.5">
@@ -145,5 +143,3 @@ export default function Header() {
     </header>
   );
 }
-
-
