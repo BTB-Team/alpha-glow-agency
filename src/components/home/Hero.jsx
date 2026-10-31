@@ -8,7 +8,7 @@ import { ArrowRight, ArrowLeft, Sparkles, CheckCircle2 } from 'lucide-react';
 import heroDarkImg from '../../assets/images/home/home-hero-dark.webp';
 import heroLightImg from '../../assets/images/home/home-hero-light.webp';
 import heroDarkMobileImg from '../../assets/images/home/home-hero-dark-mobile.webp';
-import heroLightMobileImg from '../../assets/images/home/home-hero-light-mobile.webp';
+import heroLightMobileImg from '../../assets/images/home/home-hero-dark-mobile.webp'; // یا عکس موبایل مربوطه
 
 export default function Hero() {
   const { lang } = useParams();
@@ -54,8 +54,8 @@ export default function Hero() {
       {/* هدر شناور */}
       <Header />
 
-      {/* محتوای اصلی هیرو: مدیریت فاصله‌ها در موبایل برای جلوگیری از بیرون‌زدگی دکمه‌ها */}
-      <div className="container-custom relative z-10 flex flex-col justify-end md:justify-center h-full pt-24 pb-6 sm:pb-16">
+      {/* محتوای اصلی هیرو: تنظیم پدینگ بالا برای جلوگیری از چسبیدن به هدر و تنظیم پدینگ پایین برای نمایش کامل دکمه‌ها */}
+      <div className="container-custom relative z-10 flex flex-col justify-end md:justify-center h-full pt-20 pb-16 sm:pb-16">
         <div className="max-w-2xl flex flex-col items-start text-start">
           
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full alpha-glass-control mb-2 sm:mb-6 text-[11px] sm:text-sm font-semibold font-body text-white bg-white/20 backdrop-blur-md border border-white/40 shadow-sm">
