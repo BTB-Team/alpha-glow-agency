@@ -1,8 +1,8 @@
 import { create } from 'zustand';
 
 export const useStore = create((set) => ({
-  // زبان فعال با بازیابی از حافظه محلی
-  language: localStorage.getItem('ag_lang') || 'fa',
+  // زبان فعال با بازیابی از حافظه محلی (پیش‌فرض انگلیسی)
+  language: localStorage.getItem('ag_lang') || 'en',
   setLanguage: (lang) => {
     localStorage.setItem('ag_lang', lang);
     set({ language: lang });

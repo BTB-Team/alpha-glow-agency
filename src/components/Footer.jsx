@@ -9,7 +9,8 @@ import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
 export default function Footer() {
   const { lang } = useParams();
   const { theme } = useStore();
-  const currentLang = lang === 'en' ? 'en' : 'fa';
+  // تنظیم زبان پیش‌فرض روی انگلیسی (en)
+  const currentLang = lang === 'fa' ? 'fa' : 'en';
   const isRTL = currentLang === 'fa';
   const t = currentLang === 'en' ? en : fa;
 
@@ -186,19 +187,10 @@ export default function Footer() {
           </div>
 
           {/* کپی‌رایت پایین فوتر */}
-          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-semibold text-[#213668]/75 dark:text-slate-400">
+          <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs font-semibold text-[#213668]/75 dark:text-slate-400">
             <p className="text-center sm:text-start">
               © {new Date().getFullYear()} Alpha Glow Agency. {t.footer?.rights || (isRTL ? 'تمامی حقوق محفوظ است.' : 'All rights reserved.')}
             </p>
-            <div className="flex items-center gap-4 text-[11px]">
-              <span className="hover:text-[#213668] dark:hover:text-slate-200 cursor-pointer">
-                {isRTL ? 'حریم خصوصی' : 'Privacy Policy'}
-              </span>
-              <span>•</span>
-              <span className="hover:text-[#213668] dark:hover:text-slate-200 cursor-pointer">
-                {isRTL ? 'شرایط استفاده' : 'Terms of Service'}
-              </span>
-            </div>
           </div>
 
         </div>

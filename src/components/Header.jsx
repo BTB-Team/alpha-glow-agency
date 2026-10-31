@@ -26,7 +26,8 @@ export default function Header() {
   const navigate = useNavigate();
 
   const { theme, toggleTheme } = useStore();
-  const currentLang = lang === 'en' ? 'en' : 'fa';
+  // تنظیم زبان پیش‌فرض روی انگلیسی (en)
+  const currentLang = lang === 'fa' ? 'fa' : 'en';
   const isRTL = currentLang === 'fa';
   const t = currentLang === 'en' ? en : fa;
 
