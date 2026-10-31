@@ -93,9 +93,9 @@ html[dir="ltr"],
 .font-body {
   font-weight: 400;
   line-height: 1.7;
-  font-size: clamp(0.9rem, 1vw, 1.1rem);
+  /* افزایش سایز فونت body برای خوانایی بهتر در دسکتاپ تا حدود ۲۲-۲۴ پیکسل */
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
 }
-
 /* ۷. افکت شیشه‌ای تفکیک‌شده برای لایت و دارک */
 .glass-panel {
   background: rgba(255, 255, 255, 0.65);
