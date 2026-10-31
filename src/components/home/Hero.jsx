@@ -13,7 +13,6 @@ import heroLightMobileImg from '../../assets/images/home/home-hero-light-mobile.
 export default function Hero() {
   const { lang } = useParams();
   const { theme } = useStore();
-  // تنظیم زبان پیش‌فرض روی انگلیسی (en)
   const currentLang = lang === 'fa' ? 'fa' : 'en';
   const isRTL = currentLang === 'fa';
   const t = currentLang === 'en' ? en : fa;
@@ -42,7 +41,7 @@ export default function Hero() {
           }`}
         />
         
-        {/* گرادیان هوشمند: در موبایل از پایین به بالا محو می‌شود تا متن‌ها روی میز خلوت قرار گیرند */}
+        {/* گرادیان هوشمند */}
         <div 
           className={`absolute inset-0 pointer-events-none transition-all duration-500 ${
             isRTL 
@@ -52,40 +51,39 @@ export default function Hero() {
         />
       </div>
 
-      {/* هدر شناور در بالای صفحه */}
+      {/* هدر شناور */}
       <Header />
 
-      {/* محتوای اصلی هیرو: انتقال به پایین صفحه در موبایل و وسط‌چین در دسکتاپ */}
-      <div className="container-custom relative z-10 flex flex-col justify-end md:justify-center h-full pt-28 pb-10 sm:pb-16">
+      {/* محتوای اصلی هیرو: مدیریت فاصله‌ها در موبایل برای جلوگیری از بیرون‌زدگی دکمه‌ها */}
+      <div className="container-custom relative z-10 flex flex-col justify-end md:justify-center h-full pt-24 pb-6 sm:pb-16">
         <div className="max-w-2xl flex flex-col items-start text-start">
           
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full alpha-glass-control mb-4 md:mb-6 text-xs sm:text-sm font-semibold font-body text-white bg-white/20 backdrop-blur-md border border-white/40 shadow-sm">
-            <Sparkles size={16} className="text-blue-300" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full alpha-glass-control mb-2 sm:mb-6 text-[11px] sm:text-sm font-semibold font-body text-white bg-white/20 backdrop-blur-md border border-white/40 shadow-sm">
+            <Sparkles size={14} className="text-blue-300" />
             <span>{t.hero?.badge || (isRTL ? 'آژانس خلاق و دیجیتال مارکتینگ' : 'Creative & Digital Agency')}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black font-heading text-white leading-[1.15] tracking-tight mb-3 md:mb-6 drop-shadow-md">
+          <h1 className="text-2xl sm:text-5xl lg:text-6xl font-black font-heading text-white leading-[1.1] tracking-tight mb-2 sm:mb-6 drop-shadow-md">
             {t.hero?.title || (isRTL ? 'محل درخشش برند ها' : 'Where Brands Start to Glow.')}
           </h1>
 
-          {/* سایز متن بدنه در دسکتاپ به حدود ۲۰-۲۴ پیکسل (lg:text-xl) ارتقا یافته است */}
-          <p className="text-sm sm:text-lg lg:text-xl text-slate-100 font-body leading-relaxed mb-6 md:mb-8 max-w-xl drop-shadow">
+          <p className="text-xs sm:text-lg lg:text-xl text-slate-100 font-body leading-relaxed mb-4 sm:mb-8 max-w-xl drop-shadow">
             {t.hero?.description || (isRTL 
               ? 'ما ایده‌ها را به برندهای قدرتمند، طراحی‌های خیره‌کننده و تجربه‌های دیجیتالی تأثیرگذار تبدیل می‌کنیم.' 
               : 'We turn ideas into powerful brands, stunning designs, and digital experiences that make an impact.')}
           </p>
 
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
             <Link
               to={`/${currentLang}/about`}
-              className="w-auto px-7 py-3.5 rounded-full alpha-glass-control text-white dark:text-white font-bold font-body text-sm sm:text-base bg-white/20 dark:bg-white/10 backdrop-blur-md border border-white/30 hover:bg-white/30 dark:hover:bg-white/20 transition-all duration-300 shadow-sm"            
+              className="w-auto px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-full alpha-glass-control text-white dark:text-white font-bold font-body text-xs sm:text-base bg-white/20 dark:bg-white/10 backdrop-blur-md border border-white/30 hover:bg-white/30 dark:hover:bg-white/20 transition-all duration-300 shadow-sm"            
             >
               <span>{t.hero?.ctaPrimary || (isRTL ? 'درباره ما' : 'About Us')}</span>
             </Link>
 
             <Link
               to={`/${currentLang}/services`}
-              className="px-7 py-3.5 rounded-full alpha-glass-control text-white dark:text-white font-bold font-body text-sm sm:text-base bg-white/20 dark:bg-white/10 backdrop-blur-md border border-white/30 hover:bg-white/30 dark:hover:bg-white/20 transition-all duration-300 shadow-sm"
+              className="px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-full alpha-glass-control text-white dark:text-white font-bold font-body text-xs sm:text-base bg-white/20 dark:bg-white/10 backdrop-blur-md border border-white/30 hover:bg-white/30 dark:hover:bg-white/20 transition-all duration-300 shadow-sm"
             >
               {t.hero?.ctaSecondary || (isRTL ? 'مشاهده خدمات' : 'Explore Services')}
             </Link>
