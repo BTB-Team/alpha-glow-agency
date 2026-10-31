@@ -1,0 +1,100 @@
+import { Link, useParams } from 'react-router-dom';
+import { useStore } from '../../store/useStore';
+import fa from '../../locales/fa.json';
+import en from '../../locales/en.json';
+import { ArrowRight, ArrowLeft, Sparkles, CheckCircle2 } from 'lucide-react';
+
+// ایمپورت تصاویر هیرو برای لایت و دارک مود
+import heroDarkImg from '../../assets/images/home/home-hero-dark.webp';
+import heroLightImg from '../../assets/images/home/home-hero-light.webp';
+
+export default function Hero() {
+  const { lang } = useParams();
+  const { theme } = useStore();
+  const currentLang = lang === 'en' ? 'en' : 'fa';
+  const isRTL = currentLang === 'fa';
+  const t = currentLang === 'en' ? en : fa;
+
+  // انتخاب تصویر بر اساس تم فعال (لایت یا دارک)
+  const currentHeroImage = theme === 'dark' ? heroDarkImg : heroLightImg;
+
+  return (
+    <section className="relative w-full h-screen flex flex-col justify-center overflow-hidden">
+      
+      {/* پس‌زمینه سینمایی هیرو با قابلیت فلیپ شدن (Mirror) در حالت فارسی */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <img
+          src={currentHeroImage}
+          alt="Alpha Glow Agency Workspace"
+          className={`w-full h-full object-cover object-center transition-transform duration-700 ${
+            isRTL ? 'scale-x-[-1]' : 'scale-x-100'
+          }`}
+        />
+        
+        {/* گرادیان محو هوشمند زیر متن (متناسب با LTR و RTL برای خوانایی عالی در لایت‌مود و دارک‌مود) */}
+        <div 
+          className={`absolute inset-0 pointer-events-none transition-all duration-500 ${
+            isRTL 
+              ? 'bg-gradient-to-l from-slate-950/90 via-slate-950/50 to-transparent dark:from-slate-950/95 dark:via-slate-950/70 dark:to-transparent' 
+              : 'bg-gradient-to-r from-slate-950/90 via-slate-950/50 to-transparent dark:from-slate-950/95 dark:via-slate-950/70 dark:to-transparent'
+          }`} 
+        />
+      </div>
+
+      {/* محتوای اصلی هیرو (متن‌ها و دکمه‌ها در سمت مناسب صفحه) */}
+      <div className="container-custom relative z-10 my-auto">
+        <div className="max-w-2xl flex flex-col items-start text-start">
+          
+          {/* برچسب بالای عنوان */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full alpha-glass-control mb-6 text-xs font-semibold text-white dark:text-blue-200 bg-white/70 dark:bg-white/10 backdrop-blur-md border border-white/40 shadow-sm">
+            <Sparkles size={14} className="text-white dark:text-blue-400" />
+            <span>{t.hero?.badge || (isRTL ? 'آژانس خلاق و دیجیتال مارکتینگ' : 'Creative & Digital Agency')}</span>
+          </div>
+
+          {/* عنوان اصلی (Heading) */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black font-heading text-white dark:text-white leading-[1.15] tracking-tight mb-6 drop-shadow-md">
+            {t.hero?.title || (isRTL ? 'جایی که برندها شروع به درخشش می‌کنند.' : 'Where Brands Start to Glow.')}
+          </h1>
+
+          {/* توضیحات */}
+          <p className="text-sm sm:text-base text-slate-100 dark:text-slate-300 font-body leading-relaxed mb-8 max-w-lg drop-shadow">
+            {t.hero?.description || (isRTL 
+              ? 'ما ایده‌ها را به برندهای قدرتمند، طراحی‌های خیره‌کننده و تجربه‌های دیجیتالی تأثیرگذار تبدیل می‌کنیم.' 
+              : 'We turn ideas into powerful brands, stunning designs, and digital experiences that make an impact.')}
+          </p>
+
+          {/* دکمه‌های اقدام (CTA) */}
+          <div className="flex flex-wrap items-center gap-4">
+            <Link
+              to={`/${currentLang}/about`}
+             className="w-auto px-7 py-3.5 rounded-full alpha-glass-control text-white dark:text-white font-bold text-sm bg-white/20 dark:bg-white/10 backdrop-blur-md border border-white/30 hover:bg-white/30 dark:hover:bg-white/20 transition-all duration-300 shadow-sm"            >
+              <span>{t.hero?.ctaPrimary || (isRTL ? 'شروع پروژه شما' : 'Start Your Project')}</span>
+              {/* {isRTL ? <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-1" /> : <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />} */}
+            </Link>
+
+            <Link
+              to={`/${currentLang}/services`}
+              className="px-7 py-3.5 rounded-full alpha-glass-control text-white dark:text-white font-bold text-sm bg-white/20 dark:bg-white/10 backdrop-blur-md border border-white/30 hover:bg-white/30 dark:hover:bg-white/20 transition-all duration-300 shadow-sm"
+            >
+              {t.hero?.ctaSecondary || (isRTL ? 'مشاهده خدمات' : 'Explore Services')}
+            </Link>
+          </div>
+
+          {/* ویژگی‌ها و اعتبارسنجی سریع */}
+          <div className="flex items-center gap-6 mt-12 pt-6 border-t border-white/20 dark:border-white/10 text-xs font-semibold text-slate-200 dark:text-slate-300">
+            <div className="flex items-center gap-2">
+              <CheckCircle2 size={16} className="text-blue-400" />
+              <span>{isRTL ? 'کیفیت سینمایی' : 'Cinematic Quality'}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 size={16} className="text-blue-400" />
+              <span>{isRTL ? 'طراحی اختصاصی' : 'Custom Branding'}</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+  );
+}

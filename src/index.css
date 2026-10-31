@@ -28,28 +28,28 @@
   --color-alpha-light: #f8fafc;
 }
 
-/* ۳. استایل‌های پس‌زمینه لایت مد و دارک مد */
+/* ۳. اصلاح اساسی استایل‌های پس‌زمینه (حذف fixed مخرب) */
 body {
   margin: 0;
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden; /* جلوگیری قاطع از بریدگی افقی المان‌ها */
   transition: background 0.4s ease, color 0.3s ease;
 
-  /* استایل اختصاصی لایت مد: زمینه روشن و ملایم با هاله نوری آبی بسیار کمرنگ در مرکز */
-  background-color: #f8fafc;
-  background-image: radial-gradient(circle at 50% 20%, rgba(123, 176, 240, 0.8) 0%, rgb(225, 235, 246) 70%);
-  background-attachment: fixed;
+  /* استفاده از گرادینت خطی مدرن به جای پیوستگی فیکسد سنگین مرورگر */
+  background: linear-gradient(180deg, rgb(189, 190, 191) 0%, rgb(225, 235, 246) 100%);
+  background-repeat: no-repeat;
   color: #0f172a;
 }
 
-/* استایل دارک مد: خروج از تاریکی مطلق با گرادینت شعاعی؛ مرکز صفحه نوری و روشن‌تر با حاشیه‌های سرمه‌ای عمیق */
+/* استایل دارک مد اصلاح‌شده */
 .dark body {
-  background-color: #111e3b;
-  background-image: radial-gradient(circle at 50% 25%, #253f7f 0%, #071536 45%, #9bb1e5 100%);
-  background-attachment: fixed;
+  background: linear-gradient(180deg, #0f172a 0%, #001138 50%, #0f172a 100%);
+  background-repeat: no-repeat;
   color: #f1f5f9;
 }
 
-/* ۴. مدیریت فونت بر اساس جهت صفحه و اجبار ارث‌بری در تمام المان‌ها */
+/* ۴. مدیریت فونت بر اساس جهت صفحه */
 html[dir="rtl"],
 [dir="rtl"],
 [dir="rtl"] button,
@@ -58,7 +58,6 @@ html[dir="rtl"],
 [dir="rtl"] select {
   font-family: var(--font-vazir);
 }
-
 
 html[dir="ltr"],
 [dir="ltr"],
@@ -99,7 +98,6 @@ html[dir="ltr"],
 
 /* ۷. افکت شیشه‌ای تفکیک‌شده برای لایت و دارک */
 .glass-panel {
-  /* تنظیمات لایت مد: کنتراست شفاف و تمیز روی پس‌زمینه روشن */
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -108,7 +106,6 @@ html[dir="ltr"],
 }
 
 .dark .glass-panel {
-  /* تنظیمات دارک مد: شیشه لاجوردی شفاف هماهنگ با روشنایی مرکزی */
   background: rgba(33, 54, 104, 0.4);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -127,19 +124,122 @@ html[dir="ltr"],
   }
 }
 
-.animate-menu-enter {
-  animation: menuEnter 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+/* ==========================================================================
+   Alpha Glow Ultra-Clear & Glossy Crystal Glassmorphism
+   ========================================================================== */
+
+.alpha-glass-bar {
+  position: relative;
+  /* شیشه بسیار شفاف با نقاط نوری متمرکز و بازتاب مورب براق */
+  background:
+    linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, 0.16) 36%, rgba(255, 255, 255, 0.02) 48%, transparent 60%),
+    radial-gradient(35% 90% at 18% 0%, rgba(255, 255, 255, 0.28) 0%, transparent 70%),
+    radial-gradient(30% 100% at 85% 100%, rgba(232, 121, 249, 0.42) 0%, transparent 70%),
+    radial-gradient(25% 90% at 12% 100%, rgba(56, 189, 248, 0.35) 0%, transparent 70%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(10, 16, 36, 0.14) 55%, rgba(24, 16, 54, 0.22) 100%);
+  backdrop-filter: blur(12px) saturate(200%) brightness(108%);
+  -webkit-backdrop-filter: blur(12px) saturate(200%) brightness(108%);
+  
+  box-shadow:
+    inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.95),          /* برق تیز لبه بالایی شیشه */
+    inset 0 6px 12px -4px rgba(255, 255, 255, 0.35),        /* بازتاب براق سقف کپسول */
+    inset 0 0 0 2px rgba(6, 10, 24, 0.42),                  /* خط شکست نور ظریف لبه شیشه */
+    inset 0 -2px 3px 0 rgba(240, 171, 252, 0.9),            /* تمرکز نور بنفش در کف */
+    inset 0 -7px 14px -4px rgba(168, 85, 247, 0.55),        /* هاله نوری بنفش پایین */
+    inset 14px -3px 12px -6px rgba(56, 189, 248, 0.65),     /* نقطه نوری آبی یخی در گوشه چپ */
+    inset -14px -3px 12px -6px rgba(56, 189, 248, 0.65),    /* نقطه نوری آبی یخی در گوشه راست */
+    0 14px 32px -8px rgba(2, 6, 23, 0.55),
+    0 4px 18px -2px rgba(168, 85, 247, 0.25);
 }
 
-/* پنل بازشونده کاملاً مات جهت جلوگیری از دیده‌شدن المان‌های زیرین */
-.menu-solid-panel {
-  background-color: #ffffff;
-  border: 1px solid rgba(33, 54, 104, 0.15);
-  box-shadow: 0 15px 35px -5px rgba(33, 54, 104, 0.18);
+/* افکت انحنای شیشه‌ای فوق‌براق در نیمه بالایی */
+.alpha-glass-bar::after {
+  content: "";
+  position: absolute;
+  inset: 2px 16px 54% 16px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.32) 0%,
+    rgba(255, 255, 255, 0.08) 55%,
+    transparent 100%
+  );
+  pointer-events: none;
 }
 
-.dark .menu-solid-panel {
-  background-color: #17274d;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+/* حاشیه کریستالیِ نوری در نقاط برخورد نور */
+.alpha-glass-bar::before,
+.alpha-glass-dropdown::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.15) 30%,
+    rgba(56, 189, 248, 0.7) 68%,
+    rgba(240, 171, 252, 1) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* منوی شناور عمودی با شفافیت و براقیت بالا */
+.alpha-glass-dropdown {
+  position: absolute;
+  background:
+    linear-gradient(125deg, rgba(255, 255, 255, 0.18) 0%, transparent 42%),
+    radial-gradient(75% 70% at 50% 100%, rgba(216, 180, 254, 0.38) 0%, transparent 70%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.32) 0%, rgba(8, 12, 30, 0.48) 100%);
+  backdrop-filter: blur(16px) saturate(200%) brightness(106%);
+  -webkit-backdrop-filter: blur(16px) saturate(200%) brightness(106%);
+  box-shadow:
+    inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 0 0 2px rgba(6, 10, 24, 0.45),
+    inset 0 -2px 4px 0 rgba(240, 171, 252, 0.85),
+    inset 0 -8px 16px -4px rgba(168, 85, 247, 0.5),
+    0 20px 40px -10px rgba(2, 6, 23, 0.7);
+}
+
+/* حباب‌های شیشه‌ای براق برای دکمه‌ها و جست‌وجو */
+.alpha-glass-control {
+  position: relative;
+  background:
+    radial-gradient(65% 55% at 50% 12%, rgba(255, 255, 255, 0.38) 0%, rgba(255, 255, 255, 0.08) 55%, transparent 100%),
+    radial-gradient(75% 75% at 50% 100%, rgba(232, 121, 249, 0.48) 0%, transparent 70%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(8, 12, 28, 0.24) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-bottom-color: rgba(240, 171, 252, 0.95);
+  box-shadow:
+    inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 0 0 1.5px rgba(6, 10, 24, 0.42),
+    inset 0 -2px 3px 0 rgba(245, 208, 254, 0.95),
+    inset 0 -5px 9px -2px rgba(168, 85, 247, 0.65),
+    inset 4px -2px 7px -2px rgba(56, 189, 248, 0.6),
+    0 5px 12px -3px rgba(2, 6, 23, 0.5),
+    0 2px 10px 0 rgba(192, 132, 252, 0.32);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.alpha-glass-control:hover {
+  background:
+    radial-gradient(70% 60% at 50% 12%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.12) 60%, transparent 100%),
+    radial-gradient(85% 85% at 50% 100%, rgba(240, 171, 252, 0.65) 0%, transparent 75%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(12, 18, 40, 0.28) 100%);
+  border-color: rgba(255, 255, 255, 0.75);
+  border-bottom-color: #f5d0fe;
+  box-shadow:
+    inset 0 2px 1.5px 0 #ffffff,
+    inset 0 0 0 1.5px rgba(6, 10, 24, 0.35),
+    inset 0 -2px 5px 0 #f5d0fe,
+    inset 0 -6px 12px -2px rgba(192, 132, 252, 0.85),
+    inset 5px -3px 9px -2px rgba(56, 189, 248, 0.75),
+    0 6px 16px -2px rgba(2, 6, 23, 0.6),
+    0 3px 14px 1px rgba(216, 180, 254, 0.5);
 }
