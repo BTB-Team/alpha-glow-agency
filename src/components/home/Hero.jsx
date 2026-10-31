@@ -64,7 +64,7 @@ export default function Hero() {
           </div>
 
           <h1 className="text-2xl sm:text-5xl lg:text-6xl font-black font-heading text-white leading-[1.15] tracking-tight mb-3 md:mb-6 drop-shadow-md">
-            {t.hero?.title || (isRTL ? 'جایی که برندها شروع به درخشش می‌کنند.' : 'Where Brands Start to Glow.')}
+            {t.hero?.title || (isRTL ? 'محل درخشش برند ها' : 'Where Brands Start to Glow.')}
           </h1>
 
           <p className="text-xs sm:text-base text-slate-100 font-body leading-relaxed mb-6 md:mb-8 max-w-lg drop-shadow">
