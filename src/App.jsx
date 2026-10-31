@@ -17,11 +17,12 @@ function PublicLayout() {
   const { lang } = useParams();
   const { setLanguage, theme } = useStore();
   const navigate = useNavigate();
-  const location = useLocation(); // اضافه شدن قلاب لوکیشن برای رفع ارور دیپندرسی قبلی
+  const location = useLocation();
 
   useEffect(() => {
-    if (lang !== 'fa' && lang !== 'en') {
-      navigate('/fa', { replace: true });
+    // تغییر زبان پیش‌فرض به en (اگر زبان fa یا en نبود، ریدایرکت به en)
+    if (lang !== 'en' && lang !== 'fa') {
+      navigate('/en', { replace: true });
       return;
     }
 
@@ -44,7 +45,6 @@ function PublicLayout() {
   }, [location.pathname]);
 
   return (
-    /* اصلاح اساسی کانتینر اصلی: اضافه شدن پوزیشن نسبی و جلوگیری از بیرون زدن المان‌ها */
     <div className="relative min-h-screen w-full flex flex-col overflow-x-hidden">
       <main className="flex-grow w-full relative">
         <Outlet />
@@ -55,11 +55,11 @@ function PublicLayout() {
   );
 }
 
-// ۲. لایه پنل مدیریت (مختص فاز آینده - فارسی و بدون هدر و فوتر عمومی)
+// ۲. لایه پنل مدیریت (مختص فاز آینده)
 function AdminLayout() {
   useEffect(() => {
-    document.documentElement.lang = 'fa';
-    document.documentElement.dir = 'rtl';
+    document.documentElement.lang = 'en';
+    document.documentElement.dir = 'ltr';
   }, []);
 
   return (
@@ -73,15 +73,14 @@ export default function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
-        {/* هدایت مسیر ریشه به زبان پیش‌فرض فارسی */}
-        <Route path="/" element={<Navigate to="/fa" replace />} />
+        {/* هدایت مسیر ریشه به زبان پیش‌فرض انگلیسی */}
+        <Route path="/" element={<Navigate to="/en" replace />} />
 
-        {/* مسیرهای عمومی دوزبانه (/fa و /en) */}
+        {/* مسیرهای عمومی دوزبانه (/en و /fa) */}
         <Route path="/:lang" element={<PublicLayout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           
-          {/* مسیر خدمات با قابلیت داشتن زیرمسیرهای تو در تو برای ۴ خدمت اصلی */}
           <Route path="services" element={<Services />}>
             {/* <Route path=":serviceSlug" element={<ServiceDetail />} /> */}
           </Route>
@@ -89,13 +88,13 @@ export default function App() {
           <Route path="contact" element={<Contact />} />
         </Route>
 
-        {/* مسیر پنل مدیریت آینده (جدا از Layout عمومی) */}
+        {/* مسیر پنل مدیریت آینده */}
         <Route path="/admin" element={<AdminLayout />}>
-          {/* مسیرهای ادمین در فاز بعدی اینجا قرار می‌گیرند */}
+          {/* مسیرهای ادمین */}
         </Route>
 
-        {/* هدایت مسیرهای نامعتبر */}
-        <Route path="*" element={<Navigate to="/fa" replace />} />
+        {/* هدایت مسیرهای نامعتبر به انگلیسی */}
+        <Route path="*" element={<Navigate to="/en" replace />} />
       </Routes>
     </BrowserRouter>
   ); 
