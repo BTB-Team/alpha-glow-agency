@@ -71,22 +71,22 @@ export default function Hero() {
       {/* هدر شناور در بالای صفحه */}
       <Header />
 
-      {/* محتوای اصلی هیرو: justify-end فقط برای موبایل، و justify-center برای دسکتاپ و تبلت */}
-      <div className="container-custom relative z-10 flex flex-col justify-end md:justify-center h-full pt-32 sm:pt-36 md:pt-28 pb-[4vh] sm:pb-[6vh] md:pb-0">
-        <div className="max-w-[310px] sm:max-w-md lg:max-w-2xl flex flex-col items-start text-start">
+      {/* محتوای اصلی هیرو (تنظیم پدینگ بیشتر در موبایل برای پایین‌تر آمدن محتوا) */}
+      <div className="container-custom relative z-10 flex flex-col justify-center h-full pt-44 sm:pt-40 md:pt-32 pb-6 sm:pb-10">
+        <div className="max-w-[300px] sm:max-w-md lg:max-w-2xl flex flex-col items-start text-start">
           
           {/* برچسب بالا */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full alpha-glass-control mb-2 sm:mb-4 text-[11px] sm:text-sm font-semibold font-body text-white bg-blue-950/30 backdrop-blur-md border border-blue-400/30 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full alpha-glass-control mb-3 md:mb-6 text-[11px] sm:text-sm font-semibold font-body text-white bg-blue-950/30 backdrop-blur-md border border-blue-400/30 shadow-sm">
             <Sparkles size={14} className="text-blue-300" />
             <span>{t.hero?.badge || (isRTL ? 'آژانس خلاق و دیجیتال مارکتینگ' : 'Creative & Digital Agency')}</span>
           </div>
 
-          <h1 className="text-2xl sm:text-4xl lg:text-6xl font-black font-heading text-white leading-[1.15] tracking-tight mb-2 sm:mb-3 drop-shadow-md">
+          <h1 className="text-2xl sm:text-4xl lg:text-6xl font-black font-heading text-white leading-[1.15] tracking-tight mb-2.5 md:mb-6 drop-shadow-md">
             {t.hero?.title || (isRTL ? 'محل درخشش برند ها' : 'Where Brands Start to Glow.')}
           </h1>
 
-          {/* متن توضیحات با شکست خط کنترل‌شده در تبلت */}
-          <p className="text-xs sm:text-sm lg:text-xl text-slate-100 font-body leading-relaxed mb-3 sm:mb-5 drop-shadow">
+          {/* متن توضیحات با شکست خط کنترل‌شده در تبلت/موبایل از کلمه designs به بعد */}
+          <p className="text-xs sm:text-sm lg:text-xl text-slate-100 font-body leading-relaxed mb-4 md:mb-8 drop-shadow">
             {isRTL ? (
               'ما ایده‌ها را به برندهای قدرتمند، طراحی‌های خیره‌کننده و تجربه‌های دیجیتالی تأثیرگذار تبدیل می‌کنیم.'
             ) : (
@@ -101,14 +101,14 @@ export default function Hero() {
           <div className="flex flex-wrap items-center gap-4">
             <Link
               to={`/${currentLang}/services`}
-              className="px-6 sm:px-7 py-2.5 sm:py-3.5 rounded-full alpha-glass-control text-white dark:text-white font-bold font-body text-xs sm:text-base bg-blue-900/30 dark:bg-blue-950/40 backdrop-blur-md border border-blue-400/30 hover:bg-blue-800/40 dark:hover:bg-blue-900/50 hover:border-blue-300 transition-all duration-300 shadow-sm"
+              className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-full alpha-glass-control text-white dark:text-white font-bold font-body text-xs sm:text-base bg-blue-900/30 dark:bg-blue-950/40 backdrop-blur-md border border-blue-400/30 hover:bg-blue-800/40 dark:hover:bg-blue-900/50 hover:border-blue-300 transition-all duration-300 shadow-sm"
             >
               {t.hero?.ctaSecondary || (isRTL ? 'مشاهده خدمات' : 'Explore Services')}
             </Link>
           </div>
 
-          {/* بخش ویژگی‌ها */}
-          <div className="flex items-center gap-3 sm:gap-6 mt-3 sm:mt-5 pt-3 sm:pt-4 border-t border-white/20 text-[11px] sm:text-sm font-semibold font-body text-slate-200 flex-wrap">
+          {/* بخش ویژگی‌ها با فاصله متناسب تا کف موبایل */}
+          <div className="flex items-center gap-3 sm:gap-6 mt-5 sm:mt-8 pt-4 sm:pt-6 border-t border-white/20 text-[11px] sm:text-sm font-semibold font-body text-slate-200 flex-wrap">
             <div className="flex items-center gap-2">
               <CheckCircle2 size={15} className="text-blue-400 shrink-0" />
               <span>{isRTL ? 'وبسایت • گرافیک • برندینگ • چاپ' : 'Website • Graphic • Branding • Print'}</span>
