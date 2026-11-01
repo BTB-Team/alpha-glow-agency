@@ -153,7 +153,7 @@ export default function Header() {
                 placeholder={
                   t.common?.search || (isRTL ? 'جست‌وجو...' : 'Search...')
                 }
-                className={`alpha-glass-control w-36 lg:w-44 py-2 text-xs font-medium rounded-full text-white placeholder-white/75 focus:outline-none focus:w-52 focus:border-white/60 ${
+                className={`alpha-glass-control w-36 lg:w-44 py-2 text-xs font-medium rounded-full text-alpha-blue placeholder-white/75 focus:outline-none focus:w-52 focus:border-white/60 ${
                   isRTL ? 'pr-9 pl-3.5 text-right' : 'pl-9 pr-3.5 text-left'
                 }`}
               />
