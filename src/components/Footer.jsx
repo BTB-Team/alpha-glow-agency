@@ -85,14 +85,13 @@ export default function Footer() {
           
           {/* ستون‌های فوتر */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-10 border-b border-[#213668]/15 dark:border-white/10">
-            
             {/* معرفی برند و لوگو */}
             <div className="flex flex-col gap-4">
               <Link to={`/${currentLang}`} className="inline-block">
                 <img
                   src={`${import.meta.env.BASE_URL}${theme === 'dark' ? 'logo-white.svg' : 'logo-blue.svg'}`}
                   alt="Alpha Glow Agency"
-                  className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                  className="h-12 md:h-16 w-auto object-contain transition-transform duration-300 hover:scale-105"
                   onError={(e) => {
                     e.currentTarget.src = `${import.meta.env.BASE_URL}logo.svg`;
                   }}
@@ -101,7 +100,7 @@ export default function Footer() {
               <p className="font-body text-xs md:text-sm text-[#213668]/85 dark:text-slate-300 leading-relaxed">
                 {t.footer?.slogan}
               </p>
-              
+                
               {/* شبکه‌های اجتماعی با دکمه‌های شیشه‌ای */}
               <div className="flex items-center gap-2 mt-2 flex-wrap">
                 {socialLinks.map((social) => (
