@@ -18,5 +18,12 @@
     "email": "info@alphaglow.agency",
     "phone": "+1 (555) 019-2834",
     "rights": "All rights reserved. Powered by Alpha Glow Agency."
+  },
+  "homeServices": {
+    "badge": "OUR SERVICES",
+    "titlePart1": "What We",
+    "titleHighlight": "Offer",
+    "subtitle": "Creative solutions to make your brand stand out",
+    "ctaAll": "Explore All Services"
   }
 }

@@ -25,44 +25,183 @@
       }
     }
   },
+
   "services": [
     {
-      "id": "branding",
-      "title": { "fa": "هویت بصری و برندینگ", "en": "Branding & Visual Identity" },
+      "id": "service-1",
+      "slug": "website-design",
+      "icon": "code-window",
+      "mainImage": "/assets/images/services/web-main.webp",
+      "subImages": [
+        "/assets/images/services/web-sub-1.webp",
+        "/assets/images/services/web-sub-2.webp",
+        "/assets/images/services/web-sub-3.webp"
+      ],
+      "title": {
+        "en": "Website Design",
+        "fa": "طراحی وب‌سایت"
+      },
+      "shortDescription": {
+        "en": "Modern, fast and responsive websites for your business.",
+        "fa": "وب‌سایت‌های مدرن، سریع و واکنش‌گرا برای کسب‌وکار شما."
+      },
+      "fullDescription": {
+        "en": "We design and develop custom, high-performance websites tailored to your brand goals. From UI/UX wireframing to responsive front-end and secure back-end architecture, our websites deliver seamless user experiences across all devices and convert visitors into loyal customers.",
+        "fa": "ما وب‌سایت‌های اختصاصی، سریع و مدرن را متناسب با اهداف تجاری شما طراحی و پیاده‌سازی می‌کنیم. از طراحی رابط و تجربه کاربری (UI/UX) گرفته تا کدنویسی واکنش‌گرا و بهینه‌سازی سرعت و سئو، وب‌سایت‌های ما تجربه‌ای بی‌نقص در تمامی دستگاه‌ها خلق می‌کنند."
+      },
+      "samples": [
+        {
+          "id": "web-sample-1",
+          "title": {
+            "en": "Corporate FinTech Portal",
+            "fa": "پورتال شرکتی فین‌تک"
+          },
+          "image": "/assets/images/portfolio/web-1.webp",
+          "link": "/portfolio/corporate-fintech-portal"
+        },
+        {
+          "id": "web-sample-2",
+          "title": {
+            "en": "Luxury E-Commerce Store",
+            "fa": "فروشگاه آنلاین محصولات لوکس"
+          },
+          "image": "/assets/images/portfolio/web-2.webp",
+          "link": "/portfolio/luxury-ecommerce-store"
+        }
+      ]
+    },
+    {
+      "id": "service-2",
+      "slug": "graphic-design",
+      "icon": "pen-bezier",
+      "mainImage": "/assets/images/services/graphic-main.webp",
+      "subImages": [
+        "/assets/images/services/graphic-sub-1.webp",
+        "/assets/images/services/graphic-sub-2.webp",
+        "/assets/images/services/graphic-sub-3.webp"
+      ],
+      "title": {
+        "en": "Graphic Design",
+        "fa": "طراحی گرافیک"
+      },
+      "shortDescription": {
+        "en": "Turn your ideas into stunning visuals.",
+        "fa": "ایده‌های خود را به طرح‌های بصری خیره‌کننده تبدیل کنید."
+      },
+      "fullDescription": {
+        "en": "Our creative graphic design team transforms complex concepts into captivating visual stories. Whether you need social media kits, marketing banners, digital illustrations, or promotional layouts, we craft aesthetics that capture attention instantly.",
+        "fa": "تیم خلاق طراحی گرافیک ما مفاهیم و ایده‌های شما را به داستان‌های بصری چشم‌نواز تبدیل می‌کند. از طراحی قالب‌های شبکه‌های اجتماعی و بنرهای تبلیغاتی گرفته تا تصویرسازی‌های دیجیتال و کاتالوگ‌ها، ما طرح‌هایی خلق می‌کنیم که در اولین نگاه مخاطب را جذب می‌کنند."
+      },
+      "samples": [
+        {
+          "id": "graphic-sample-1",
+          "title": {
+            "en": "Social Media Visual Campaign",
+            "fa": "کمپین بصری شبکه‌های اجتماعی"
+          },
+          "image": "/assets/images/portfolio/graphic-1.webp",
+          "link": "/portfolio/social-media-campaign"
+        },
+        {
+          "id": "graphic-sample-2",
+          "title": {
+            "en": "Event Key Visuals & Posters",
+            "fa": "پوسترها و هویت بصری رویداد"
+          },
+          "image": "/assets/images/portfolio/graphic-2.webp",
+          "link": "/portfolio/event-key-visuals"
+        }
+      ]
+    },
+    {
+      "id": "service-3",
       "slug": "branding",
-      "description": {
-        "fa": "خلق زبان بصری پایدار، لوگو و استراتژی ارتباطی برند.",
-        "en": "Creating enduring visual language, logos, and brand strategy."
-      }
+      "icon": "alpha-logo",
+      "mainImage": "/assets/images/services/branding-main.webp",
+      "subImages": [
+        "/assets/images/services/branding-sub-1.webp",
+        "/assets/images/services/branding-sub-2.webp",
+        "/assets/images/services/branding-sub-3.webp"
+      ],
+      "title": {
+        "en": "Branding",
+        "fa": "برندینگ و هویت بصری"
+      },
+      "shortDescription": {
+        "en": "Build a memorable brand with a unique identity.",
+        "fa": "برندی ماندگار با هویتی منحصربه‌فرد بسازید."
+      },
+      "fullDescription": {
+        "en": "A strong brand is more than just a logo. We develop comprehensive brand identities including logo systems, typography, color palettes, brand guidelines (Brand Book), and tone of voice that establish trust and set you apart in your industry.",
+        "fa": "یک برند قدرتمند فراتر از یک لوگوی ساده است. ما هویت جامع برند شما شامل طراحی لوگو، پالت رنگی، تایپوگرافی، کتابچه راهنمای برند (Brand Book) و لحن ارتباطی را به گونه‌ای خلق می‌کنیم که اعتماد مخاطبان را جلب کرده و شما را در بازار متمایز سازد."
+      },
+      "samples": [
+        {
+          "id": "branding-sample-1",
+          "title": {
+            "en": "Minimalist Coffee Brand Identity",
+            "fa": "هویت بصری برند قهوه تخصصی"
+          },
+          "image": "/assets/images/portfolio/branding-1.webp",
+          "link": "/portfolio/coffee-brand-identity"
+        },
+        {
+          "id": "branding-sample-2",
+          "title": {
+            "en": "Tech Startup Rebranding",
+            "fa": "ری‌برندینگ استارتاپ تکنولوژی"
+          },
+          "image": "/assets/images/portfolio/branding-2.webp",
+          "link": "/portfolio/tech-startup-rebranding"
+        }
+      ]
     },
     {
-      "id": "web-development",
-      "title": { "fa": "طراحی و توسعه وب", "en": "Website Design & Development" },
-      "slug": "web-development",
-      "description": {
-        "fa": "وب‌سایت‌های تعاملی با عملکرد عالی و معماری واکنش‌گرا.",
-        "en": "Interactive, high-performance websites with responsive architecture."
-      }
-    },
-    {
-      "id": "3d-design",
-      "title": { "fa": "طراحی گرافیک و سه‌بعدی", "en": "Graphic & 3D Design" },
-      "slug": "3d-design",
-      "description": {
-        "fa": "رندرهای واقع‌گرایانه، جلوه‌های حرکتی و المان‌های تعاملی.",
-        "en": "Photorealistic renders, motion dynamics, and interactive assets."
-      }
-    },
-    {
-      "id": "printing",
-      "title": { "fa": "چاپ و تبلیغات", "en": "Printing & Advertising" },
-      "slug": "printing",
-      "description": {
-        "fa": "ست اداری باکیفیت، بسته‌بندی و متریال‌های تبلیغاتی ملموس.",
-        "en": "Premium stationery, bespoke packaging, and tangible print collateral."
-      }
+      "id": "service-4",
+      "slug": "print",
+      "icon": "printer",
+      "mainImage": "/assets/images/services/print-main.webp",
+      "subImages": [
+        "/assets/images/services/print-sub-1.webp",
+        "/assets/images/services/print-sub-2.webp",
+        "/assets/images/services/print-sub-3.webp"
+      ],
+      "title": {
+        "en": "Print",
+        "fa": "چاپ و بسته‌بندی"
+      },
+      "shortDescription": {
+        "en": "High-quality printing for lasting impressions.",
+        "fa": "چاپ باکیفیت برای خلق تأثیری ماندگار."
+      },
+      "fullDescription": {
+        "en": "Bring your brand into the physical world with our premium print and packaging solutions. From luxury business cards with gold foil and embossed stationery to brochures, packaging boxes, and large-format banners, we ensure flawless color accuracy and material quality.",
+        "fa": "با خدمات چاپ و بسته‌بندی ممتاز ما، برند خود را در دنیای واقعی ملموس کنید. از کارت‌های ویزیت لوکس با طلاکوب و ست اداری برجسته گرفته تا بروشورها، جعبه‌های بسته‌بندی و استندهای تبلیغاتی، ما دقت رنگ و کیفیت متریال بی‌نقص را تضمین می‌کنیم."
+      },
+      "samples": [
+        {
+          "id": "print-sample-1",
+          "title": {
+            "en": "Gold Foil Executive Stationery",
+            "fa": "ست اداری مدیریتی با روکش طلاکوب"
+          },
+          "image": "/assets/images/portfolio/print-1.webp",
+          "link": "/portfolio/executive-stationery"
+        },
+        {
+          "id": "print-sample-2",
+          "title": {
+            "en": "Premium Product Packaging",
+            "fa": "بسته‌بندی لوکس محصولات"
+          },
+          "image": "/assets/images/portfolio/print-2.webp",
+          "link": "/portfolio/premium-packaging"
+        }
+      ]
     }
   ],
+
+
   "portfolio": [],
   "testimonials": []
 }
