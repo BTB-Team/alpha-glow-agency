@@ -11,6 +11,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import ScrollToTop from './components/ScrollToTop';
+import AutoScrollTop from './components/AutoScrollTop';
 
 // ۱. لایه صفحات عمومی (شامل هدر، فوتر و مدیریت زبان URL)
 function PublicLayout() {
@@ -72,6 +73,7 @@ function AdminLayout() {
 export default function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <AutoScrollTop/>
       <Routes>
         {/* هدایت مسیر ریشه به زبان پیش‌فرض انگلیسی */}
         <Route path="/" element={<Navigate to="/en" replace />} />
