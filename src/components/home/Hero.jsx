@@ -71,9 +71,9 @@ export default function Hero() {
       {/* هدر شناور در بالای صفحه */}
       <Header />
 
-      {/* محتوای اصلی هیرو (تنظیم پدینگ بیشتر در موبایل برای پایین‌تر آمدن محتوا) */}
-      <div className="container-custom relative z-10 flex flex-col justify-center h-full pt-44 sm:pt-40 md:pt-32 pb-6 sm:pb-10">
-        <div className="max-w-[300px] sm:max-w-md lg:max-w-2xl flex flex-col items-start text-start">
+      {/* محتوای اصلی هیرو: پدینگ افقی یکسان با هدر (px-6 md:px-12) برای هماهنگی کامل تراز */}
+      <div className="w-full max-w-7xl mx-auto relative z-10 flex flex-col justify-center h-full pt-32 sm:pt-36 md:pt-28 px-6 md:px-12">
+        <div className="max-w-[310px] sm:max-w-md lg:max-w-2xl flex flex-col items-start text-start">
           
           {/* برچسب بالا */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full alpha-glass-control mb-3 md:mb-6 text-[11px] sm:text-sm font-semibold font-body text-white bg-blue-950/30 backdrop-blur-md border border-blue-400/30 shadow-sm">
