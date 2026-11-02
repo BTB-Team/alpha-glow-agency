@@ -1,15 +1,16 @@
-import HeroScene from '../components/home/HeroScene';
+import Header from '../components/Header';
+import Hero from '../components/home/Hero';
 
 export default function Home() {
   return (
-    <div className="w-full">
-      {/* صحنه اول و لایه‌بندی میز کار هیرو */}
-      <HeroScene />
+    <main className="w-full">
+      {/* هدر مستقیماً بالای صفحه قرار می‌گیرد */}
+      <Header />
       
-      {/* فضای خالی موقت برای امکان اسکرول و تست پینینگ */}
-      <div className="h-screen flex items-center justify-center">
-        <p className="text-sm text-slate-400">صحنه ۲ در اسکرول بعدی لود خواهد شد...</p>
-      </div>
-    </div>
+      {/* هیرو شامل پس‌زمینه سینمایی و محتواست */}
+      <Hero />
+      
+      {/* سایر بخش‌های صفحه اصلی */}
+    </main>
   );
 }
