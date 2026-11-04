@@ -347,7 +347,7 @@
       "category": "graphic-design",
       "icon": "book-open",
       "createdAt": "2026-02-22",
-      "mainImage": "/src/assets/images/portfolio/zerak-catalog.webp",
+      "mainImage": "zerak-catalog.webp",
       "subImages": [
         "/src/assets/images/portfolio/zerak-catalog-1.webp",
         "/src/assets/images/portfolio/zerak-catalog-2.webp"
