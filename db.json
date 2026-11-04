@@ -31,11 +31,11 @@
       "id": "service-1",
       "slug": "website-design",
       "icon": "code-window",
-      "mainImage": "/assets/images/services/web-main.webp",
+      "mainImage": "/src/assets/images/services/web-main.webp",
       "subImages": [
-        "/assets/images/services/web-sub-1.webp",
-        "/assets/images/services/web-sub-2.webp",
-        "/assets/images/services/web-sub-3.webp"
+        "/src/assets/images/services/web-sub-1.webp",
+        "/src/assets/images/services/web-sub-2.webp",
+        "/src/assets/images/services/web-sub-3.webp"
       ],
       "title": {
         "en": "Website Design",
@@ -56,7 +56,7 @@
             "en": "Corporate FinTech Portal",
             "fa": "پورتال شرکتی فین‌تک"
           },
-          "image": "/assets/images/portfolio/web-1.webp",
+          "image": "/src/assets/images/portfolio/web-1.webp",
           "link": "/portfolio/corporate-fintech-portal"
         },
         {
@@ -65,7 +65,7 @@
             "en": "Luxury E-Commerce Store",
             "fa": "فروشگاه آنلاین محصولات لوکس"
           },
-          "image": "/assets/images/portfolio/web-2.webp",
+          "image": "/src/assets/images/portfolio/web-2.webp",
           "link": "/portfolio/luxury-ecommerce-store"
         }
       ]
@@ -74,11 +74,11 @@
       "id": "service-2",
       "slug": "graphic-design",
       "icon": "pen-bezier",
-      "mainImage": "/assets/images/services/graphic-main.webp",
+      "mainImage": "/src/assets/images/services/graphic-main.webp",
       "subImages": [
-        "/assets/images/services/graphic-sub-1.webp",
-        "/assets/images/services/graphic-sub-2.webp",
-        "/assets/images/services/graphic-sub-3.webp"
+        "/src/assets/images/services/graphic-sub-1.webp",
+        "/src/assets/images/services/graphic-sub-2.webp",
+        "/src/assets/images/services/graphic-sub-3.webp"
       ],
       "title": {
         "en": "Graphic Design",
@@ -99,7 +99,7 @@
             "en": "Social Media Visual Campaign",
             "fa": "کمپین بصری شبکه‌های اجتماعی"
           },
-          "image": "/assets/images/portfolio/graphic-1.webp",
+          "image": "/src/assets/images/portfolio/graphic-1.webp",
           "link": "/portfolio/social-media-campaign"
         },
         {
@@ -108,7 +108,7 @@
             "en": "Event Key Visuals & Posters",
             "fa": "پوسترها و هویت بصری رویداد"
           },
-          "image": "/assets/images/portfolio/graphic-2.webp",
+          "image": "/src/assets/images/portfolio/graphic-2.webp",
           "link": "/portfolio/event-key-visuals"
         }
       ]
@@ -117,11 +117,11 @@
       "id": "service-3",
       "slug": "branding",
       "icon": "alpha-logo",
-      "mainImage": "/assets/images/services/branding-main.webp",
+      "mainImage": "/src/assets/images/services/branding-main.webp",
       "subImages": [
-        "/assets/images/services/branding-sub-1.webp",
-        "/assets/images/services/branding-sub-2.webp",
-        "/assets/images/services/branding-sub-3.webp"
+        "/src/assets/images/services/branding-sub-1.webp",
+        "/src/assets/images/services/branding-sub-2.webp",
+        "/src/assets/images/services/branding-sub-3.webp"
       ],
       "title": {
         "en": "Branding",
@@ -142,7 +142,7 @@
             "en": "Minimalist Coffee Brand Identity",
             "fa": "هویت بصری برند قهوه تخصصی"
           },
-          "image": "/assets/images/portfolio/branding-1.webp",
+          "image": "/src/assets/images/portfolio/branding-1.webp",
           "link": "/portfolio/coffee-brand-identity"
         },
         {
@@ -151,7 +151,7 @@
             "en": "Tech Startup Rebranding",
             "fa": "ری‌برندینگ استارتاپ تکنولوژی"
           },
-          "image": "/assets/images/portfolio/branding-2.webp",
+          "image": "/src/assets/images/portfolio/branding-2.webp",
           "link": "/portfolio/tech-startup-rebranding"
         }
       ]
@@ -160,11 +160,11 @@
       "id": "service-4",
       "slug": "print",
       "icon": "printer",
-      "mainImage": "/assets/images/services/print-main.webp",
+      "mainImage": "/src/assets/images/services/print-main.webp",
       "subImages": [
-        "/assets/images/services/print-sub-1.webp",
-        "/assets/images/services/print-sub-2.webp",
-        "/assets/images/services/print-sub-3.webp"
+        "/src/assets/images/services/print-sub-1.webp",
+        "/src/assets/images/services/print-sub-2.webp",
+        "/src/assets/images/services/print-sub-3.webp"
       ],
       "title": {
         "en": "Print",
@@ -185,7 +185,7 @@
             "en": "Gold Foil Executive Stationery",
             "fa": "ست اداری مدیریتی با روکش طلاکوب"
           },
-          "image": "/assets/images/portfolio/print-1.webp",
+          "image": "/src/assets/images/portfolio/print-1.webp",
           "link": "/portfolio/executive-stationery"
         },
         {
@@ -194,14 +194,237 @@
             "en": "Premium Product Packaging",
             "fa": "بسته‌بندی لوکس محصولات"
           },
-          "image": "/assets/images/portfolio/print-2.webp",
+          "image": "/src/assets/images/portfolio/print-2.webp",
           "link": "/portfolio/premium-packaging"
         }
       ]
     }
   ],
-
-
-  "portfolio": [],
+  "portfolio": [
+    {
+      "id": "port-1",
+      "slug": "alpha-glow-website",
+      "category": "website-design",
+      "icon": "globe",
+      "createdAt": "2026-03-01",
+      "mainImage": "/src/assets/images/portfolio/alpha-glow-web.webp",
+      "subImages": [
+        "/src/assets/images/portfolio/alpha-glow-web-1.webp",
+        "/src/assets/images/portfolio/alpha-glow-web-2.webp"
+      ],
+      "title": {
+        "en": "Alpha Glow Website",
+        "fa": "وب‌سایت آژانس آلفا گلو"
+      },
+      "client": {
+        "en": "Alpha Glow Agency",
+        "fa": "آژانس دیجیتال آلفا گلو"
+      },
+      "shortDescription": {
+        "en": "Modern glassmorphic agency platform with 3D visual depth.",
+        "fa": "پلتفرم مدرن شیشه‌ای با عمق بصری سه‌بعدی برای آژانس خلاقیت."
+      },
+      "fullDescription": {
+        "en": "Designed and developed the official bilingual web platform for Alpha Glow Agency featuring custom 3D glassmorphism, interactive GSAP animations, and high-speed performance.",
+        "fa": "طراحی و توسعه وب‌سایت رسمی و دوزبانه آژانس آلفا گلو با رابط کاربری شیشه‌ای (Glassmorphism)، انیمیشن‌های تعاملی و سرعت بارگذاری بالا."
+      }
+    },
+    {
+      "id": "port-2",
+      "slug": "amovi-travel-app",
+      "category": "website-design",
+      "icon": "smartphone",
+      "createdAt": "2026-02-20",
+      "mainImage": "/src/assets/images/portfolio/amovi-app.webp",
+      "subImages": [
+        "/src/assets/images/portfolio/amovi-app-1.webp",
+        "/src/assets/images/portfolio/amovi-app-2.webp"
+      ],
+      "title": {
+        "en": "Amovi Travel App",
+        "fa": "اپلیکیشن و وب‌سایت گردشگری آمووی"
+      },
+      "client": {
+        "en": "Amovi Travel",
+        "fa": "شرکت گردشگری آمووی"
+      },
+      "shortDescription": {
+        "en": "Seamless flight and tour booking experience across devices.",
+        "fa": "تجربه کاربری مدرن برای رزرو آنلاین پرواز و تورهای مسافرتی."
+      },
+      "fullDescription": {
+        "en": "A complete UI/UX design and responsive web application for Amovi Travel, enabling users to explore destinations and book tickets effortlessly.",
+        "fa": "طراحی رابط کاربری و پیاده‌سازی وب‌اپلیکیشن واکنش‌گرا برای جستجوی مقاصد گردشگری و رزرو آنلاین بلیط."
+      }
+    },
+    {
+      "id": "port-3",
+      "slug": "cmx-connect-partnership",
+      "category": "branding",
+      "icon": "fingerprint",
+      "createdAt": "2026-03-02",
+      "mainImage": "/src/assets/images/portfolio/cmx-branding.webp",
+      "subImages": [
+        "/src/assets/images/portfolio/cmx-branding-1.webp",
+        "/src/assets/images/portfolio/cmx-branding-2.webp"
+      ],
+      "title": {
+        "en": "CMX & AG Brand Identity",
+        "fa": "هویت بصری رویداد CMX Connect"
+      },
+      "client": {
+        "en": "CMX Connect",
+        "fa": "رویداد CMX Connect"
+      },
+      "shortDescription": {
+        "en": "Creative partnership and complete event branding system.",
+        "fa": "همکاری خلاقانه و طراحی جامع هویت بصری رویداد."
+      },
+      "fullDescription": {
+        "en": "Developed the complete visual identity, stage backdrops, badges, and promotional branding for the CMX & Alpha Glow creative partnership.",
+        "fa": "طراحی هویت بصری، استندها، بج‌های شناسایی و اقلام تبلیغاتی در قالب همکاری خلاقانه CMX و آلفا گلو."
+      }
+    },
+    {
+      "id": "port-4",
+      "slug": "ano-apparel-branding",
+      "category": "branding",
+      "icon": "pen-tool",
+      "createdAt": "2026-02-18",
+      "mainImage": "/src/assets/images/portfolio/ano-logo.webp",
+      "subImages": [
+        "/src/assets/images/portfolio/ano-logo-1.webp",
+        "/src/assets/images/portfolio/ano-logo-2.webp"
+      ],
+      "title": {
+        "en": "ANO Apparel & AG Logo",
+        "fa": "برندینگ پوشاک ANO و لوگوی AG"
+      },
+      "client": {
+        "en": "ANO Clothing Brand",
+        "fa": "برند لباس ANO"
+      },
+      "shortDescription": {
+        "en": "Custom monogram logo and woven garment label identity.",
+        "fa": "طراحی لوگو و هویت بصری اتیکت و لیبل برند پوشاک."
+      },
+      "fullDescription": {
+        "en": "Crafted a distinctive brand mark and custom woven clothing labels ('Made in Afghanistan') to establish a premium fashion identity.",
+        "fa": "طراحی نشانه تجاری و لیبل‌های پارچه‌ای اختصاصی برای برندهای پوشاک با استاندارد جهانی."
+      }
+    },
+    {
+      "id": "port-5",
+      "slug": "ag-holographic-labels",
+      "category": "graphic-design",
+      "icon": "sparkles",
+      "createdAt": "2026-03-03",
+      "mainImage": "/src/assets/images/portfolio/holographic-labels.webp",
+      "subImages": [
+        "/src/assets/images/portfolio/holographic-labels-1.webp",
+        "/src/assets/images/portfolio/holographic-labels-2.webp"
+      ],
+      "title": {
+        "en": "Holographic Die-Cut Labels",
+        "fa": "طراحی لیبل‌های هولوگرامی و تکه‌ای"
+      },
+      "client": {
+        "en": "Alpha Glow Custom Series",
+        "fa": "سفارشات اختصاصی آلفا گلو"
+      },
+      "shortDescription": {
+        "en": "Eye-catching die-cut sticker and QR label graphics.",
+        "fa": "طراحی گرافیکی لیبل‌های تکه‌ای و هولوگرامی برای اولین بار در افغانستان."
+      },
+      "fullDescription": {
+        "en": "Designed precision vector artwork and QR-integrated layouts for holographic and die-cut brand stickers with vibrant light reflection.",
+        "fa": "طراحی وکتور دقیق و صفحه‌آرایی لیبل‌های هولوگرامی و استیکرهای برش‌خاص همراه با بارکد اختصاصی برند."
+      }
+    },
+    {
+      "id": "port-6",
+      "slug": "zerak-official-invoice",
+      "category": "graphic-design",
+      "icon": "book-open",
+      "createdAt": "2026-02-22",
+      "mainImage": "/src/assets/images/portfolio/zerak-catalog.webp",
+      "subImages": [
+        "/src/assets/images/portfolio/zerak-catalog-1.webp",
+        "/src/assets/images/portfolio/zerak-catalog-2.webp"
+      ],
+      "title": {
+        "en": "Zerak Corporate Forms & Catalog",
+        "fa": "طراحی فاکتور حرفه‌ای و کاتالوگ زیرک"
+      },
+      "client": {
+        "en": "Zerak Brand",
+        "fa": "برند زیرک (Zerak)"
+      },
+      "shortDescription": {
+        "en": "Structured corporate invoice layout and editorial catalog.",
+        "fa": "صفحه‌آرایی فاکتور رسمی، کاتالوگ و اوراق اداری اختصاصی."
+      },
+      "fullDescription": {
+        "en": "Created a clean, authoritative layout for Zerak's official invoices, brochures, and corporate documentation to elevate customer trust.",
+        "fa": "طراحی گرافیکی ساختارمند برای بل‌های رسمی، بروشور و فرم‌های اداری که اعتبار برند را در نگاه مشتری دوچندان می‌کند."
+      }
+    },
+    {
+      "id": "port-7",
+      "slug": "bw-embossed-business-card",
+      "category": "print",
+      "icon": "credit-card",
+      "createdAt": "2026-03-04",
+      "mainImage": "/src/assets/images/portfolio/bw-card.webp",
+      "subImages": [
+        "/src/assets/images/portfolio/bw-card-1.webp",
+        "/src/assets/images/portfolio/bw-card-2.webp"
+      ],
+      "title": {
+        "en": "BW Embossed Card & Mug",
+        "fa": "ویزیت‌کارت و چاپ برجسته BW"
+      },
+      "client": {
+        "en": "BW Brand",
+        "fa": "مجموعه BW"
+      },
+      "shortDescription": {
+        "en": "First-class business cards and 3D embossed promotional mug.",
+        "fa": "چاپ ویزیت‌کارت کیفیت اول و ماگ با چاپ برجسته طلایی."
+      },
+      "fullDescription": {
+        "en": "Produced premium textured business cards with gold foil accents alongside custom 3D embossed ceramic mugs for executive gifting.",
+        "fa": "تولید و چاپ کارت ویزیت‌های پرطرفدار با متریال درجه یک به همراه چاپ برجسته روی ماگ و هدایای تبلیغاتی."
+      }
+    },
+    {
+      "id": "port-8",
+      "slug": "hrq-luxury-packaging",
+      "category": "print",
+      "icon": "package",
+      "createdAt": "2026-03-05",
+      "mainImage": "/src/assets/images/portfolio/holographic-labels.webp",
+      "subImages": [
+        "/src/assets/images/portfolio/hrq-packaging-1.webp",
+        "/src/assets/images/portfolio/hrq-packaging-2.webp"
+      ],
+      "title": {
+        "en": "HRQ & Khyber Luxury Packaging",
+        "fa": "جعبه کیبوردی HRQ و بسته‌بندی خیبر"
+      },
+      "client": {
+        "en": "HRQ & Khyber",
+        "fa": "برندهای HRQ و خیبر"
+      },
+      "shortDescription": {
+        "en": "Gold-foiled rigid keyboard boxes and two-color shopping bags.",
+        "fa": "چاپ جعبه کیبوردی طلاکوب و خریطه پلاستیکی دو رنگ."
+      },
+      "fullDescription": {
+        "en": "Engineered durable, luxury keyboard-style packaging boxes with metallic gold foil for HRQ and custom two-color printed carrier bags for Khyber.",
+        "fa": "طراحی و تولید جعبه‌های کیبوردی مقوایی با طلاکوب برجسته برای برند HRQ و چاپ کیسه‌های فروشگاهی اختصاصی."
+      }
+    }
+  ],
   "testimonials": []
 }

@@ -12,6 +12,7 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import ScrollToTop from './components/ScrollToTop';
 import AutoScrollTop from './components/AutoScrollTop';
+import Portfolio from './pages/Portfolio';
 
 // ۱. لایه صفحات عمومی (شامل هدر، فوتر و مدیریت زبان URL)
 function PublicLayout() {
@@ -82,7 +83,7 @@ export default function App() {
         <Route path="/:lang" element={<PublicLayout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          
+          <Route path="portfolio" element={<Portfolio />} />
           <Route path="services" element={<Services />}>
             {/* <Route path=":serviceSlug" element={<ServiceDetail />} /> */}
           </Route>
