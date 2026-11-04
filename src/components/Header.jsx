@@ -256,14 +256,14 @@ export default function Header() {
                           onClick={() => setIsMenuOpen(false)}
                           className={`relative flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm transition-all duration-200 ${
                             active
-                              ? 'bg-white/20 text-white font-bold shadow-[inset_0_1px_0_rgba(255,255,255,0.4)]'
-                              : 'text-white/85 font-semibold hover:text-white hover:bg-white/10'
+                              ? 'bg-white/15 text-white font-bold border border-cyan-300/80 shadow-[0_0_18px_rgba(56,189,248,0.45),inset_0_1px_1px_rgba(255,255,255,0.6)]'
+                              : 'text-white/85 font-semibold hover:text-white hover:bg-white/10 border border-transparent'
                           }`}
                         >
                           {active && (
                             <span
                               aria-hidden="true"
-                              className={`w-1 h-5 rounded-full bg-gradient-to-b from-white to-indigo-300 shadow-[0_0_8px_rgba(255,255,255,0.9)] ${
+                              className={`w-1 h-5 rounded-full bg-gradient-to-b from-white via-sky-300 to-cyan-400 shadow-[0_0_12px_rgba(56,189,248,0.9)] ${
                                 isRTL ? '-mr-1.5' : '-ml-1.5'
                               }`}
                             />
@@ -272,11 +272,11 @@ export default function Header() {
                             size={17}
                             className={
                               active
-                                ? 'text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.9)]'
+                                ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.9)]'
                                 : 'text-white/80'
                             }
                           />
-                          <span className="tracking-wide text-white">{item.label}</span>
+                          <span className="tracking-wide text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.7)]">{item.label}</span>
                         </Link>
                       </li>
                     );

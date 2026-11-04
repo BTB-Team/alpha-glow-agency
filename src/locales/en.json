@@ -25,5 +25,18 @@
     "titleHighlight": "Offer",
     "subtitle": "Creative solutions to make your brand stand out",
     "ctaAll": "Explore All Services"
+  },
+  "homePortfolio": {
+    "badge": "OUR PORTFOLIO",
+    "titlePart1": "Selected",
+    "titleHighlight": "Creative Works",
+    "subtitle": "A glimpse of ideas brought to life.",
+    "ctaAll": "Explore All Projects",
+    "categories": {
+      "website-design": "Website Design",
+      "branding": "Branding",
+      "graphic-design": "Graphic Design",
+      "print": "Print"
+    }
   }
 }
