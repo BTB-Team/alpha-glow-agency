@@ -13,8 +13,8 @@ import Contact from './pages/Contact';
 import ScrollToTop from './components/ScrollToTop';
 import AutoScrollTop from './components/AutoScrollTop';
 import Portfolio from './pages/Portfolio';
+import Preloader from './components/Preloader';
 
-// ۱. لایه صفحات عمومی (شامل هدر، فوتر و مدیریت زبان URL)
 function PublicLayout() {
   const { lang } = useParams();
   const { setLanguage, theme } = useStore();
@@ -22,7 +22,6 @@ function PublicLayout() {
   const location = useLocation();
 
   useEffect(() => {
-    // تغییر زبان پیش‌فرض به en (اگر زبان fa یا en نبود، ریدایرکت به en)
     if (lang !== 'en' && lang !== 'fa') {
       navigate('/en', { replace: true });
       return;
@@ -33,7 +32,6 @@ function PublicLayout() {
     document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
   }, [lang, setLanguage, navigate]);
 
-  // اعمال کلاس dark روی تگ html برای پشتیبانی Tailwind
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
   }, [theme]);
@@ -57,7 +55,6 @@ function PublicLayout() {
   );
 }
 
-// ۲. لایه پنل مدیریت (مختص فاز آینده)
 function AdminLayout() {
   useEffect(() => {
     document.documentElement.lang = 'en';
@@ -74,29 +71,26 @@ function AdminLayout() {
 export default function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
+      {/* پرلودر در بالاترین سطح ریشه قرار می‌گیرد تا روی هدر و تمام صفحات بیفتد */}
+      <Preloader />
+      
       <AutoScrollTop/>
+      
       <Routes>
-        {/* هدایت مسیر ریشه به زبان پیش‌فرض انگلیسی */}
         <Route path="/" element={<Navigate to="/en" replace />} />
 
-        {/* مسیرهای عمومی دوزبانه (/en و /fa) */}
         <Route path="/:lang" element={<PublicLayout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="portfolio" element={<Portfolio />} />
-          <Route path="services" element={<Services />}>
-            {/* <Route path=":serviceSlug" element={<ServiceDetail />} /> */}
-          </Route>
-
+          <Route path="services" element={<Services />} />
           <Route path="contact" element={<Contact />} />
         </Route>
 
-        {/* مسیر پنل مدیریت آینده */}
         <Route path="/admin" element={<AdminLayout />}>
           {/* مسیرهای ادمین */}
         </Route>
 
-        {/* هدایت مسیرهای نامعتبر به انگلیسی */}
         <Route path="*" element={<Navigate to="/en" replace />} />
       </Routes>
     </BrowserRouter>
