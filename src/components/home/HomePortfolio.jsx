@@ -5,6 +5,23 @@ import db from '../../../db.json';
 import fa from '../../locales/fa.json';
 import en from '../../locales/en.json';
 
+// { eager: true } یعنی همه عکس‌ها در زمان بیلد بارگذاری شوند
+// علامت ** یعنی تمام زیرپوشه‌ها داخل پوشه images را هم اسکن کن
+const allImages = import.meta.glob('../../assets/images/**/*', { eager: true });
+
+// تابع هوشمند برای پیدا کردن عکس بر اساس اسم فایل یا مسیر نسبی آن
+const getImageUrl = (imagePath) => {
+  if (!imagePath) return '';
+  
+  // استخراج نام فایل (مثلا web-1.webp) از مسیری که در db.json ذخیره شده
+  const fileName = imagePath.split('/').pop();
+  
+  // جستجو در بین تمام فایل‌های پیدا شده در پوشه images و زیرپوشه‌های آن
+  const matchedKey = Object.keys(allImages).find((key) => key.endsWith(fileName));
+  
+  return matchedKey ? allImages[matchedKey].default : imagePath;
+};
+
 export default function HomePortfolio() {
   const { lang } = useParams();
   const { theme } = useStore();
@@ -12,10 +29,8 @@ export default function HomePortfolio() {
   const isRTL = currentLang === 'fa';
   const t = currentLang === 'en' ? en : fa;
 
-  // انتخاب ۸ پروژه برتر از db.json
-  const portfolioItems = db?.portfolio?.slice(0, 8) || [];
+  const items = db?.portfolio?.slice(0, 8) || [];
 
-  // تابع مدیریت حرکت سه‌بعدی نرم موس روی کارت (فقط در دسکتاپ)
   const handleMouseMove = (e, cardEl) => {
     if (window.innerWidth < 1024) return;
     const rect = cardEl.getBoundingClientRect();
@@ -37,11 +52,8 @@ export default function HomePortfolio() {
 
   return (
     <section className="relative w-full py-24 md:py-32 overflow-hidden select-none transition-colors duration-500 bg-slate-50 dark:bg-[#030712]">
-      
-      {/* کانتینر اصلی محتوا */}
       <div className="container-custom relative z-10">
         
-        {/* هدر سیکشن پورتفولیو */}
         <div className="flex flex-col items-center text-center mb-16 md:mb-20">
           <div className="flex items-center gap-4 mb-3">
             <span className="w-12 md:w-20 h-[1.5px] bg-gradient-to-r from-transparent via-blue-500 to-sky-400" />
@@ -59,17 +71,16 @@ export default function HomePortfolio() {
           </h2>
 
           <p className="font-body text-slate-600 dark:text-slate-300 max-w-2xl">
-            {t.homePortfolio?.subtitle ||
-              (isRTL
-                ? 'نگاهی کوتاه به ایده‌هایی که به واقعیت تبدیل شده‌اند.'
-                : 'A glimpse of ideas brought to life.')}
+            {t.homePortfolio?.subtitle || (isRTL ? 'نگاهی کوتاه به ایده‌هایی که به واقعیت تبدیل شده‌اند.' : 'A glimpse of ideas brought to life.')}
           </p>
         </div>
 
-        {/* گرید ریسپانسیو با کارت‌های بزرگ‌تر و منظم */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 items-center pb-12">
-          {portfolioItems.map((item) => {
+          {items.map((item) => {
             const categoryName = t.homePortfolio?.categories?.[item.category] || item.category;
+            
+            // تبدیل مسیر متنی db.json به آدرس معتبر و هک شده توسط Vite (حتی در زیرپوشه‌ها)
+            const resolvedImage = getImageUrl(item.mainImage);
 
             return (
               <div
@@ -78,20 +89,17 @@ export default function HomePortfolio() {
                 onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}
                 className="relative group w-full h-[320px] md:h-[340px] rounded-2xl overflow-hidden cursor-pointer border border-slate-300/60 dark:border-blue-500/30 shadow-xl bg-slate-900/10 dark:bg-slate-900/40 backdrop-blur-md transition-all duration-300 ease-out will-change-transform hover:z-30"
               >
-                {/* لایه بردر نورانی نئونی هنگام هاور */}
                 <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-sky-400 group-hover:shadow-[0_0_35px_rgba(56,189,248,0.7)] pointer-events-none transition-all duration-300 z-30" />
 
-                {/* تصویر نمونه‌کار */}
                 <img
-                  src={item.mainImage}
+                  src={resolvedImage}
                   alt={item.title?.[currentLang] || item.title?.en}
                   loading="lazy"
                   className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
                 />
 
-                {/* کادر اطلاعات پایین کارت (ثابت، با متون کوچک‌تر و بدون آیکن) */}
                 <div className="absolute inset-x-0 bottom-0 p-3.5 bg-gradient-to-t from-slate-950/95 via-slate-950/75 to-transparent backdrop-blur-md border-t border-white/10 z-20 flex flex-col text-start">
-                 <h3 className="text-xs md:text-sm font-semibold text-white drop-shadow truncate">
+                  <h3 className="text-xs md:text-sm font-semibold text-white drop-shadow truncate">
                     {item.title?.[currentLang] || item.title?.en}
                   </h3>
                   <span className="text-[10px] md:text-[11px] text-sky-300 font-body mt-0.5">
@@ -103,7 +111,6 @@ export default function HomePortfolio() {
           })}
         </div>
 
-        {/* دکمه Explore All Projects */}
         <div className="flex flex-col items-center mt-6">
           <a
             href={`/${currentLang}/portfolio`}
