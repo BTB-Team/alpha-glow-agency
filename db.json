@@ -31,11 +31,11 @@
       "id": "service-1",
       "slug": "website-design",
       "icon": "code-window",
-      "mainImage": "/src/assets/images/services/web-main.webp",
+      "mainImage": "web-main.webp",
       "subImages": [
-        "/src/assets/images/services/web-sub-1.webp",
-        "/src/assets/images/services/web-sub-2.webp",
-        "/src/assets/images/services/web-sub-3.webp"
+        "web-sub-1.webp",
+        "web-sub-2.webp",
+        "web-sub-3.webp"
       ],
       "title": {
         "en": "Website Design",
@@ -56,8 +56,8 @@
             "en": "Corporate FinTech Portal",
             "fa": "پورتال شرکتی فین‌تک"
           },
-          "image": "/src/assets/images/portfolio/web-1.webp",
-          "link": "/portfolio/corporate-fintech-portal"
+          "image": "web-1.webp",
+          "link": "corporate-fintech-portal"
         },
         {
           "id": "web-sample-2",
@@ -65,8 +65,8 @@
             "en": "Luxury E-Commerce Store",
             "fa": "فروشگاه آنلاین محصولات لوکس"
           },
-          "image": "/src/assets/images/portfolio/web-2.webp",
-          "link": "/portfolio/luxury-ecommerce-store"
+          "image": "web-2.webp",
+          "link": "luxury-ecommerce-store"
         }
       ]
     },
@@ -74,11 +74,11 @@
       "id": "service-2",
       "slug": "graphic-design",
       "icon": "pen-bezier",
-      "mainImage": "/src/assets/images/services/graphic-main.webp",
+      "mainImage": "graphic-main.webp",
       "subImages": [
-        "/src/assets/images/services/graphic-sub-1.webp",
-        "/src/assets/images/services/graphic-sub-2.webp",
-        "/src/assets/images/services/graphic-sub-3.webp"
+        "graphic-sub-1.webp",
+        "graphic-sub-2.webp",
+        "graphic-sub-3.webp"
       ],
       "title": {
         "en": "Graphic Design",
@@ -99,8 +99,8 @@
             "en": "Social Media Visual Campaign",
             "fa": "کمپین بصری شبکه‌های اجتماعی"
           },
-          "image": "/src/assets/images/portfolio/graphic-1.webp",
-          "link": "/portfolio/social-media-campaign"
+          "image": "graphic-1.webp",
+          "link": "social-media-campaign"
         },
         {
           "id": "graphic-sample-2",
@@ -108,8 +108,8 @@
             "en": "Event Key Visuals & Posters",
             "fa": "پوسترها و هویت بصری رویداد"
           },
-          "image": "/src/assets/images/portfolio/graphic-2.webp",
-          "link": "/portfolio/event-key-visuals"
+          "image": "graphic-2.webp",
+          "link": "event-key-visuals"
         }
       ]
     },
@@ -117,11 +117,11 @@
       "id": "service-3",
       "slug": "branding",
       "icon": "alpha-logo",
-      "mainImage": "/src/assets/images/services/branding-main.webp",
+      "mainImage": "branding-main.webp",
       "subImages": [
-        "/src/assets/images/services/branding-sub-1.webp",
-        "/src/assets/images/services/branding-sub-2.webp",
-        "/src/assets/images/services/branding-sub-3.webp"
+        "branding-sub-1.webp",
+        "branding-sub-2.webp",
+        "branding-sub-3.webp"
       ],
       "title": {
         "en": "Branding",
@@ -142,8 +142,8 @@
             "en": "Minimalist Coffee Brand Identity",
             "fa": "هویت بصری برند قهوه تخصصی"
           },
-          "image": "/src/assets/images/portfolio/branding-1.webp",
-          "link": "/portfolio/coffee-brand-identity"
+          "image": "branding-1.webp",
+          "link": "coffee-brand-identity"
         },
         {
           "id": "branding-sample-2",
@@ -151,8 +151,8 @@
             "en": "Tech Startup Rebranding",
             "fa": "ری‌برندینگ استارتاپ تکنولوژی"
           },
-          "image": "/src/assets/images/portfolio/branding-2.webp",
-          "link": "/portfolio/tech-startup-rebranding"
+          "image": "branding-2.webp",
+          "link": "tech-startup-rebranding"
         }
       ]
     },
@@ -160,11 +160,11 @@
       "id": "service-4",
       "slug": "print",
       "icon": "printer",
-      "mainImage": "/src/assets/images/services/print-main.webp",
+      "mainImage": "print-main.webp",
       "subImages": [
-        "/src/assets/images/services/print-sub-1.webp",
-        "/src/assets/images/services/print-sub-2.webp",
-        "/src/assets/images/services/print-sub-3.webp"
+        "print-sub-1.webp",
+        "print-sub-2.webp",
+        "print-sub-3.webp"
       ],
       "title": {
         "en": "Print",
@@ -185,8 +185,8 @@
             "en": "Gold Foil Executive Stationery",
             "fa": "ست اداری مدیریتی با روکش طلاکوب"
           },
-          "image": "/src/assets/images/portfolio/print-1.webp",
-          "link": "/portfolio/executive-stationery"
+          "image": "print-1.webp",
+          "link": "executive-stationery"
         },
         {
           "id": "print-sample-2",
@@ -194,8 +194,8 @@
             "en": "Premium Product Packaging",
             "fa": "بسته‌بندی لوکس محصولات"
           },
-          "image": "/src/assets/images/portfolio/print-2.webp",
-          "link": "/portfolio/premium-packaging"
+          "image": "print-2.webp",
+          "link": "premium-packaging"
         }
       ]
     }
@@ -207,10 +207,10 @@
       "category": "website-design",
       "icon": "globe",
       "createdAt": "2026-03-01",
-      "mainImage": "/src/assets/images/portfolio/alpha-glow-web.webp",
+      "mainImage": "alpha-glow-web.webp",
       "subImages": [
-        "/src/assets/images/portfolio/alpha-glow-web-1.webp",
-        "/src/assets/images/portfolio/alpha-glow-web-2.webp"
+        "alpha-glow-web-1.webp",
+        "alpha-glow-web-2.webp"
       ],
       "title": {
         "en": "Alpha Glow Website",
@@ -235,10 +235,10 @@
       "category": "website-design",
       "icon": "smartphone",
       "createdAt": "2026-02-20",
-      "mainImage": "/src/assets/images/portfolio/amovi-app.webp",
+      "mainImage": "amovi-app.webp",
       "subImages": [
-        "/src/assets/images/portfolio/amovi-app-1.webp",
-        "/src/assets/images/portfolio/amovi-app-2.webp"
+        "amovi-app-1.webp",
+        "amovi-app-2.webp"
       ],
       "title": {
         "en": "Amovi Travel App",
@@ -263,10 +263,10 @@
       "category": "branding",
       "icon": "fingerprint",
       "createdAt": "2026-03-02",
-      "mainImage": "/src/assets/images/portfolio/cmx-branding.webp",
+      "mainImage": "cmx-branding.webp",
       "subImages": [
-        "/src/assets/images/portfolio/cmx-branding-1.webp",
-        "/src/assets/images/portfolio/cmx-branding-2.webp"
+        "cmx-branding-1.webp",
+        "cmx-branding-2.webp"
       ],
       "title": {
         "en": "CMX & AG Brand Identity",
@@ -291,10 +291,10 @@
       "category": "branding",
       "icon": "pen-tool",
       "createdAt": "2026-02-18",
-      "mainImage": "/src/assets/images/portfolio/ano-logo.webp",
+      "mainImage": "ano-logo.webp",
       "subImages": [
-        "/src/assets/images/portfolio/ano-logo-1.webp",
-        "/src/assets/images/portfolio/ano-logo-2.webp"
+        "ano-logo-1.webp",
+        "ano-logo-2.webp"
       ],
       "title": {
         "en": "ANO Apparel & AG Logo",
@@ -319,10 +319,10 @@
       "category": "graphic-design",
       "icon": "sparkles",
       "createdAt": "2026-03-03",
-      "mainImage": "/src/assets/images/portfolio/holographic-labels.webp",
+      "mainImage": "holographic-labels.webp",
       "subImages": [
-        "/src/assets/images/portfolio/holographic-labels-1.webp",
-        "/src/assets/images/portfolio/holographic-labels-2.webp"
+        "holographic-labels-1.webp",
+        "holographic-labels-2.webp"
       ],
       "title": {
         "en": "Holographic Die-Cut Labels",
@@ -349,8 +349,8 @@
       "createdAt": "2026-02-22",
       "mainImage": "zerak-catalog.webp",
       "subImages": [
-        "/src/assets/images/portfolio/zerak-catalog-1.webp",
-        "/src/assets/images/portfolio/zerak-catalog-2.webp"
+        "zerak-catalog-1.webp",
+        "zerak-catalog-2.webp"
       ],
       "title": {
         "en": "Zerak Corporate Forms & Catalog",
@@ -375,10 +375,10 @@
       "category": "print",
       "icon": "credit-card",
       "createdAt": "2026-03-04",
-      "mainImage": "/src/assets/images/portfolio/bw-card.webp",
+      "mainImage": "bw-card.webp",
       "subImages": [
-        "/src/assets/images/portfolio/bw-card-1.webp",
-        "/src/assets/images/portfolio/bw-card-2.webp"
+        "bw-card-1.webp",
+        "bw-card-2.webp"
       ],
       "title": {
         "en": "BW Embossed Card & Mug",
@@ -403,10 +403,10 @@
       "category": "print",
       "icon": "package",
       "createdAt": "2026-03-05",
-      "mainImage": "/src/assets/images/portfolio/holographic-labels.webp",
+      "mainImage": "hrq_packaging.webp",
       "subImages": [
-        "/src/assets/images/portfolio/hrq-packaging-1.webp",
-        "/src/assets/images/portfolio/hrq-packaging-2.webp"
+        "hrq-packaging-1.webp",
+        "hrq-packaging-2.webp"
       ],
       "title": {
         "en": "HRQ & Khyber Luxury Packaging",
