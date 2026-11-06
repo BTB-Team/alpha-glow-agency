@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import Hero from '../components/home/Hero';
+import HomeAbout from '../components/home/HomeAbout';
 import HomePortfolio from '../components/home/HomePortfolio';
 import HomeServices from '../components/home/HomeServices';
 
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <HomeServices/>
       <HomePortfolio/>
+      <HomeAbout/>
       
       {/* سایر بخش‌های صفحه اصلی */}
     </main>

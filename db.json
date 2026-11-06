@@ -426,5 +426,8 @@
       }
     }
   ],
+  "about": {
+  "logoImage": "logo-blue.svg"
+  },
   "testimonials": []
 }

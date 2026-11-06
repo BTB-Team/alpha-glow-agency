@@ -51,7 +51,7 @@ export default function HomePortfolio() {
   };
 
   return (
-    <section className="relative w-full py-24 md:py-32 overflow-hidden select-none transition-colors duration-500 bg-slate-50 dark:bg-[#030712]">
+    <section className="relative w-full py-24 md:py-24 overflow-hidden select-none transition-colors duration-500 bg-slate-50 dark:bg-[#030712]">
       <div className="container-custom relative z-10">
         
         <div className="flex flex-col items-center text-center mb-16 md:mb-20">
