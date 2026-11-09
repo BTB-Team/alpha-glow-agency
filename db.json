@@ -427,7 +427,7 @@
     }
   ],
   "about": {
-     "logoImage": "logo.webp",
+     "logoImage": "home-about.webp",
     "stats": [
       { "id": "projects", "value": "+100", "icon": "Briefcase" },
       { "id": "orders", "value": "+500", "icon": "Layers" },
@@ -545,6 +545,26 @@
       }
     ]
   }
-],
-  "testimonials": []
+ ],
+  "promotionalBanner": {
+      "title": {
+      "image": "/images/banner-bg.webp",
+      "fa": "پیشنهاد ویژه؛ خلق هویت برند با بالاترین استاندارد",
+      "en": "Special Offer: Crafting Brand Identity with Top Standards"
+    },
+    "subtitle": {
+      "fa": "همین امروز پروژه خود را ثبت کنید و از مشاوره تخصصی رایگان تیم آلفا گلو بهره‌مند شوید.",
+      "en": "Register your project today and get free specialized consultation from Alpha Glow."
+    },
+    "buttonText": {
+      "fa": "ثبت سفارش پروژه",
+      "en": "Start Your Project"
+    },
+    "buttonLink": "/contact",
+    "secondaryButtonText": {
+      "fa": "مشاهده نمونه کارها",
+      "en": "View Portfolio"
+    },
+    "secondaryButtonLink": "/portfolio"
+    }
 }

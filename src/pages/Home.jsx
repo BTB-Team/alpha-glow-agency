@@ -4,6 +4,7 @@ import HomeAbout from '../components/home/HomeAbout';
 import HomePortfolio from '../components/home/HomePortfolio';
 import HomeServices from '../components/home/HomeServices';
 import TestimonialsMarquee from '../components/home/TestimonialsMarquee';
+import PromotionalBanner from '../components/PromotionalBanner';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <HomePortfolio/>
       <HomeAbout/>
       <TestimonialsMarquee/>
+      {/* <PromotionalBanner/> */}
       
       {/* سایر بخش‌های صفحه اصلی */}
     </main>
