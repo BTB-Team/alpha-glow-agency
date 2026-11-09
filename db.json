@@ -427,7 +427,124 @@
     }
   ],
   "about": {
-  "logoImage": "home-about-2.jpg"
+     "logoImage": "logo.webp",
+    "stats": [
+      { "id": "projects", "value": "+100", "icon": "Briefcase" },
+      { "id": "orders", "value": "+500", "icon": "Layers" },
+      { "id": "clients", "value": "+80", "icon": "Users" },
+      { "id": "experience", "value": "+1", "icon": "Calendar" }
+    ]
   },
+
+  "portfolioProjects": [
+  {
+    "id": "project-1",
+    "title": { "fa": "طراحی هویت بصری تک‌نو", "en": "Tekno Visual Identity" },
+    "category": "branding",
+    "testimonials": [
+      {
+        "id": "t1",
+        "name": { "fa": "سینا کریم‌پور", "en": "Sina Karimpour" },
+        "role": { "fa": "مدیرعامل استارتاپ تک‌نو", "en": "CEO at Tekno Startup" },
+        "comment": {
+          "fa": "همکاری با آلفا گلو یکی از بهترین تجربه‌های کاری ما بود. دقت نظر در جزئیات برندینگ بی‌نظیر است.",
+          "en": "Working with Alpha Glow was one of our best experiences. Their attention to branding detail is unmatched."
+        },
+        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgV2A-HdVxt5ydbv5re4yaEIl8DSkcUjR-t8AL3MAUcQ&s=10", 
+        "isFeaturedOnHome": true
+      }
+    ]
+  },
+  {
+    "id": "project-2",
+    "title": { "fa": "طراحی وب‌سایت راد", "en": "Rad Website Design" },
+    "category": "web",
+    "testimonials": [
+      {
+        "id": "t2",
+        "name": { "fa": "مریم رضایی", "en": "Maryam Rezaei" },
+        "role": { "fa": "مدیر مارکتینگ مجموعه راد", "en": "Marketing Manager at Rad" },
+        "comment": {
+          "fa": "طراحی گرافیک و متریال‌های تبلیغاتی با بالاترین کیفیت و در کوتاه‌ترین زمان انجام شد.",
+          "en": "Graphic design and promotional materials were delivered with top quality and in record time."
+        },
+        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTagYQtNJUh94DmbBRnP2C2UINjhmAU4jnAyrBCf-eSdQ&s=10", 
+        "isFeaturedOnHome": true
+      }
+    ]
+  },
+  {
+    "id": "project-3",
+    "title": { "fa": "بسته‌بندی تخصصی کلینیک", "en": "Clinic Packaging" },
+    "category": "print",
+    "testimonials": [
+      {
+        "id": "t3",
+        "name": { "fa": "دکتر پارسا", "en": "Dr. Parsa" },
+        "role": { "fa": "بنیان‌گذار کلینیک تخصصی", "en": "Founder of Specialized Clinic" },
+        "comment": {
+          "fa": "ترکیب هنر و استراتژی در آلفا گلو دقیقاً همان چیزی بود که برند ما برای رشد نیاز داشت.",
+          "en": "The blend of art and strategy at Alpha Glow was exactly what our brand needed to grow."
+        },
+        "avatar": "", 
+        "isFeaturedOnHome": true
+      }
+    ]
+  },
+   {
+    "id": "project-4",
+    "title": { "fa": "طراحی هویت بصری تک‌نو", "en": "Tekno Visual Identity" },
+    "category": "branding",
+    "testimonials": [
+      {
+        "id": "t1",
+        "name": { "fa": "سینا کریم‌پور", "en": "Sina Karimpour" },
+        "role": { "fa": "مدیرعامل استارتاپ تک‌نو", "en": "CEO at Tekno Startup" },
+        "comment": {
+          "fa": "همکاری با آلفا گلو یکی از بهترین تجربه‌های کاری ما بود. دقت نظر در جزئیات برندینگ بی‌نظیر است.",
+          "en": "Working with Alpha Glow was one of our best experiences. Their attention to branding detail is unmatched."
+        },
+        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPsZV5OIXBwnAT7WM_d2efRh7v0_Y-2TOdJ-lejz644A&s=10", 
+        "isFeaturedOnHome": true
+      }
+    ]
+  },
+  {
+    "id": "project-5",
+    "title": { "fa": "طراحی وب‌سایت راد", "en": "Rad Website Design" },
+    "category": "web",
+    "testimonials": [
+      {
+        "id": "t2",
+        "name": { "fa": "مریم رضایی", "en": "Maryam Rezaei" },
+        "role": { "fa": "مدیر مارکتینگ مجموعه راد", "en": "Marketing Manager at Rad" },
+        "comment": {
+          "fa": "طراحی گرافیک و متریال‌های تبلیغاتی با بالاترین کیفیت و در کوتاه‌ترین زمان انجام شد.",
+          "en": "Graphic design and promotional materials were delivered with top quality and in record time."
+        },
+        "avatar": "", 
+        "isFeaturedOnHome": true
+      }
+    ]
+  },
+  {
+    "id": "project-6",
+    "title": { "fa": "بسته‌بندی تخصصی کلینیک", "en": "Clinic Packaging" },
+    "category": "print",
+    "testimonials": [
+      {
+        "id": "t3",
+        "name": { "fa": "دکتر پارسا", "en": "Dr. Parsa" },
+        "role": { "fa": "بنیان‌گذار کلینیک تخصصی", "en": "Founder of Specialized Clinic" },
+        "comment": {
+          "fa": "ترکیب هنر و استراتژی در آلفا گلو دقیقاً همان چیزی بود که برند ما برای رشد نیاز داشت.",
+          "en": "The blend of art and strategy at Alpha Glow was exactly what our brand needed to grow."
+        },
+        "avatar": "", 
+        "isFeaturedOnHome": true
+      }
+    ]
+  }
+],
   "testimonials": []
 }

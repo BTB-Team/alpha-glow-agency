@@ -40,12 +40,24 @@
     }
   },
   "homeAbout": {
-  "badge": "ABOUT US",
-  "subHeader": "CREATIVE DESIGN & VISUAL STRATEGY AGENCY",
-  "titlePart1": "About Alpha Glow;",
-  "titleHighlight": "Where Brands Shine",
-  "para1": "Alpha Glow is a creative, modern, and dynamic agency offering specialized services in graphic design, branding, web design, and print.",
-  "para2": "Founded by Arezoo Mohammadi with the vision of creating smart visual solutions that go beyond aesthetics, we combine art and strategy to deliver your brand's message more clearly and professionally to your audience.",
-  "ctaStory": "Our Story"
- }
+    "badge": "ABOUT US",
+    "subHeader": "CREATIVE DESIGN & VISUAL STRATEGY AGENCY",
+    "titlePart1": "About Alpha Glow;",
+    "titleHighlight": "Where Brands Shine",
+    "para1": "Alpha Glow is a creative, modern, and dynamic agency offering specialized services in graphic design, branding, web design, and print.",
+    "para2": "Founded by Arezoo Mohammadi with the vision of creating smart visual solutions that go beyond aesthetics, we combine art and strategy to deliver your brand's message more clearly and professionally to your audience.",
+    "ctaStory": "Our Story",
+    "stats": {
+      "projects": "Completed Projects",
+      "orders": "Designs & Print Orders",
+      "clients": "Happy Clients",
+      "experience": "Year of Experience"
+    }
+  },
+  "homeTestimonials": {
+    "badge": "TESTIMONIALS",
+    "titlePart1": "What",
+    "titleHighlight": "Clients Say",
+    "subtitle": "Real feedback from our valued partners."
+  }
 }

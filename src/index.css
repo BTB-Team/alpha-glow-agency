@@ -13,7 +13,7 @@
 
 @font-face {
   font-family: 'Inter Local';
-  src: url('/fonts/inter/Inter-Variable.woff2') format('woff2-variations');
+  src: url('/fonts/InterVariable.woff2') format('woff2-variations');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -196,3 +196,64 @@ html[dir="ltr"],
     0 3px 14px 1px rgba(30, 58, 138, 0.6);
 }
 
+/* افکت تابش نور از لبه پایینی به سمت بالای داخل کارت هنگام هاور */
+.alpha-bottom-lamp {
+  position: relative;
+  overflow: hidden;
+}
+
+.alpha-bottom-lamp::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    85% 75% at 50% 105%,
+    rgba(56, 189, 248, 0.42) 0%,
+    rgba(14, 165, 233, 0.16) 45%,
+    transparent 80%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.alpha-bottom-lamp::after {
+  content: "";
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, transparent, #38bdf8, #bae6fd, #38bdf8, transparent);
+  box-shadow: 0 -2px 16px 2px rgba(56, 189, 248, 0.85);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.alpha-bottom-lamp:hover::before,
+.alpha-bottom-lamp:hover::after {
+  opacity: 1;
+}
+
+/* کلاس ها برای انیمیشن اسکرول افقی نظریات مشتریان */
+@keyframes smooth-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-smooth-marquee {
+  display: flex;
+  width: max-content;
+  animation: smooth-marquee 40s linear infinite;
+}
+
+.animate-smooth-marquee:hover {
+  animation-play-state: paused;
+}

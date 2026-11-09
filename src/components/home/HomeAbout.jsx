@@ -4,19 +4,18 @@ import { useStore } from '../../store/useStore';
 import db from '../../../db.json';
 import fa from '../../locales/fa.json';
 import en from '../../locales/en.json';
+import AboutStats from './AboutStats';
 
 // بارگذاری خودکار تصاویر از پوشه src/assets/images برای کارکرد صحیح در دیپلوی
 const allImages = import.meta.glob('../../assets/images/**/*', { eager: true });
 
 const getLogoUrl = (imagePath) => {
-  const keys = Object.keys(allImages);
-  if (imagePath) {
-    const fileName = imagePath.split('/').pop();
-    const matched = keys.find((k) => k.toLowerCase().endsWith(fileName.toLowerCase()));
-    if (matched) return allImages[matched].default;
-  }
-  const autoLogo = keys.find((k) => k.toLowerCase().includes('logo'));
-  return autoLogo ? allImages[autoLogo].default : '';
+  if (!imagePath) return '';
+  const fileName = imagePath.split('/').pop();
+  const matched = Object.keys(allImages).find((k) =>
+    k.toLowerCase().endsWith(fileName.toLowerCase())
+  );
+  return matched ? allImages[matched].default : '';
 };
 
 export default function HomeAbout() {
@@ -26,30 +25,8 @@ export default function HomeAbout() {
   const isRTL = currentLang === 'fa';
   const t = currentLang === 'en' ? en : fa;
 
-  // دریافت تصویر از db.json (یا تغییر مستقیم نام فایل در همین خط)
-  const aboutDb = db?.about || {};
-  const logoSrc = getLogoUrl(aboutDb.logoImage || aboutDb.image);
-
-  const content = {
-    badge: t.homeAbout?.badge || (isRTL ? 'درباره ما' : 'ABOUT US'),
-    subHeader:
-      t.homeAbout?.subHeader ||
-      (isRTL ? 'آژانس خلاقیت، طراحی و استراتژی بصری' : 'CREATIVE DESIGN & VISUAL STRATEGY AGENCY'),
-    titlePart1: t.homeAbout?.titlePart1 || (isRTL ? 'درباره آلفا گلو؛' : 'About Alpha Glow;'),
-    titleHighlight:
-      t.homeAbout?.titleHighlight || (isRTL ? 'جایی که برندها می‌درخشند' : 'Where Brands Shine'),
-    para1:
-      t.homeAbout?.para1 ||
-      (isRTL
-        ? 'آلفا گلو یک آژانس خلاق، مدرن و پویاست که خدمات تخصصی در زمینه‌های طراحی گرافیک، برندینگ، طراحی وب‌سایت و چاپ ارائه می‌دهد.'
-        : 'Alpha Glow is a creative, modern, and dynamic agency offering specialized services in graphic design, branding, web design, and print.'),
-    para2:
-      t.homeAbout?.para2 ||
-      (isRTL
-        ? 'این مجموعه توسط آرزو محمدی با هدف خلق راهکارهای بصری هوشمندانه و فراتر از زیبایی پایه‌گذاری شد. ما در آلفا گلو هنر و استراتژی را ترکیب می‌کنیم تا پیام برند شما را شفاف‌تر و حرفه‌ای‌تر به مخاطب برسانیم.'
-        : "Founded by Arezoo Mohammadi with the vision of creating smart visual solutions that go beyond aesthetics, we combine art and strategy to deliver your brand's message more clearly and professionally to your audience."),
-    ctaStory: t.homeAbout?.ctaStory || (isRTL ? 'داستان ما' : 'Our Story'),
-  };
+  const logoSrc = getLogoUrl(db?.about?.logoImage);
+  const content = t.homeAbout || {};
 
   return (
     <section className="relative w-full py-24 md:py-32 overflow-hidden select-none transition-colors duration-500 bg-slate-50 dark:bg-[#030712]">
@@ -60,7 +37,6 @@ export default function HomeAbout() {
           {/* ستون متن و دکمه (۷ ستون) */}
           <div className="lg:col-span-7 flex flex-col items-start text-start z-20">
             
-            {/* بج بالای عنوان */}
             <div className="flex items-center gap-4 mb-3">
               <span className="w-12 md:w-16 h-[1.5px] bg-gradient-to-r from-transparent via-blue-500 to-sky-400" />
               <span className="text-xs md:text-sm font-bold tracking-[0.28em] uppercase text-blue-900 dark:text-sky-300 font-body">
@@ -68,12 +44,10 @@ export default function HomeAbout() {
               </span>
             </div>
 
-            {/* زیرعنوان */}
             <p className="text-xs md:text-sm font-bold tracking-wider uppercase text-blue-600/80 dark:text-sky-400/80 mb-2 font-body">
               {content.subHeader}
             </p>
 
-            {/* عنوان اصلی */}
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-black font-heading tracking-tight text-slate-900 dark:text-white mb-6 drop-shadow-sm leading-tight">
               <span>{content.titlePart1} </span>
               <span className="bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-950 dark:from-white dark:via-sky-200 dark:to-sky-400 bg-clip-text text-transparent">
@@ -81,13 +55,11 @@ export default function HomeAbout() {
               </span>
             </h2>
 
-            {/* پاراگراف‌های متن اصلی */}
             <div className="space-y-4 font-body text-slate-600 dark:text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mb-8">
               <p>{content.para1}</p>
               <p>{content.para2}</p>
             </div>
 
-            {/* دکمه فراخوان (داستان ما) */}
             <div className="flex flex-wrap items-center">
               <Link
                 to={`/${currentLang}/about`}
@@ -174,23 +146,14 @@ export default function HomeAbout() {
               </svg>
 
               {/* لایه ۲ (میانی - z-10): قاب دایره‌ای بزرگ تصویر */}
-              <div className="relative z-10 w-64 h-64 sm:w-80 sm:h-80 md:w-[350px] md:h-[350px] rounded-full overflow-hidden border-2 border-sky-400/50 dark:border-sky-400/40 bg-slate-950 shadow-[0_20px_50px_rgba(2,132,199,0.28)] flex items-center justify-center">
-                {logoSrc ? (
+              <div className="relative z-10 w-64 h-64 sm:w-80 sm:h-80 md:w-[350px] md:h-[350px] rounded-full overflow-hidden border-2 border-sky-400/50 dark:border-sky-400/40 bg-[#030712] shadow-[0_20px_50px_rgba(2,132,199,0.28)] flex items-center justify-center">
+                {logoSrc && (
                   <img
                     src={logoSrc}
-                    alt="Alpha Glow"
+                    alt={content.titleHighlight || 'Alpha Glow'}
                     loading="lazy"
                     className="w-full h-full object-cover rounded-full scale-[1.02]"
                   />
-                ) : (
-                  <div className="flex flex-col items-center justify-center text-center p-6">
-                    <span className="text-3xl sm:text-4xl font-black font-heading tracking-wider text-white">
-                      ALPHA GLOW
-                    </span>
-                    <span className="text-xs text-sky-400 mt-2 tracking-[0.25em] font-body">
-                      CREATIVE AGENCY
-                    </span>
-                  </div>
                 )}
               </div>
 
@@ -281,6 +244,9 @@ export default function HomeAbout() {
           </div>
 
         </div>
+
+        {/* ردیف کارت‌های شیشه‌ای آمار */}
+        <AboutStats />
 
       </div>
     </section>
