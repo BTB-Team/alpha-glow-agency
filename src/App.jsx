@@ -72,7 +72,7 @@ export default function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
       {/* پرلودر در بالاترین سطح ریشه قرار می‌گیرد تا روی هدر و تمام صفحات بیفتد */}
-      <Preloader />
+      {/* <Preloader /> */}
       
       <AutoScrollTop/>
       
