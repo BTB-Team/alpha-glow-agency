@@ -10,7 +10,8 @@ export default function FinalCTA() {
   const [ctaData, setCtaData] = useState(null);
 
   useEffect(() => {
-    fetch('/db.json')
+    // استفاده از BASE_URL برای پشتیبانی از زیرپوشه گیت‌هاب پیجز
+    fetch(`${import.meta.env.BASE_URL}db.json`)
       .then((res) => {
         if (!res.ok) throw new Error('Failed to load db.json');
         return res.json();
@@ -34,15 +35,12 @@ export default function FinalCTA() {
 
   return (
     <section className="relative w-full py-24 md:py-32 overflow-hidden select-none">
-      {/* نور محیطی ملایم در پس‌زمینه بدون ایجاد کادر */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[750px] h-[250px] md:h-[350px] bg-blue-600/10 dark:bg-sky-500/10 rounded-full blur-[110px] pointer-events-none z-0" />
 
-      {/* خط نوری افقی ظریف برای تفکیک فضایی */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-2xl h-[1px] bg-gradient-to-r from-transparent via-slate-300 dark:via-white/10 to-transparent" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center text-center">
         
-        {/* بج بالای عنوان با خطوط گرادیانی طرفین مطابق استاندارد پروژه */}
         <div className="flex items-center gap-4 mb-3">
           <span className="w-12 md:w-16 h-[1.5px] bg-gradient-to-r from-transparent via-blue-500 to-sky-400" />
           <span className="text-xs md:text-sm font-bold tracking-[0.28em] uppercase text-blue-900 dark:text-sky-300 font-body">
@@ -51,7 +49,6 @@ export default function FinalCTA() {
           <span className="w-12 md:w-16 h-[1.5px] bg-gradient-to-l from-transparent via-blue-500 to-sky-400" />
         </div>
 
-        {/* تیتر اصلی با گرادیان استاندارد پروژه (سفید به آبی آسمانی در دارک‌مود) */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-heading tracking-tight text-slate-900 dark:text-white leading-[1.2] mb-4">
           <span>{titlePart1} </span>
           <span className="bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-950 dark:from-white dark:via-sky-200 dark:to-sky-400 bg-clip-text text-transparent font-heading">
@@ -59,12 +56,10 @@ export default function FinalCTA() {
           </span>
         </h2>
 
-        {/* زیرعنوان هماهنگ با رنگ‌بندی سایر بخش‌ها */}
         <p className="font-body text-slate-600 dark:text-slate-400 max-w-xl text-sm md:text-base leading-relaxed mb-9">
           {subtitle}
         </p>
 
-        {/* دکمه‌های شیشه‌ای کپسولی و ظریف */}
         <div className="flex flex-wrap items-center justify-center gap-3.5">
           <Link
             to={`/${currentLang}${ctaData.primaryBtnLink}`}
