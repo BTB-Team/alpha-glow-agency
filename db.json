@@ -497,7 +497,7 @@
     "category": "branding",
     "testimonials": [
       {
-        "id": "t1",
+        "id": "t4",
         "name": { "fa": "سینا کریم‌پور", "en": "Sina Karimpour" },
         "role": { "fa": "مدیرعامل استارتاپ تک‌نو", "en": "CEO at Tekno Startup" },
         "comment": {
@@ -515,7 +515,7 @@
     "category": "web",
     "testimonials": [
       {
-        "id": "t2",
+        "id": "t5",
         "name": { "fa": "مریم رضایی", "en": "Maryam Rezaei" },
         "role": { "fa": "مدیر مارکتینگ مجموعه راد", "en": "Marketing Manager at Rad" },
         "comment": {
@@ -533,7 +533,7 @@
     "category": "print",
     "testimonials": [
       {
-        "id": "t3",
+        "id": "t6",
         "name": { "fa": "دکتر پارسا", "en": "Dr. Parsa" },
         "role": { "fa": "بنیان‌گذار کلینیک تخصصی", "en": "Founder of Specialized Clinic" },
         "comment": {
@@ -546,25 +546,50 @@
     ]
   }
  ],
+  
   "promotionalBanner": {
-      "title": {
-      "image": "/images/banner-bg.webp",
-      "fa": "پیشنهاد ویژه؛ خلق هویت برند با بالاترین استاندارد",
-      "en": "Special Offer: Crafting Brand Identity with Top Standards"
+    "mainImage": "banner/corporate-banner-main..webp",
+    "floatImage": "banner/corporate-banner-float.webp",
+    "title": {
+      "fa": "پیشنهاد ویژه آلفا گلو",
+      "en": "Alpha Glow Speial Offer"
     },
     "subtitle": {
-      "fa": "همین امروز پروژه خود را ثبت کنید و از مشاوره تخصصی رایگان تیم آلفا گلو بهره‌مند شوید.",
-      "en": "Register your project today and get free specialized consultation from Alpha Glow."
+      "fa": "ارائه راهکارهای نوین در طراحی هویت بصری، وب‌سایت و دیجیتال مارکتینگ با استانداردهای جهانی.",
+      "en": "Providing modern solutions in visual identity, web design, and digital marketing with global standards."
     },
     "buttonText": {
-      "fa": "ثبت سفارش پروژه",
-      "en": "Start Your Project"
+      "fa": "شروع همکاری",
+      "en": "Start Project"
     },
-    "buttonLink": "/contact",
-    "secondaryButtonText": {
-      "fa": "مشاهده نمونه کارها",
-      "en": "View Portfolio"
+    "buttonLink": "/contact"
+   },
+   "finalCta": {
+    "badge": {
+      "fa": "آماده شروع هستید؟",
+      "en": "READY TO GLOW?"
     },
-    "secondaryButtonLink": "/portfolio"
-    }
+    "titlePart1": {
+      "fa": "بیایید ایده بعدی شما را به یک",
+      "en": "Let’s turn your next big idea into a"
+    },
+    "titleHighlight": {
+      "fa": "اثر ماندگار تبدیل کنیم",
+      "en": "digital masterpiece"
+    },
+    "subtitle": {
+      "fa": "تیم آلفا گلو آماده است تا از مرحله استراتژی و هویت بصری تا پیاده‌سازی وب و سه‌بعدی در کنار برند شما باشد.",
+      "en": "From brand identity and strategy to modern web development and interactive 3D experiences, we are ready to elevate your brand."
+    },
+    "primaryBtnText": {
+      "fa": "ثبت درخواست پروژه",
+      "en": "Start a Project"
+    },
+    "primaryBtnLink": "/contact",
+    "secondaryBtnText": {
+      "fa": "مشاهده خدمات ما",
+      "en": "Explore Services"
+    },
+    "secondaryBtnLink": "/services"
+  }
 }

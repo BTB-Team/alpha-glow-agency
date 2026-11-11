@@ -1,11 +1,11 @@
+import CorporateBanner from '../components/CorporateBanner';
+import FinalCTA from '../components/FinalCTA';
 import Header from '../components/Header';
 import Hero from '../components/home/Hero';
 import HomeAbout from '../components/home/HomeAbout';
 import HomePortfolio from '../components/home/HomePortfolio';
 import HomeServices from '../components/home/HomeServices';
 import TestimonialsMarquee from '../components/home/TestimonialsMarquee';
-import PromotionalBanner from '../components/PromotionalBanner';
-
 export default function Home() {
   return (
     <main className="w-full">
@@ -18,8 +18,8 @@ export default function Home() {
       <HomePortfolio/>
       <HomeAbout/>
       <TestimonialsMarquee/>
-      {/* <PromotionalBanner/> */}
-      
+      <CorporateBanner/>
+      <FinalCTA/>
       {/* سایر بخش‌های صفحه اصلی */}
     </main>
   );
