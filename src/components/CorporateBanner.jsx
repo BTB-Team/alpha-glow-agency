@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
+import db from '/db.json';
 
-// شناسایی تمام تصاویر داخل src/assets/images برای کارکرد صحیح بعد از npm run build در گیت‌هاب پیجز
+// باندل کردن خودکار تصاویر داخل src/assets/images توسط Vite برای گیت‌هاب پیجز
 const assetImages = import.meta.glob(
   '/src/assets/images/**/*.{png,jpg,jpeg,webp,svg,avif}',
   { eager: true, import: 'default' }
@@ -13,23 +13,7 @@ export default function CorporateBanner() {
   const currentLang = lang === 'fa' ? 'fa' : 'en';
   const isRTL = currentLang === 'fa';
 
-  const [bannerData, setBannerData] = useState(null);
-
-  useEffect(() => {
-    // استفاده از BASE_URL برای پشتیبانی از زیرپوشه گیت‌هاب پیجز
-    fetch(`${import.meta.env.BASE_URL}db.json`)
-      .then((res) => {
-        if (!res.ok) throw new Error('Failed to load db.json');
-        return res.json();
-      })
-      .then((data) => {
-        if (data?.promotionalBanner) {
-          setBannerData(data.promotionalBanner);
-        }
-      })
-      .catch((err) => console.error('Error fetching banner data:', err));
-  }, []);
-
+  const bannerData = db?.promotionalBanner;
   if (!bannerData) return null;
 
   const getImageUrl = (path) => {
@@ -39,12 +23,10 @@ export default function CorporateBanner() {
     const cleanPath = path.replace(/^\/+/, '');
     const assetKey = `/src/assets/images/${cleanPath}`;
 
-    // اگر تصویر در src/assets/images باشد، لینک بیلدشده Vite را برمی‌گرداند
     if (assetImages[assetKey]) {
       return assetImages[assetKey];
     }
 
-    // اگر تصویر در پوشه public باشد
     return `${import.meta.env.BASE_URL}${cleanPath}`;
   };
 

@@ -1,29 +1,13 @@
-import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
+import db from '/db.json';
 
 export default function FinalCTA() {
   const { lang } = useParams();
   const currentLang = lang === 'fa' ? 'fa' : 'en';
   const isRTL = currentLang === 'fa';
 
-  const [ctaData, setCtaData] = useState(null);
-
-  useEffect(() => {
-    // استفاده از BASE_URL برای پشتیبانی از زیرپوشه گیت‌هاب پیجز
-    fetch(`${import.meta.env.BASE_URL}db.json`)
-      .then((res) => {
-        if (!res.ok) throw new Error('Failed to load db.json');
-        return res.json();
-      })
-      .then((data) => {
-        if (data?.finalCta) {
-          setCtaData(data.finalCta);
-        }
-      })
-      .catch((err) => console.error('Error fetching final CTA data:', err));
-  }, []);
-
+  const ctaData = db?.finalCta;
   if (!ctaData) return null;
 
   const badge = ctaData.badge?.[currentLang] || ctaData.badge?.en;
