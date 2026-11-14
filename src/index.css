@@ -142,22 +142,23 @@ html[dir="ltr"],
   );
   pointer-events: none;
 }
-/* منوی شناور عمودی با شفافیت کریستالی و خوانایی عالی متن‌ها */
+/* منوی شناور عمودی با جلوه شیشه‌ای کدر و خوانایی عالی متن‌ها */
 .alpha-glass-dropdown {
   position: absolute;
   background:
-    linear-gradient(125deg, rgba(255, 255, 255, 0.25) 0%, transparent 45%),
-    radial-gradient(75% 70% at 50% 100%, rgba(59, 130, 246, 0.25) 0%, transparent 70%),
-    linear-gradient(180deg, rgba(8, 12, 28, 0.25) 0%, rgba(15, 23, 42, 0.35) 100%);
-  backdrop-filter: blur(14px) saturate(180%) brightness(108%);
-  -webkit-backdrop-filter: blur(14px) saturate(180%) brightness(108%);
+    linear-gradient(125deg, rgba(255, 255, 255, 0.14) 0%, transparent 45%),
+    radial-gradient(75% 70% at 50% 100%, rgba(59, 130, 246, 0.22) 0%, transparent 70%),
+    linear-gradient(180deg, rgba(8, 13, 30, 0.86) 0%, rgba(15, 23, 42, 0.92) 100%);
+  backdrop-filter: blur(22px) saturate(160%) brightness(85%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%) brightness(85%);
   box-shadow:
-    inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.95),
-    inset 0 0 0 1.5px rgba(6, 10, 24, 0.35),
-    inset 0 -2px 4px 0 rgba(191, 219, 254, 0.7),
-    inset 0 -6px 12px -3px rgba(37, 99, 235, 0.4),
-    0 15px 35px -8px rgba(2, 6, 23, 0.5);
+    inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.45),
+    inset 0 0 0 1.5px rgba(6, 10, 24, 0.6),
+    inset 0 -2px 4px 0 rgba(191, 219, 254, 0.35),
+    inset 0 -6px 12px -3px rgba(37, 99, 235, 0.3),
+    0 20px 45px -8px rgba(2, 6, 23, 0.75);
 }
+  
 
 /* حباب‌های شیشه‌ای براق با وایب سرمه‌ای و آبی برای دکمه‌ها و جست‌وجو */
 .alpha-glass-control {

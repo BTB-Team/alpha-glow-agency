@@ -59,5 +59,78 @@
     "titlePart1": "What",
     "titleHighlight": "Clients Say",
     "subtitle": "Real feedback from our valued partners."
+  },
+  "servicesHero": {
+    "slides": {
+      "web": {
+        "badge": "Digital Experience Engineering • Online Glow",
+        "title": "Website Design & Development",
+        "description": "We combine strategy, modern design, and advanced technology to make your business shine in the digital world."
+      },
+      "graphic": {
+        "badge": "Creating Visual Beauty • Beyond the Frame",
+        "title": "Creative Graphic Design",
+        "description": "We create visually appealing and purposeful designs that deliver your brand's message with maximum impact."
+      },
+      "branding": {
+        "badge": "Transforming Ideas into Shining Brands",
+        "title": "Branding & Visual Identity",
+        "description": "We build a unique, lasting, and authentic identity that tells your business story in your customers' minds."
+      },
+      "print": {
+        "badge": "Tangible Quality • Custom Print & Packaging",
+        "title": "Print & Packaging Services",
+        "description": "We produce luxury labels, tags, ribbons, and packaging with the highest print accuracy to enhance the value of your products."
+      }
+    }
+  },
+  "aboutHero": {
+  "badge": "ABOUT US",
+  "titlePart1": "Inside",
+  "titleHighlight": "Alpha Glow",
+  "subtitle": "Where art, strategy, and technology converge to craft lasting and luminous brand identities."
+ },
+ "aboutStory": {
+  "badge": "OUR STORY",
+  "titlePart1": "The Journey of",
+  "titleHighlight": "Alpha Glow",
+  "lead": "Every great beginning starts with a single small step.",
+  "paragraphs": [
+    "Alpha Glow began on August 4, 2025, with an Instagram page and a single goal: turning creativity into valuable services for businesses.",
+    "In the first three months, despite continuous efforts, we did not achieve the results we expected. Instead of stopping, we decided to study the market more closely, analyze trending content, and find fresh ways to showcase our work.",
+    "This path led us to a pivotal shift: creating authentic, creative content using our own laptop desk, hands, and voice—an approach that allowed us to present our work in a distinctively different way.",
+    "In November 2025, we began working more seriously on this method, and on December 7, 2025, we relaunched Alpha Glow's activities with this new approach.",
+    "Just two weeks later, we landed our first project—a result that proved shifting strategy and persevering can transform the trajectory of a business.",
+    "Three months later, we added printing and advertising services to our operations; a sector that gradually grew to become one of Alpha Glow's core areas of activity.",
+    "Today, Alpha Glow continues its journey in graphic design, branding and visual identity, web design, and printing and advertising services—driven by the same initial belief that every brand deserves a distinctive identity and a professional presence."
+  ],
+  "closing": "This is not the end of the story yet; Alpha Glow is still growing, learning, and building!"
+ },
+ "aboutMissionVision": {
+  "badge": "GOALS & VALUES",
+  "titlePart1": "Our Mission &",
+  "titleHighlight": "Vision",
+  "mission": {
+    "title": "Our Mission",
+    "tag": "PURPOSE & ACTION",
+    "description": "At Alpha Glow, our mission is to transform creativity into valuable services for businesses. Through graphic design, branding, web development, and printing, we help brands establish a distinct and professional presence while communicating their message clearly to their audience."
+  },
+  "vision": {
+    "title": "Our Vision",
+    "tag": "FUTURE & STRATEGY",
+    "description": "Our vision is to create solutions that go beyond visual aesthetics—strategic solutions that authentically reflect each brand’s identity and build a strong foundation for growth in both local and international markets. We believe every brand deserves to stand out and truly glow."
   }
+ },
+ "aboutFounderSection": {
+  "badge": "LEADERSHIP & VISION",
+  "titlePart1": "Meet the",
+  "titleHighlight": "Founder"
+},
+  "aboutCta": {
+  "titlePart1": "Ready to make your brand",
+  "titleHighlight": "truly glow?",
+  "subtitle": "Let’s discuss your next project and craft a solution tailored to your goals.",
+  "buttonText": "Start a Project"
+ }
+
 }

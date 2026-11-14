@@ -226,14 +226,13 @@ export default function Header() {
               >
                 {isMenuOpen ? <X size={19} className="text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.8)]" /> : <Menu size={19} className="text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.8)]" />}
               </button>
-
-              {/* پنل منوی عمودی */}
+                                {/* پنل منوی عمودی با بلور قوی و خوانایی بالا */}
               <nav
                 id="alpha-floating-nav"
                 dir={isRTL ? 'rtl' : 'ltr'}
                 aria-label={isRTL ? 'منوی اصلی' : 'Main Navigation'}
                 aria-hidden={!isMenuOpen}
-                className={`alpha-glass-dropdown absolute top-full mt-3 w-[235px] max-w-[calc(100vw-2rem)] p-2 rounded-2xl z-50 transition-all duration-200 ease-out ${
+                className={`alpha-glass-dropdown absolute top-full mt-3 w-[235px] max-w-[calc(100vw-2rem)] p-2 rounded-2xl z-50 transition-all duration-200 ease-out bg-[#091229]/80 backdrop-blur-2xl backdrop-saturate-150 border border-white/20 shadow-[0_20px_50px_rgba(2,6,23,0.75)] ${
                   isRTL
                     ? 'left-0 origin-top-left'
                     : 'right-0 origin-top-right'
@@ -256,8 +255,8 @@ export default function Header() {
                           onClick={() => setIsMenuOpen(false)}
                           className={`relative flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm transition-all duration-200 ${
                             active
-                              ? 'bg-white/15 text-white font-bold border border-cyan-300/80 shadow-[0_0_18px_rgba(56,189,248,0.45),inset_0_1px_1px_rgba(255,255,255,0.6)]'
-                              : 'text-white/85 font-semibold hover:text-white hover:bg-white/10 border border-transparent'
+                              ? 'bg-sky-500/25 text-white font-bold border border-cyan-300/70 shadow-[0_0_18px_rgba(56,189,248,0.35),inset_0_1px_1px_rgba(255,255,255,0.4)]'
+                              : 'text-white/90 font-semibold hover:text-white hover:bg-white/15 border border-transparent'
                           }`}
                         >
                           {active && (
@@ -272,17 +271,20 @@ export default function Header() {
                             size={17}
                             className={
                               active
-                                ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.9)]'
-                                : 'text-white/80'
+                                ? 'text-white drop-shadow-[0_0_6px_rgba(56,189,248,0.8)]'
+                                : 'text-white/85'
                             }
                           />
-                          <span className="tracking-wide text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.7)]">{item.label}</span>
+                          <span className="tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)]">
+                            {item.label}
+                          </span>
                         </Link>
                       </li>
                     );
                   })}
                 </ul>
               </nav>
+
             </div>
           </div>
         </div>

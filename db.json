@@ -591,5 +591,26 @@
       "en": "Explore Services"
     },
     "secondaryBtnLink": "/services"
+  },
+  "founder": {
+  "image": "founder",
+  "name": {
+    "fa": "آرزو محمدی",
+    "en": "Arezoo Mohammadi"
+  },
+  "bio": {
+    "fa": [
+      "آرزو محمدی، بنیان گذار الفا گلو است. او یک کارآفرین جوان با علاقه به طراحی، تکنالوژی و ایجاد برندهای متمایز است. او الفا گلو را با این باور آغاز کرد که خلاقیت، در کنار تفکر استراتژیک و طراحی حرفه ای، می تواند به کسب وکارها کمک کند تا هویت خود را بهتر معرفی کنند و حضوری متمایز در بازار داشته باشند.",
+      "او در مسیر توسعه الفا گلو، از شکل گیری ایده های اولیه تا گسترش خدمات آژانس، تجربه کسب کرده و به طور پیوسته دانش و مهارت های خود را در زمینه طراحی دیجیتال و توسعه وب گسترش می دهد."
+    ],
+    "en": [
+      "Arezoo Mohammadi is the founder of Alpha Glow. She is a young entrepreneur with a passion for design, technology, and building distinctive brands. She started Alpha Glow with the belief that creativity, combined with strategic thinking and professional design, can help businesses better present their identity and establish a standout presence in the market.",
+      "Along the journey of developing Alpha Glow—from shaping initial ideas to expanding the agency's services—she has gained valuable experience and continuously broadens her knowledge and skills in digital design and web development."
+    ]
+  },
+  "visionQuote": {
+    "fa": "نگاه او به طراحی، فراتر از زیبایی بصری است؛ هدف، خلق راهکارهایی است که هویت هر برند را به درستی بازتاب دهند، پیام آن را روشن تر منتقل کنند و تجربه ای حرفه ای برای مخاطبان بسازند.",
+    "en": "Her approach to design goes beyond visual aesthetics; the goal is to craft solutions that accurately reflect each brand's identity, communicate its message more clearly, and create a professional experience for the audience."
   }
+ }
 }
