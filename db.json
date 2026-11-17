@@ -612,5 +612,220 @@
     "fa": "نگاه او به طراحی، فراتر از زیبایی بصری است؛ هدف، خلق راهکارهایی است که هویت هر برند را به درستی بازتاب دهند، پیام آن را روشن تر منتقل کنند و تجربه ای حرفه ای برای مخاطبان بسازند.",
     "en": "Her approach to design goes beyond visual aesthetics; the goal is to craft solutions that accurately reflect each brand's identity, communicate its message more clearly, and create a professional experience for the audience."
   }
- }
+ },
+ "contactSocials": {
+  "instagram": "https://instagram.com/alphaglow",
+  "facebook": "https://facebook.com/alphaglow",
+  "linkedin": "https://linkedin.com/company/alphaglow",
+  "telegram": "https://t.me/alphaglow",
+  "whatsapp": "https://wa.me/93700000000"
+},
+"socialProfiles": [
+  {
+    "id": "instagram",
+    "platform": "Instagram",
+    "handle": "@alpha.glow_agency",
+    "verified": true,
+    "accentFrom": "#f59e0b",
+    "accentVia": "#ec4899",
+    "accentTo": "#8b5cf6",
+    "url": "https://instagram.com/alpha.glow_agency",
+    "messageUrl": "https://ig.me/m/alpha.glow_agency",
+    "title": {
+      "fa": "alpha.glow_agency",
+      "en": "alpha.glow_agency"
+    },
+    "subtitle": {
+      "fa": "وبسایت | گرافیک | چاپ و تبلیغات",
+      "en": "Website | Graphic | Printing & Ads"
+    },
+    "stats": [
+      { "value": "124", "label": { "fa": "پست", "en": "posts" } },
+      { "value": "3,491", "label": { "fa": "دنبال‌کننده", "en": "followers" } },
+      { "value": "11", "label": { "fa": "دنبال‌شونده", "en": "following" } }
+    ],
+    "bio": {
+      "fa": [
+        "⚡ | « الفا گلو » محل درخشش برند ها",
+        "AF | دیجیتال اجنسی در افغانستان",
+        "📌 | از طراحی تا چاپ | ارسال سفارش به سراسر جهان"
+      ],
+      "en": [
+        "⚡ | \"Alpha Glow\" Where Brands Shine",
+        "AF | Digital Agency in Afghanistan",
+        "📌 | From Design to Print | Worldwide Delivery"
+      ]
+    },
+    "tags": {
+      "fa": ["جریان کار", "وبسایت ما", "ایونت", "لیبل", "بسته بندی"],
+      "en": ["Workflow", "Website", "Events", "Labels", "Packaging"]
+    },
+    "primaryBtn": { "fa": "دنبال کردن", "en": "Follow" },
+    "secondaryBtn": { "fa": "ارسال پیام", "en": "Message" }
+  },
+  {
+    "id": "telegram",
+    "platform": "Telegram",
+    "handle": "Alpha Glow Agency",
+    "verified": true,
+    "accentFrom": "#38bdf8",
+    "accentVia": "#0284c7",
+    "accentTo": "#1d4ed8",
+    "url": "https://t.me/alphaglow",
+    "messageUrl": "https://t.me/alphaglow",
+    "title": {
+      "fa": "Alpha Glow Agency",
+      "en": "Alpha Glow Agency"
+    },
+    "subtitle": {
+      "fa": "کانال رسمی تلگرام آلفا گلو",
+      "en": "Official Telegram Channel"
+    },
+    "stats": [
+      { "value": "220", "label": { "fa": "مشترک", "en": "subscribers" } },
+      { "value": "AF", "label": { "fa": "اولین اجنسی", "en": "1st Agency" } },
+      { "value": "24/7", "label": { "fa": "ثبت سفارش", "en": "Orders" } }
+    ],
+    "bio": {
+      "fa": [
+        "⚡ | « الـــفا گـــلو » محل درخشش برند ها",
+        "AF | اولین دیجیتال اجنسی در افغانستان",
+        "📩 | ثبت سفارش از طریق واتساپ و تلگرام"
+      ],
+      "en": [
+        "⚡ | \"Alpha Glow\" Where Brands Shine",
+        "AF | Premier Digital Agency in Afghanistan",
+        "📩 | Direct project orders via WhatsApp & Telegram"
+      ]
+    },
+    "tags": {
+      "fa": ["نمونه‌کارها", "ثبت سفارش", "اخبار آژانس"],
+      "en": ["Portfolio", "Order Now", "Agency News"]
+    },
+    "primaryBtn": { "fa": "مشاهده در تلگرام", "en": "View in Telegram" },
+    "secondaryBtn": { "fa": "پیام مستقیم", "en": "Direct Message" }
+  },
+  {
+    "id": "linkedin",
+    "platform": "LinkedIn",
+    "handle": "Alpha Glow Agency",
+    "verified": true,
+    "accentFrom": "#60a5fa",
+    "accentVia": "#2563eb",
+    "accentTo": "#1e3a8a",
+    "url": "https://linkedin.com/company/alphaglow",
+    "messageUrl": "https://linkedin.com/company/alphaglow",
+    "title": {
+      "fa": "Alpha Glow Agency",
+      "en": "Alpha Glow Agency"
+    },
+    "subtitle": {
+      "fa": "خدمات طراحی • کابل، افغانستان",
+      "en": "Design Services • Kabul, Afghanistan"
+    },
+    "stats": [
+      { "value": "14", "label": { "fa": "دنبال‌کننده", "en": "followers" } },
+      { "value": "2-10", "label": { "fa": "اعضای تیم", "en": "employees" } },
+      { "value": "B2B", "label": { "fa": "همکاری корпораتی", "en": "Corporate" } }
+    ],
+    "bio": {
+      "fa": [
+        "آژانس خلاقیت در افغانستان برای طراحی وبسایت، برندینگ، گرافیک و چاپ",
+        "📍 کابل | شبکه رسمی ارتباطات حرفه‌ای و سازمانی آلفا گلو"
+      ],
+      "en": [
+        "A creative agency in Afghanistan for design Website, Branding, Graphic and printing",
+        "📍 Kabul | Official corporate network & B2B partnerships"
+      ]
+    },
+    "tags": {
+      "fa": ["طراحی وبسایت", "برندینگ", "گرافیک", "چاپ"],
+      "en": ["Website", "Branding", "Graphic", "Printing"]
+    },
+    "primaryBtn": { "fa": "+ دنبال کردن", "en": "+ Follow" },
+    "secondaryBtn": { "fa": "ارسال پیام", "en": "Message" }
+  },
+  {
+    "id": "facebook",
+    "platform": "Facebook",
+    "handle": "Alpha Glow",
+    "verified": true,
+    "accentFrom": "#3b82f6",
+    "accentVia": "#1d4ed8",
+    "accentTo": "#1e40af",
+    "url": "https://facebook.com/alphaglow",
+    "messageUrl": "https://m.me/alphaglow",
+    "title": {
+      "fa": "Alpha Glow",
+      "en": "Alpha Glow"
+    },
+    "subtitle": {
+      "fa": "جایی که برندها می‌درخشند",
+      "en": "Where Brands Glow"
+    },
+    "stats": [
+      { "value": "58", "label": { "fa": "دنبال‌کننده", "en": "followers" } },
+      { "value": "0", "label": { "fa": "دنبال‌شونده", "en": "following" } },
+      { "value": "7+", "label": { "fa": "خدمات تخصصی", "en": "services" } }
+    ],
+    "bio": {
+      "fa": [
+        "✨ طراحی پوستر، لوگو، پروفایل کمپنی و بنر تبلیغاتی",
+        "🎯 برندینگ کامل، طراحی بزنس کارت و ادیت تخصصی ویدیو"
+      ],
+      "en": [
+        "✨ Poster Design, Logo, Company Profile & Advertising Banners",
+        "🎯 Complete Branding, Business Cards & Video Editing"
+      ]
+    },
+    "tags": {
+      "fa": ["طراحی لوگو", "پروفایل کمپنی", "برندینگ", "ادیت ویدیو"],
+      "en": ["Logo Design", "Company Profile", "Branding", "Video Edit"]
+    },
+    "primaryBtn": { "fa": "دنبال کردن صفحه", "en": "Follow Page" },
+    "secondaryBtn": { "fa": "ارسال پیام", "en": "Message" }
+  },
+  {
+    "id": "whatsapp",
+    "platform": "WhatsApp",
+    "handle": "WhatsApp Business",
+    "verified": true,
+    "accentFrom": "#4ade80",
+    "accentVia": "#22c55e",
+    "accentTo": "#15803d",
+    "url": "https://wa.me/93700000000",
+    "messageUrl": "https://wa.me/93700000000",
+    "title": {
+      "fa": "Alpha Glow Direct",
+      "en": "Alpha Glow Direct"
+    },
+    "subtitle": {
+      "fa": "مشاوره و ثبت سفارش مستقیم",
+      "en": "Direct Consultation & Orders"
+    },
+    "stats": [
+      { "value": "Online", "label": { "fa": "وضعیت", "en": "status" } },
+      { "value": "< 15m", "label": { "fa": "زمان پاسخ", "en": "response" } },
+      { "value": "Global", "label": { "fa": "ارسال سفارش", "en": "delivery" } }
+    ],
+    "bio": {
+      "fa": [
+        "💬 ارتباط مستقیم و سریع با تیم مدیریت پروژه آلفا گلو",
+        "🚀 استعلام قیمت، مشاوره رایگان و پیگیری لحظه‌ای سفارش‌ها",
+        "📦 پذیرش سفارش‌های طراحی، وب و چاپ از سراسر جهان"
+      ],
+      "en": [
+        "💬 Direct & fast communication with Alpha Glow project managers",
+        "🚀 Instant quotes, free consultation & live order tracking",
+        "📦 Accepting Web, Design & Print orders worldwide"
+      ]
+    },
+    "tags": {
+      "fa": ["مشاوره رایگان", "استعلام قیمت", "ثبت سفارش سریع"],
+      "en": ["Free Consult", "Get a Quote", "Fast Order"]
+    },
+    "primaryBtn": { "fa": "شروع گفتگو در واتساپ", "en": "Chat on WhatsApp" },
+    "secondaryBtn": { "fa": "تماس مستقیم", "en": "Direct Call" }
+  }
+]
 }

@@ -131,6 +131,14 @@
   "titleHighlight": "truly glow?",
   "subtitle": "Let’s discuss your next project and craft a solution tailored to your goals.",
   "buttonText": "Start a Project"
- }
+ },
+ "contactHero3D": {
+  "topTag": "Systems over Services.",
+  "topLine1": "Content without structure",
+  "topLine2": "Is just NOISE.",
+  "bottomLine1": "Connect directly with",
+  "bottomLine2": "Alpha Glow",
+  "hint": "Click on any 3D icon to connect"
+}
 
 }
