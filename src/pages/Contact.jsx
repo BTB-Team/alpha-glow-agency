@@ -3,7 +3,12 @@ import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import ContactSocial3D from '../components/contact/ContactSocial3D';
 import ContactSocialCards from '../components/contact/ContactSocialCards';
-import ContactProjectForm from '../components/contact/ContactProjectForm';
+import ContactSimpleForm from '../components/contact/ContactSimpleForm';
+// import Header from '../components/Header';
+// import Footer from '../components/Footer';
+// import ContactSocial3D from '../components/ContactSocial3D';
+// import ContactSocialCards from '../components/ContactSocialCards';
+// import ContactSimpleForm from '../components/ContactSimpleForm';
 
 export default function Contact() {
   const { lang } = useParams();
@@ -31,7 +36,10 @@ export default function Contact() {
         <div className="w-full relative z-20 isolate">
           <ContactSocialCards />
         </div>
-        <ContactProjectForm/>
+
+        <div className="w-full relative z-20 isolate">
+          <ContactSimpleForm />
+        </div>
       </main>
     </div>
   );
