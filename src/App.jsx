@@ -4,6 +4,7 @@ import { useStore } from './store/useStore';
 
 // کامپوننت‌های مشترک از روت پوشه components
 import Footer from './components/Footer';
+import ProjectRequestModal from './components/ProjectRequestModal';
 
 // صفحات اصلی از پوشه pages
 import Home from './pages/Home';
@@ -51,6 +52,7 @@ function PublicLayout() {
         <ScrollToTop />
       </main>
       <Footer />
+      <ProjectRequestModal />
     </div>
   );
 }
@@ -74,7 +76,7 @@ export default function App() {
       {/* پرلودر در بالاترین سطح ریشه قرار می‌گیرد تا روی هدر و تمام صفحات بیفتد */}
       {/* <Preloader /> */}
       
-      <AutoScrollTop/>
+      <AutoScrollTop />
       
       <Routes>
         <Route path="/" element={<Navigate to="/en" replace />} />

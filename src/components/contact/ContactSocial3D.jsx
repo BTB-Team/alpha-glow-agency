@@ -577,15 +577,15 @@ export default function ContactSocial3D() {
         ref={mountRef}
         className="absolute inset-0 w-full h-full z-10 touch-pan-y"
       />
-
+      
       {/* کپسول شیشه‌ای پایین */}
-      <div className="relative z-20 pointer-events-none mt-auto px-4">
+      {/* <div className="relative z-20 pointer-events-none mt-auto px-4">
         <div className="alpha-glass-bar px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold font-body text-blue-900 dark:text-sky-300 text-center">
           {hoveredSocial
             ? `↗ ${hoveredSocial}`
             : copy?.hint || 'Click on any 3D icon to connect'}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

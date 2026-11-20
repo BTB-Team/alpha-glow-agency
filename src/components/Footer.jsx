@@ -78,7 +78,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full mt-28 pb-12">
+    <footer className="w-full pt-28 pb-12 bg-slate-50 dark:bg-[#030712]">
       <div className="container-custom">
         {/* بدنه فوتر با استایل شیشه‌ای کریستالی هماهنگ با هدر */}
         <div className="alpha-glass-bar p-8 md:p-12 rounded-[2.5rem] transition-colors duration-300">
