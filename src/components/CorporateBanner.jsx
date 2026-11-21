@@ -39,7 +39,7 @@ export default function CorporateBanner() {
 
   return (
     <section className="relative w-full max-w-[1440px] mx-auto my-20 px-4 sm:px-6 lg:px-8">
-      <div className="relative rounded-[32px] overflow-hidden bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-white/10 shadow-xl min-h-[380px] md:min-h-[420px] flex items-center">
+      <div className="relative rounded-[32px] overflow-hidden bg-white dark:bg-[#030712]  border border-slate-200/80 dark:border-white/10 shadow-xl min-h-[380px] md:min-h-[420px] flex items-center">
         
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
           <div className="absolute -bottom-24 -left-20 w-[600px] h-[300px] bg-gradient-to-tr from-blue-600 via-blue-500 to-sky-400 rounded-full opacity-90 transform rotate-12 blur-[1px]" />
