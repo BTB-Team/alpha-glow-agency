@@ -147,20 +147,20 @@
   "subtitle": "A curated showcase of projects crafted through strategy, visual identity, and modern design.",
   "categories": {
     "all": "All Projects",
+    "website-design": "Website Design",
     "branding": "Branding",
-    "web": "Web Design",
-    "graphic": "Graphic Design",
-    "print": "Print & Packaging"
+    "graphic-design": "Graphic Design",
+    "print": "Print & Packaging",
+    "viewCategoryPortfolio": "View All Projects in This Service"
   },
   "card": {
     "client": "Client",
-    "year": "Year",
+    "date": "Date",
     "viewDetails": "View Case Study"
   },
   "modal": {
-    "challenge": "The Challenge",
-    "solution": "Our Solution",
-    "deliverables": "Deliverables",
+    "overview": "Project Overview",
+    "gallery": "Project Gallery",
     "clientFeedback": "Client Feedback",
     "orderSimilar": "Start a Similar Project",
     "close": "Close"
