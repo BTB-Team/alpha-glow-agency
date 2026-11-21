@@ -25,5 +25,152 @@
     "titleHighlight": "Offer",
     "subtitle": "Creative solutions to make your brand stand out",
     "ctaAll": "Explore All Services"
+  },
+  "homePortfolio": {
+    "badge": "OUR PORTFOLIO",
+    "titlePart1": "Selected",
+    "titleHighlight": "Creative Works",
+    "subtitle": "A glimpse of ideas brought to life.",
+    "ctaAll": "Explore All Projects",
+    "categories": {
+      "website-design": "Website Design",
+      "branding": "Branding",
+      "graphic-design": "Graphic Design",
+      "print": "Print"
+    }
+  },
+  "homeAbout": {
+    "badge": "ABOUT US",
+    "subHeader": "CREATIVE DESIGN & VISUAL STRATEGY AGENCY",
+    "titlePart1": "About Alpha Glow;",
+    "titleHighlight": "Where Brands Shine",
+    "para1": "Alpha Glow is a creative, modern, and dynamic agency offering specialized services in graphic design, branding, web design, and print.",
+    "para2": "Founded by Arezoo Mohammadi with the vision of creating smart visual solutions that go beyond aesthetics, we combine art and strategy to deliver your brand's message more clearly and professionally to your audience.",
+    "ctaStory": "Our Story",
+    "stats": {
+      "projects": "Completed Projects",
+      "orders": "Designs & Print Orders",
+      "clients": "Happy Clients",
+      "experience": "Year of Experience"
+    }
+  },
+  "homeTestimonials": {
+    "badge": "TESTIMONIALS",
+    "titlePart1": "What",
+    "titleHighlight": "Clients Say",
+    "subtitle": "Real feedback from our valued partners."
+  },
+  "servicesHero": {
+    "slides": {
+      "web": {
+        "badge": "Digital Experience Engineering • Online Glow",
+        "title": "Website Design & Development",
+        "description": "We combine strategy, modern design, and advanced technology to make your business shine in the digital world."
+      },
+      "graphic": {
+        "badge": "Creating Visual Beauty • Beyond the Frame",
+        "title": "Creative Graphic Design",
+        "description": "We create visually appealing and purposeful designs that deliver your brand's message with maximum impact."
+      },
+      "branding": {
+        "badge": "Transforming Ideas into Shining Brands",
+        "title": "Branding & Visual Identity",
+        "description": "We build a unique, lasting, and authentic identity that tells your business story in your customers' minds."
+      },
+      "print": {
+        "badge": "Tangible Quality • Custom Print & Packaging",
+        "title": "Print & Packaging Services",
+        "description": "We produce luxury labels, tags, ribbons, and packaging with the highest print accuracy to enhance the value of your products."
+      }
+    }
+  },
+  "aboutHero": {
+  "badge": "ABOUT US",
+  "titlePart1": "Inside",
+  "titleHighlight": "Alpha Glow",
+  "subtitle": "Where art, strategy, and technology converge to craft lasting and luminous brand identities."
+ },
+ "aboutStory": {
+  "badge": "OUR STORY",
+  "titlePart1": "The Journey of",
+  "titleHighlight": "Alpha Glow",
+  "lead": "Every great beginning starts with a single small step.",
+  "paragraphs": [
+    "Alpha Glow began on August 4, 2025, with an Instagram page and a single goal: turning creativity into valuable services for businesses.",
+    "In the first three months, despite continuous efforts, we did not achieve the results we expected. Instead of stopping, we decided to study the market more closely, analyze trending content, and find fresh ways to showcase our work.",
+    "This path led us to a pivotal shift: creating authentic, creative content using our own laptop desk, hands, and voice—an approach that allowed us to present our work in a distinctively different way.",
+    "In November 2025, we began working more seriously on this method, and on December 7, 2025, we relaunched Alpha Glow's activities with this new approach.",
+    "Just two weeks later, we landed our first project—a result that proved shifting strategy and persevering can transform the trajectory of a business.",
+    "Three months later, we added printing and advertising services to our operations; a sector that gradually grew to become one of Alpha Glow's core areas of activity.",
+    "Today, Alpha Glow continues its journey in graphic design, branding and visual identity, web design, and printing and advertising services—driven by the same initial belief that every brand deserves a distinctive identity and a professional presence."
+  ],
+  "closing": "This is not the end of the story yet; Alpha Glow is still growing, learning, and building!"
+ },
+ "aboutMissionVision": {
+  "badge": "GOALS & VALUES",
+  "titlePart1": "Our Mission &",
+  "titleHighlight": "Vision",
+  "mission": {
+    "title": "Our Mission",
+    "tag": "PURPOSE & ACTION",
+    "description": "At Alpha Glow, our mission is to transform creativity into valuable services for businesses. Through graphic design, branding, web development, and printing, we help brands establish a distinct and professional presence while communicating their message clearly to their audience."
+  },
+  "vision": {
+    "title": "Our Vision",
+    "tag": "FUTURE & STRATEGY",
+    "description": "Our vision is to create solutions that go beyond visual aesthetics—strategic solutions that authentically reflect each brand’s identity and build a strong foundation for growth in both local and international markets. We believe every brand deserves to stand out and truly glow."
   }
+ },
+ "aboutFounderSection": {
+  "badge": "LEADERSHIP & VISION",
+  "titlePart1": "Meet the",
+  "titleHighlight": "Founder"
+},
+  "aboutCta": {
+  "titlePart1": "Ready to make your brand",
+  "titleHighlight": "truly glow?",
+  "subtitle": "Let’s discuss your next project and craft a solution tailored to your goals.",
+  "buttonText": "Start a Project"
+ },
+ "contactHero3D": {
+  "topTag": "Systems over Services.",
+  "topLine1": "Content without structure",
+  "topLine2": "Is just NOISE.",
+  "bottomLine1": "Connect directly with",
+  "bottomLine2": "Alpha Glow",
+  "hint": "Click on any 3D icon to connect"
+},
+"portfolioPage": {
+  "badge": "PORTFOLIO",
+  "titlePart1": "Selected",
+  "titleHighlight": "Works",
+  "subtitle": "A curated showcase of projects crafted through strategy, visual identity, and modern design.",
+  "categories": {
+    "all": "All Projects",
+    "branding": "Branding",
+    "web": "Web Design",
+    "graphic": "Graphic Design",
+    "print": "Print & Packaging"
+  },
+  "card": {
+    "client": "Client",
+    "year": "Year",
+    "viewDetails": "View Case Study"
+  },
+  "modal": {
+    "challenge": "The Challenge",
+    "solution": "Our Solution",
+    "deliverables": "Deliverables",
+    "clientFeedback": "Client Feedback",
+    "orderSimilar": "Start a Similar Project",
+    "close": "Close"
+  },
+  "emptyState": "No projects found in this category yet.",
+  "cta": {
+    "title": "Your Brand Could Be Our Next Story",
+    "subtitle": "Have an idea in mind? The Alpha Glow team is ready to bring it to life.",
+    "button": "Start a Project"
+  }
+}
+
 }

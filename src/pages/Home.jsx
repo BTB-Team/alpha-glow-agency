@@ -1,7 +1,11 @@
+import CorporateBanner from '../components/CorporateBanner';
+import FinalCTA from '../components/FinalCTA';
 import Header from '../components/Header';
 import Hero from '../components/home/Hero';
+import HomeAbout from '../components/home/HomeAbout';
+import HomePortfolio from '../components/home/HomePortfolio';
 import HomeServices from '../components/home/HomeServices';
-
+import TestimonialsMarquee from '../components/home/TestimonialsMarquee';
 export default function Home() {
   return (
     <main className="w-full">
@@ -10,8 +14,12 @@ export default function Home() {
       
       {/* هیرو شامل پس‌زمینه سینمایی و محتواست */}
       <Hero />
-      <HomeServices/>
-      
+      <HomeServices/> 
+      <HomePortfolio/>
+      <HomeAbout/>
+      <TestimonialsMarquee/>
+      <CorporateBanner/>
+      <FinalCTA/>
       {/* سایر بخش‌های صفحه اصلی */}
     </main>
   );
