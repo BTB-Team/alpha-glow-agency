@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
+import { useStore } from '../store/useStore';
 
 const SERVICES = [
   {
@@ -32,6 +33,21 @@ const SERVICES = [
   },
 ];
 
+// نگاشت خودکار دسته‌بندی‌های db.json به شناسه‌های چک‌باکس فرم
+const CATEGORY_TO_SERVICE_ID = {
+  'graphic-design': 'Graphic Design',
+  branding: 'Branding & Visual Identity',
+  'website-design': 'Website Design',
+  print: 'Printing & Advertising',
+};
+
+const resolveServiceId = (rawService) => {
+  if (!rawService) return null;
+  if (CATEGORY_TO_SERVICE_ID[rawService]) return CATEGORY_TO_SERVICE_ID[rawService];
+  const directMatch = SERVICES.find((s) => s.id === rawService);
+  return directMatch ? directMatch.id : null;
+};
+
 const BUDGET_RANGES = [
   { id: '$200 - $500', label: { fa: '۲۰۰ تا ۵۰۰ دالر ($200 – $500)', en: '$200 – $500' } },
   { id: '$500 - $1,500', label: { fa: '۵۰۰ تا ۱,۵۰۰ دالر ($500 – $1,500)', en: '$500 – $1,500' } },
@@ -55,24 +71,32 @@ const sanitize = (val) =>
 
 export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, defaultService = '' }) {
   const { lang } = useParams();
-  // تشخیص زبان از URL یا ویژگی dir صفحه
   const detectedLang =
     lang === 'fa' || document.documentElement.dir === 'rtl' ? 'fa' : 'en';
   const isRTL = detectedLang === 'fa';
 
+  const isStoreModalOpen = useStore((state) => state.isProjectModalOpen);
+  const projectModalContext = useStore((state) => state.projectModalContext);
+  const closeStoreModal = useStore((state) => state.closeProjectModal);
+
   const [internalOpen, setInternalOpen] = useState(false);
-  const isOpen = controlledOpen !== undefined ? controlledOpen : internalOpen;
+  const isOpen =
+    controlledOpen !== undefined
+      ? controlledOpen
+      : internalOpen || isStoreModalOpen;
 
   const mountedAt = useRef(Date.now());
   const dropdownRef = useRef(null);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
+
+  const initialServiceId = resolveServiceId(defaultService);
 
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
     phone: '',
     country: '',
-    services: defaultService ? [defaultService] : [],
+    services: initialServiceId ? [initialServiceId] : [],
     budgetRange: '$500 - $1,500',
     customBudget: '',
     timeline: '2 - 4 Weeks',
@@ -84,16 +108,49 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedData, setSubmittedData] = useState(null);
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setIsServiceOpen(false);
-    if (onClose) onClose();
     setInternalOpen(false);
-  };
+    closeStoreModal();
+    if (onClose) onClose();
+  }, [closeStoreModal, onClose]);
 
-  // گوش دادن به رویداد سراسری برای باز شدن از هر دکمه CTA در سراسر سایت
+  // پر کردن خودکار خدمت و پروژه مرجع هنگام باز شدن از استور (مثلاً از دکمه PortfolioModal)
+  useEffect(() => {
+    if (!isStoreModalOpen) return;
+
+    mountedAt.current = Date.now();
+    setSubmittedData(null);
+    setErrors({});
+
+    const mappedService = resolveServiceId(projectModalContext?.service);
+    const refProject = projectModalContext?.referenceProject;
+
+    if (mappedService || refProject) {
+      setFormData((prev) => {
+        const nextServices = mappedService ? [mappedService] : prev.services;
+        const refNote = refProject
+          ? isRTL
+            ? `درخواست پروژه مشابه با: ${refProject}\n`
+            : `Similar project request to: ${refProject}\n`
+          : '';
+
+        return {
+          ...prev,
+          services: nextServices,
+          description:
+            refNote && !prev.description.includes(refProject)
+              ? `${refNote}${prev.description}`
+              : prev.description,
+        };
+      });
+    }
+  }, [isStoreModalOpen, projectModalContext, isRTL]);
+
+  // حفظ سازگاری با دکمه‌هایی که از رویداد سراسری open-project-modal استفاده می‌کنند
   useEffect(() => {
     const handleGlobalOpen = (e) => {
-      const preselected = e?.detail?.service;
+      const preselected = resolveServiceId(e?.detail?.service);
       if (preselected) {
         setFormData((prev) => ({
           ...prev,
@@ -103,6 +160,7 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
         }));
       }
       mountedAt.current = Date.now();
+      setSubmittedData(null);
       setInternalOpen(true);
     };
 
@@ -114,7 +172,7 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
       window.removeEventListener('open-project-modal', handleGlobalOpen);
       window.removeEventListener('close-project-modal', handleGlobalClose);
     };
-  }, []);
+  }, [handleClose]);
 
   // قفل کردن اسکرول صفحه پشت مودال و بستن با کلید Escape
   useEffect(() => {
@@ -132,7 +190,7 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
       document.body.style.overflow = prevOverflow;
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isOpen]);
+  }, [isOpen, handleClose]);
 
   // بستن منوی بازشوی خدمات هنگام کلیک بیرون آن
   useEffect(() => {
@@ -324,7 +382,7 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
   return (
     <div
       dir={isRTL ? 'rtl' : 'ltr'}
-      className="fixed inset-0 z-[999] flex items-center justify-center p-3 sm:p-5 overflow-y-auto"
+      className="fixed inset-0 z-[999] flex items-center justify-center p-3 sm:p-5 overflow-y-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
     >
       {/* پس‌زمینه تار شیشه‌ای (کلیک روی آن مودال را می‌بندد) */}
       <div
@@ -332,18 +390,8 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
         className="fixed inset-0 bg-slate-950/65 dark:bg-[#020617]/80 backdrop-blur-md transition-opacity duration-300"
       />
 
-      {/* بدنه اصلی مودال شیشه‌ای */}
-      <div className="relative z-10 w-full max-w-3xl max-h-[92vh] overflow-y-auto rounded-[24px] p-5 sm:p-8 backdrop-blur-2xl bg-gradient-to-br from-white/95 via-sky-50/90 to-blue-100/85 dark:from-[#1e3261]/92 dark:via-[#132042]/95 dark:to-[#0b1224]/95 text-[#213668] dark:text-white border border-sky-400/50 dark:border-sky-200/35 shadow-[0_25px_70px_-12px_rgba(0,0,0,0.65),0_0_30px_-4px_rgba(56,189,248,0.3),inset_0_1px_2px_rgba(255,255,255,0.95)] dark:shadow-[0_25px_70px_-12px_rgba(0,0,0,0.85),0_0_30px_-4px_rgba(56,189,248,0.35),inset_0_1px_1.5px_rgba(255,255,255,0.5)]">
-        
-        {/* خط نوری ظریف لبه بالا */}
-        <div
-          className="absolute inset-x-8 top-0 h-[1.5px] rounded-full opacity-95 pointer-events-none"
-          style={{
-            backgroundImage:
-              'linear-gradient(90deg, transparent, #38bdf8, #2563eb, #38bdf8, transparent)',
-            boxShadow: '0 0 12px #38bdf8',
-          }}
-        />
+      {/* بدنه اصلی مودال شیشه‌ای با اسکرول‌بار مخفی */}
+      <div className="relative z-10 w-full max-w-3xl max-h-[92vh] overflow-y-auto overscroll-contain [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden rounded-[24px] p-5 sm:p-8 alpha-glass-bar">
 
         {/* هدر مودال + دکمه بستن */}
         <div className="flex items-start justify-between gap-4 pb-4 mb-5 border-b border-blue-900/10 dark:border-white/10">
@@ -781,47 +829,59 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
             </div>
 
             {/* ۹. دکمه ارسال درخواست */}
-            <div className="pt-3 border-t border-blue-900/10 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
-              <span className="text-xs text-slate-600 dark:text-white/70">
-                {isRTL
-                  ? '🔒 اطلاعات شما با امنیت کامل در سیستم ثبت می‌شود.'
-                  : '🔒 Your details are securely validated and stored.'}
-              </span>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full sm:w-auto min-w-[230px] py-2.5 px-6 rounded-[12px] text-sm sm:text-[15px] font-bold text-white transition-all duration-300 hover:brightness-110 hover:-translate-y-0.5 disabled:opacity-60 flex items-center justify-center gap-2 cursor-pointer"
-                style={{
-                  background:
-                    'linear-gradient(135deg, rgba(37, 99, 235, 0.92), rgba(14, 165, 233, 0.85))',
-                  border: '1px solid rgba(255, 255, 255, 0.35)',
-                  boxShadow: '0 8px 20px -4px rgba(14, 165, 233, 0.45)',
-                }}
-              >
-                <span>
-                  {isSubmitting
-                    ? isRTL
-                      ? 'در حال ارسال...'
-                      : 'Submitting...'
-                    : isRTL
-                    ? 'ثبت و ارسال درخواست پروژه'
-                    : 'Submit Project Request'}
+              <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <span className="inline-flex items-center gap-2  text-xs sm:text-[13px] text-white text-center sm:text-start">
+                  <svg
+                    className="w-4 h-4 shrink-0 text-blue-800 dark:text-sky-400"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg>
+                  <span>
+                    {isRTL
+                      ? 'اطلاعات شما با امنیت کامل در سیستم ثبت می‌شود.'
+                      : 'Your details are securely validated and stored.'}
+                  </span>
                 </span>
-                <svg
-                  className={`w-4 h-4 shrink-0 ${isRTL ? '-scale-x-100' : ''}`}
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                    
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="group w-full sm:w-auto min-w-[230px] py-3 px-6 rounded-xl  text-sm sm:text-[15px] font-bold bg-blue-950 hover:bg-blue-900 text-white border border-blue-900/40 shadow-[0_10px_24px_-6px_rgba(23,37,84,0.35)] dark:bg-sky-400 dark:hover:bg-sky-300 dark:text-slate-950 dark:border-sky-300/60 dark:shadow-[0_10px_24px_-6px_rgba(56,189,248,0.4)] transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-60 disabled:pointer-events-none flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <path d="M7 17 17 7" />
-                  <path d="M7 7h10v10" />
-                </svg>
-              </button>
-            </div>
+                  <span>
+                    {isSubmitting
+                      ? isRTL
+                        ? 'در حال ارسال...'
+                        : 'Submitting...'
+                      : isRTL
+                      ? 'ثبت و ارسال درخواست پروژه'
+                      : 'Submit Project Request'}
+                  </span>
+                  <svg
+                    className={`w-4 h-4 shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 ${
+                      isRTL ? '-scale-x-100' : ''
+                    }`}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M7 17 17 7" />
+                    <path d="M7 7h10v10" />
+                  </svg>
+                </button>
+              </div>
           </form>
         )}
       </div>

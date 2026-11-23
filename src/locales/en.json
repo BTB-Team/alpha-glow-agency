@@ -171,6 +171,18 @@
     "subtitle": "Have an idea in mind? The Alpha Glow team is ready to bring it to life.",
     "button": "Start a Project"
   }
+},
+"search": {
+  "placeholder": "Search services & portfolio...",
+  "servicesTitle": "Services",
+  "portfolioTitle": "Portfolio",
+  "quickSuggestions": "Quick Suggestions",
+  "noResults": "No matching services or projects found.",
+  "viewAllResults": "View all results for",
+  "resultsFor": "Search results for",
+  "clearSearch": "Clear search",
+  "interactionHint": "Scroll to unfold projects • Hover cards to preview",
+ "resetFilters": "Show All Projects"
 }
 
 }

@@ -208,6 +208,7 @@
     "icon": "globe",
     "createdAt": "2026-03-01",
     "mainImage": "alpha-glow-web.webp",
+    "previewVideo": "https://www.shutterstock.com/shutterstock/videos/4109113279/preview/stock-footage-futuristic-digital-data-network-with-cybersecurity-dashboards-analytics-interfaces-and-high-speed.webm",
     "subImages": [
       "alpha-glow-web-1.webp",
       "alpha-glow-web-2.webp"
@@ -249,8 +250,8 @@
     "icon": "smartphone",
     "createdAt": "2026-02-20",
     "mainImage": "amovi-app.webp",
-    "previewVideo": "[https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4](https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4)",
-    "subImages": [
+    "previewVideo": "https://www.shutterstock.com/shutterstock/videos/3780293109/preview/stock-footage-fast-moving-silver-car-on-the-road.webm",
+    "suImages": [
       "amovi-app-1.webp",
       "amovi-app-2.webp"
     ],
@@ -332,7 +333,7 @@
     "category": "branding",
     "icon": "pen-tool",
     "createdAt": "2026-02-18",
-    "previewVideo": "alpha-glow-preview.mp4",
+    "previewVideo": "https://www.shutterstock.com/shutterstock/videos/4039396859/preview/stock-footage-conceptual-image-of-a-group-of-business-people-conversing-in-an-office-and-business-data.webm",
     "mainImage": "ano-logo.webp",
     "subImages": [
       "ano-logo-1.webp",
@@ -375,7 +376,7 @@
     "icon": "sparkles",
     "createdAt": "2026-03-03",
     "mainImage": "holographic-labels.webp",
-    "previewVideo": "alpha-glow-preview.mp4",
+    "previewVideo": "https://www.shutterstock.com/shutterstock/videos/4017400967/preview/stock-footage-typing-computer-and-programming-with-business-man-for-cybersecurity-firewall-code-and-research.webm",
     "subImages": [
       "holographic-labels-1.webp",
       "holographic-labels-2.webp"
@@ -405,7 +406,7 @@
     "icon": "book-open",
     "createdAt": "2026-02-22",
     "mainImage": "zerak-catalog.webp",
-    "previewVideo": "alpha-glow-preview.mp4",
+    "previewVideo": "https://www.shutterstock.com/shutterstock/videos/3990345743/preview/stock-footage-glowing-cloud-symbol-data-center-server-room-blue-digital-lines-connecting-racks-represents-cloud.webm",
     "subImages": [
       "zerak-catalog-1.webp",
       "zerak-catalog-2.webp"
@@ -447,7 +448,7 @@
     "icon": "credit-card",
     "createdAt": "2026-03-04",
     "mainImage": "bw-card.webp",
-    "previewVideo": "alpha-glow-preview.mp4",
+    "previewVideo": "https://www.shutterstock.com/shutterstock/videos/3990345743/preview/stock-footage-glowing-cloud-symbol-data-center-server-room-blue-digital-lines-connecting-racks-represents-cloud.webm",
     "subImages": [
       "bw-card-1.webp",
       "bw-card-2.webp"
@@ -477,7 +478,79 @@
     "icon": "package",
     "createdAt": "2026-03-05",
     "mainImage": "hrq_packaging.webp",
-    "previewVideo": "alpha-glow-preview.mp4",
+    "previewVideo": "https://www.shutterstock.com/shutterstock/videos/3990345743/preview/stock-footage-glowing-cloud-symbol-data-center-server-room-blue-digital-lines-connecting-racks-represents-cloud.webm",
+    "subImages": [
+      "hrq-packaging-1.webp",
+      "hrq-packaging-2.webp"
+    ],
+    "title": {
+      "en": "HRQ & Khyber Luxury Packaging",
+      "fa": "جعبه کیبوردی HRQ و بسته‌بندی خیبر"
+    },
+    "client": {
+      "en": "HRQ & Khyber",
+      "fa": "برندهای HRQ و خیبر"
+    },
+    "shortDescription": {
+      "en": "Gold-foiled rigid keyboard boxes and two-color shopping bags.",
+      "fa": "چاپ جعبه کیبوردی طلاکوب و خریطه پلاستیکی دو رنگ."
+    },
+    "fullDescription": {
+      "en": "Engineered durable, luxury keyboard-style packaging boxes with metallic gold foil for HRQ and custom two-color printed carrier bags for Khyber.",
+      "fa": "طراحی و تولید جعبه‌های کیبوردی مقوایی با طلاکوب برجسته برای برند HRQ و چاپ کیسه‌های فروشگاهی اختصاصی."
+    },
+    "testimonials": [
+      {
+        "id": "t6",
+        "name": { "fa": "حامد رحیمی", "en": "Hamed Rahimi" },
+        "role": { "fa": "مدیر فروش مجموعه HRQ", "en": "Sales Director at HRQ" },
+        "comment": {
+          "fa": "کیفیت چاپ و ظرافت طلاکوب جعبه‌ها دقیقاً همان حس لوکسی بود که برای بسته‌بندی محصولاتمان دنبالش بودیم.",
+          "en": "The print finish and gold foil precision gave our product packaging the exact luxury feel we wanted."
+        },
+        "avatar": "",
+        "isFeaturedOnHome": true
+      }
+    ]
+  },
+    {
+    "id": "port-9",
+    "slug": "bw-embossed-business-card",
+    "category": "print",
+    "icon": "credit-card",
+    "createdAt": "2026-03-04",
+    "mainImage": "bw-card.webp",
+    "previewVideo": "https://www.shutterstock.com/shutterstock/videos/3990345743/preview/stock-footage-glowing-cloud-symbol-data-center-server-room-blue-digital-lines-connecting-racks-represents-cloud.webm",
+    "subImages": [
+      "bw-card-1.webp",
+      "bw-card-2.webp"
+    ],
+    "title": {
+      "en": "BW Embossed Card & Mug",
+      "fa": "ویزیت‌کارت و چاپ برجسته BW"
+    },
+    "client": {
+      "en": "BW Brand",
+      "fa": "مجموعه BW"
+    },
+    "shortDescription": {
+      "en": "First-class business cards and 3D embossed promotional mug.",
+      "fa": "چاپ ویزیت‌کارت کیفیت اول و ماگ با چاپ برجسته طلایی."
+    },
+    "fullDescription": {
+      "en": "Produced premium textured business cards with gold foil accents alongside custom 3D embossed ceramic mugs for executive gifting.",
+      "fa": "تولید و چاپ کارت ویزیت‌های پرطرفدار با متریال درجه یک به همراه چاپ برجسته روی ماگ و هدایای تبلیغاتی."
+    },
+    "testimonials": []
+  },
+  {
+    "id": "port-10",
+    "slug": "hrq-luxury-packaging",
+    "category": "print",
+    "icon": "package",
+    "createdAt": "2026-03-05",
+    "mainImage": "hrq_packaging.webp",
+    "previewVideo": "https://www.shutterstock.com/shutterstock/videos/3990345743/preview/stock-footage-glowing-cloud-symbol-data-center-server-room-blue-digital-lines-connecting-racks-represents-cloud.webm",
     "subImages": [
       "hrq-packaging-1.webp",
       "hrq-packaging-2.webp"

@@ -1,45 +1,41 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { X, ArrowUpLeft, ArrowUpRight } from 'lucide-react';
+import { useStore } from '../../store/useStore';
 
-// جستجوی خودکار در تمام زیرپوشه‌های src/assets برای فایل‌های تصویری (مخصوص Vite)
 const assetImageModules = import.meta.glob(
   '../../assets/**/*.{webp,png,jpg,jpeg,avif,svg}',
   { eager: true, import: 'default' }
 );
 
-    // اگر عکس‌ها در پوشه public هستند، مسیر دقیق پوشه را اینجا تنظیم کن (مثلاً '/images/' یا '/images/portfolio/')
-    const PUBLIC_PORTFOLIO_IMG_BASE = '/images/portfolio/';
+const PUBLIC_PORTFOLIO_IMG_BASE = '/images/portfolio/';
 
-    export const getPortfolioImageUrl = (imgName) => {
-      if (!imgName) return '';
-      if (imgName.startsWith('http') || imgName.startsWith('/')) return imgName;
+export const getPortfolioImageUrl = (imgName) => {
+  if (!imgName) return '';
+  if (imgName.startsWith('http') || imgName.startsWith('/')) return imgName;
 
-      // ۱. بررسی وجود فایل در src/assets
-      const matchedKey = Object.keys(assetImageModules).find((path) =>
-        path.endsWith(`/${imgName}`)
-      );
-      if (matchedKey) return assetImageModules[matchedKey];
+  const matchedKey = Object.keys(assetImageModules).find((path) =>
+    path.endsWith(`/${imgName}`)
+  );
+  if (matchedKey) return assetImageModules[matchedKey];
 
-      // ۲. در غیر این صورت خواندن از پوشه public
-      return `${PUBLIC_PORTFOLIO_IMG_BASE}${imgName}`;
-    };
+  return `${PUBLIC_PORTFOLIO_IMG_BASE}${imgName}`;
+};
 
-    // فال‌بک خودکار اگر مسیر /images/portfolio/ خطا داد، مسیر /images/ را هم تست کند
-    export const handlePortfolioImageError = (e, imgName) => {
-      if (!imgName || e.currentTarget.dataset.fallbackTried) return;
-      e.currentTarget.dataset.fallbackTried = 'true';
-      e.currentTarget.src = `/images/${imgName}`;
-    };
+export const handlePortfolioImageError = (e, imgName) => {
+  if (!imgName || e.currentTarget.dataset.fallbackTried) return;
+  e.currentTarget.dataset.fallbackTried = 'true';
+  e.currentTarget.src = `/images/${imgName}`;
+};
 
-    export default function PortfolioModal({ project, currentLang, tp, onClose }) {
-      const isRTL = currentLang === 'fa';
-      const ActionArrow = isRTL ? ArrowUpLeft : ArrowUpRight;
+export default function PortfolioModal({ project, currentLang, tp, onClose }) {
+  const openProjectModal = useStore((state) => state.openProjectModal);
+  const isRTL = currentLang === 'fa';
+  const ActionArrow = isRTL ? ArrowUpLeft : ArrowUpRight;
 
-      const getLocalized = (field) => {
-        if (!field) return '';
-        return typeof field === 'object' ? field[currentLang] || field.en || '' : field;
-    };
+  const getLocalized = (field) => {
+    if (!field) return '';
+    return typeof field === 'object' ? field[currentLang] || field.en || '' : field;
+  };
 
   useEffect(() => {
     if (!project) return;
@@ -59,6 +55,18 @@ const assetImageModules = import.meta.glob(
 
   if (!project) return null;
 
+  const handleOrderSimilar = () => {
+    const context = {
+      service: project.category || null,
+      referenceProject: getLocalized(project.title) || null,
+    };
+
+    onClose();
+    requestAnimationFrame(() => {
+      openProjectModal(context);
+    });
+  };
+
   return (
     <div
       dir={isRTL ? 'rtl' : 'ltr'}
@@ -69,15 +77,15 @@ const assetImageModules = import.meta.glob(
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white dark:bg-[#0b1120] border border-slate-200 dark:border-slate-800 rounded-[28px] shadow-2xl"
+        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto overscroll-contain [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden bg-white dark:bg-[#0b1120] border border-slate-200 dark:border-slate-800 rounded-[24px] sm:rounded-[28px] shadow-2xl"
       >
-        {/* هدر ثابت مدال */}
-        <div className="sticky top-0 z-20 flex items-center justify-between px-6 sm:px-8 py-5 bg-white dark:bg-[#0b1120] border-b border-slate-100 dark:border-slate-800">
-          <div>
-            <span className="text-[11px] font-body font-bold uppercase tracking-wider text-blue-700 dark:text-sky-400">
+        {/* هدر ثابت مودال */}
+        <div className="sticky top-0 z-20 flex items-center justify-between gap-4 px-5 sm:px-7 py-4 bg-white dark:bg-[#0b1120] border-b border-slate-100 dark:border-slate-800">
+          <div className="min-w-0">
+            <span className="block !text-[16px] !leading-snug font-semibold text-blue-700 dark:text-sky-400 mb-0.5">
               {tp.categories[project.category] || project.category}
             </span>
-            <h3 className="text-lg sm:text-2xl font-black font-heading text-slate-900 dark:text-white">
+            <h3 className="font-body font-bold text-slate-900 dark:text-white truncate">
               {getLocalized(project.title)}
             </h3>
           </div>
@@ -86,46 +94,48 @@ const assetImageModules = import.meta.glob(
             type="button"
             onClick={onClose}
             aria-label={tp.modal.close}
-            className="w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center transition-colors cursor-pointer shrink-0"
+            className="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center transition-colors cursor-pointer shrink-0"
           >
-            <X size={20} />
+            <X size={18} />
           </button>
         </div>
 
-        {/* بدنه مدال */}
-        <div className="p-6 sm:p-8 space-y-8">
+        {/* بدنه مودال */}
+        <div className="p-5 sm:p-7 space-y-6">
           <div className="rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-900 aspect-[16/9]">
             <img
               src={getPortfolioImageUrl(project.mainImage)}
               alt={getLocalized(project.title)}
+              onError={(e) => handlePortfolioImageError(e, project.mainImage)}
               className="w-full h-full object-cover"
             />
           </div>
 
-          <div className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
-            <h4 className="font-heading font-bold text-slate-900 dark:text-white text-base mb-2.5">
+          <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
+            <h4 className="font-body font-bold text-slate-900 dark:text-white mb-2">
               {tp.modal.overview}
             </h4>
-            <p className="font-body text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="!text-[16px] !leading-relaxed text-slate-600 dark:text-slate-300">
               {getLocalized(project.fullDescription)}
             </p>
           </div>
 
           {Array.isArray(project.subImages) && project.subImages.length > 0 && (
             <div>
-              <h4 className="font-heading font-bold text-slate-900 dark:text-white text-base mb-4">
+              <h4 className="font-body font-bold text-slate-900 dark:text-white mb-3">
                 {tp.modal.gallery}
               </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {project.subImages.map((imgName, idx) => (
                   <div
                     key={idx}
-                    className="rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-900 aspect-[4/3]"
+                    className="rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-900 aspect-[4/3]"
                   >
                     <img
                       src={getPortfolioImageUrl(imgName)}
                       alt={`${getLocalized(project.title)} ${idx + 1}`}
                       loading="lazy"
+                      onError={(e) => handlePortfolioImageError(e, imgName)}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -141,15 +151,15 @@ const assetImageModules = import.meta.glob(
             const clientComment = getLocalized(feedback.comment);
 
             return (
-              <div className="p-6 rounded-2xl bg-blue-950/5 dark:bg-slate-900 border border-blue-950/10 dark:border-slate-800">
-                <span className="block text-xs font-body font-bold text-blue-800 dark:text-sky-400 mb-3">
+              <div className="p-5 rounded-2xl bg-blue-950/5 dark:bg-slate-900 border border-blue-950/10 dark:border-slate-800">
+                <h4 className="font-body font-bold text-blue-800 dark:text-sky-400 mb-2">
                   {tp.modal.clientFeedback}
-                </span>
-                <p className="font-body text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed mb-5">
+                </h4>
+                <p className="!text-[16px] !leading-relaxed text-slate-700 dark:text-slate-200 mb-4">
                   {clientComment}
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-full bg-white dark:bg-slate-800 p-0.5 border border-slate-200 dark:border-slate-700 shrink-0 overflow-hidden">
+                  <div className="w-10 h-10 rounded-full bg-white dark:bg-slate-800 p-0.5 border border-slate-200 dark:border-slate-700 shrink-0 overflow-hidden">
                     {feedback.avatar && feedback.avatar.trim() !== '' ? (
                       <img
                         src={feedback.avatar}
@@ -157,16 +167,16 @@ const assetImageModules = import.meta.glob(
                         className="w-full h-full rounded-full object-cover"
                       />
                     ) : (
-                      <div className="w-full h-full rounded-full bg-gradient-to-tr from-blue-600 to-sky-400 text-white font-heading font-bold text-sm flex items-center justify-center">
+                      <div className="w-full h-full rounded-full bg-gradient-to-tr from-blue-600 to-sky-400 text-white font-bold !text-[16px] flex items-center justify-center">
                         {clientName ? clientName.charAt(0) : 'A'}
                       </div>
                     )}
                   </div>
                   <div>
-                    <p className="font-heading font-bold text-sm text-slate-900 dark:text-white">
+                    <p className="font-bold !text-[16px] !leading-snug text-slate-900 dark:text-white">
                       {clientName}
                     </p>
-                    <p className="font-body text-xs text-slate-500 dark:text-slate-400">
+                    <p className="!text-[16px] !leading-snug text-slate-500 dark:text-slate-400">
                       {clientRole}
                     </p>
                   </div>
@@ -179,18 +189,18 @@ const assetImageModules = import.meta.glob(
             <button
               type="button"
               onClick={onClose}
-              className="px-5 py-3 rounded-xl font-body font-semibold text-xs sm:text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+              className="px-5 py-2.5 rounded-xl font-semibold !text-[16px] !leading-snug text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
             >
               {tp.modal.close}
             </button>
-            <Link
-              to={`/${currentLang}/contact`}
-              onClick={onClose}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-950 hover:bg-blue-900 text-white dark:bg-sky-400 dark:hover:bg-sky-300 dark:text-slate-950 font-body font-bold text-xs sm:text-sm transition-colors"
+            <button
+              type="button"
+              onClick={handleOrderSimilar}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-950 hover:bg-blue-900 text-white dark:bg-sky-400 dark:hover:bg-sky-300 dark:text-slate-950 font-bold !text-[16px] !leading-snug transition-colors cursor-pointer"
             >
               <span>{tp.modal.orderSimilar}</span>
-              <ActionArrow size={16} />
-            </Link>
+              <ActionArrow size={17} />
+            </button>
           </div>
         </div>
       </div>
