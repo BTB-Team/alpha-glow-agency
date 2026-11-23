@@ -731,7 +731,7 @@ export default function ContactProjectForm() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full sm:w-auto min-w-[240px] py-3 px-6 rounded-[12px] text-sm sm:text-[15px] font-bold text-white transition-all duration-300 hover:brightness-110 hover:-translate-y-0.5 disabled:opacity-60 flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full sm:w-auto min-w-[240px] py-3 px-6 rounded-[12px] text-sm sm:text-[15px] font-bold text-white transition-all duration-300 hover:brightness-110 hover:-translate-y-0.5 disabled:opacity-60 flex items-center justify-center gap-2 cursor-pointer "
                   style={{
                     background:
                       'linear-gradient(135deg, rgba(37, 99, 235, 0.92), rgba(14, 165, 233, 0.85))',

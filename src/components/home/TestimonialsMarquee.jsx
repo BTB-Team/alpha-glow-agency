@@ -14,7 +14,7 @@ export default function TestimonialsMarquee() {
   const sliderRef = useRef(null);
 
   // استخراج کاملاً داینامیک از فایل db.json بر اساس تگ isFeaturedOnHome
-  const projects = db?.portfolioProjects || [];
+  const projects = db?.portfolio || [];
   const featuredTestimonials = projects.flatMap((project) => 
     (project.testimonials || []).filter((item) => item.isFeaturedOnHome === true)
   );

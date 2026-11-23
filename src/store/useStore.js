@@ -16,4 +16,28 @@ export const useStore = create((set) => ({
       localStorage.setItem('ag_theme', newTheme);
       return { theme: newTheme };
     }),
+
+  // کنترل گلوبال مودال فرم درخواست پروژه از هر صفحه‌ای
+  isProjectModalOpen: false,
+  projectModalContext: {
+    service: null,
+    referenceProject: null,
+  },
+  openProjectModal: (context = {}) =>
+    set({
+      isProjectModalOpen: true,
+      projectModalContext: {
+        service: typeof context === 'string' ? context : context?.service || null,
+        referenceProject:
+          typeof context === 'object' ? context?.referenceProject || null : null,
+      },
+    }),
+  closeProjectModal: () =>
+    set({
+      isProjectModalOpen: false,
+      projectModalContext: {
+        service: null,
+        referenceProject: null,
+      },
+    }),
 }));
