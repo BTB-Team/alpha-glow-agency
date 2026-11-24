@@ -146,7 +146,7 @@ export default function ContactSimpleForm() {
               {isRTL ? 'باز کردن فرم ثبت پروژه' : 'Open Project Form'}
             </button>
           </div>
-
+          
           {isSent ? (
             <div className="py-8 text-center flex flex-col items-center space-y-4">
               <div className="alpha-form-success-icon">
