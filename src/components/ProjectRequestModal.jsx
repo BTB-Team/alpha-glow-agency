@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
+import { useStore } from '../store/useStore';
 
 const SERVICES = [
   {
@@ -32,6 +33,21 @@ const SERVICES = [
   },
 ];
 
+// نگاشت خودکار دسته‌بندی‌های db.json به شناسه‌های چک‌باکس فرم
+const CATEGORY_TO_SERVICE_ID = {
+  'graphic-design': 'Graphic Design',
+  branding: 'Branding & Visual Identity',
+  'website-design': 'Website Design',
+  print: 'Printing & Advertising',
+};
+
+const resolveServiceId = (rawService) => {
+  if (!rawService) return null;
+  if (CATEGORY_TO_SERVICE_ID[rawService]) return CATEGORY_TO_SERVICE_ID[rawService];
+  const directMatch = SERVICES.find((s) => s.id === rawService);
+  return directMatch ? directMatch.id : null;
+};
+
 const BUDGET_RANGES = [
   { id: '$200 - $500', label: { fa: '۲۰۰ تا ۵۰۰ دالر ($200 – $500)', en: '$200 – $500' } },
   { id: '$500 - $1,500', label: { fa: '۵۰۰ تا ۱,۵۰۰ دالر ($500 – $1,500)', en: '$500 – $1,500' } },
@@ -55,24 +71,32 @@ const sanitize = (val) =>
 
 export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, defaultService = '' }) {
   const { lang } = useParams();
-  // تشخیص زبان از URL یا ویژگی dir صفحه
   const detectedLang =
     lang === 'fa' || document.documentElement.dir === 'rtl' ? 'fa' : 'en';
   const isRTL = detectedLang === 'fa';
 
+  const isStoreModalOpen = useStore((state) => state.isProjectModalOpen);
+  const projectModalContext = useStore((state) => state.projectModalContext);
+  const closeStoreModal = useStore((state) => state.closeProjectModal);
+
   const [internalOpen, setInternalOpen] = useState(false);
-  const isOpen = controlledOpen !== undefined ? controlledOpen : internalOpen;
+  const isOpen =
+    controlledOpen !== undefined
+      ? controlledOpen
+      : internalOpen || isStoreModalOpen;
 
   const mountedAt = useRef(Date.now());
   const dropdownRef = useRef(null);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
+
+  const initialServiceId = resolveServiceId(defaultService);
 
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
     phone: '',
     country: '',
-    services: defaultService ? [defaultService] : [],
+    services: initialServiceId ? [initialServiceId] : [],
     budgetRange: '$500 - $1,500',
     customBudget: '',
     timeline: '2 - 4 Weeks',
@@ -84,16 +108,49 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedData, setSubmittedData] = useState(null);
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setIsServiceOpen(false);
-    if (onClose) onClose();
     setInternalOpen(false);
-  };
+    closeStoreModal();
+    if (onClose) onClose();
+  }, [closeStoreModal, onClose]);
 
-  // گوش دادن به رویداد سراسری برای باز شدن از هر دکمه CTA در سراسر سایت
+  // پر کردن خودکار خدمت و پروژه مرجع هنگام باز شدن از استور (مثلاً از دکمه PortfolioModal)
+  useEffect(() => {
+    if (!isStoreModalOpen) return;
+
+    mountedAt.current = Date.now();
+    setSubmittedData(null);
+    setErrors({});
+
+    const mappedService = resolveServiceId(projectModalContext?.service);
+    const refProject = projectModalContext?.referenceProject;
+
+    if (mappedService || refProject) {
+      setFormData((prev) => {
+        const nextServices = mappedService ? [mappedService] : prev.services;
+        const refNote = refProject
+          ? isRTL
+            ? `درخواست پروژه مشابه با: ${refProject}\n`
+            : `Similar project request to: ${refProject}\n`
+          : '';
+
+        return {
+          ...prev,
+          services: nextServices,
+          description:
+            refNote && !prev.description.includes(refProject)
+              ? `${refNote}${prev.description}`
+              : prev.description,
+        };
+      });
+    }
+  }, [isStoreModalOpen, projectModalContext, isRTL]);
+
+  // حفظ سازگاری با دکمه‌هایی که از رویداد سراسری open-project-modal استفاده می‌کنند
   useEffect(() => {
     const handleGlobalOpen = (e) => {
-      const preselected = e?.detail?.service;
+      const preselected = resolveServiceId(e?.detail?.service);
       if (preselected) {
         setFormData((prev) => ({
           ...prev,
@@ -103,6 +160,7 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
         }));
       }
       mountedAt.current = Date.now();
+      setSubmittedData(null);
       setInternalOpen(true);
     };
 
@@ -114,7 +172,7 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
       window.removeEventListener('open-project-modal', handleGlobalOpen);
       window.removeEventListener('close-project-modal', handleGlobalClose);
     };
-  }, []);
+  }, [handleClose]);
 
   // قفل کردن اسکرول صفحه پشت مودال و بستن با کلید Escape
   useEffect(() => {
@@ -132,7 +190,7 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
       document.body.style.overflow = prevOverflow;
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isOpen]);
+  }, [isOpen, handleClose]);
 
   // بستن منوی بازشوی خدمات هنگام کلیک بیرون آن
   useEffect(() => {
@@ -315,43 +373,29 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
   };
 
   const fieldStyle = (hasErr) =>
-    `w-full rounded-[12px] px-4 py-2.5 text-sm sm:text-[15px] transition-all duration-300 outline-none border ${
-      hasErr
-        ? 'bg-rose-50/80 dark:bg-slate-950/60 text-slate-900 dark:text-white border-rose-500 dark:border-rose-400/85 shadow-[0_0_12px_rgba(244,63,94,0.2)]'
-        : 'bg-white/90 dark:bg-slate-950/55 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-white/45 border-blue-900/15 dark:border-sky-200/20 focus:border-blue-600 dark:focus:border-sky-400/80 focus:bg-white dark:focus:bg-slate-950/80 focus:shadow-[0_0_16px_rgba(37,99,235,0.15)] dark:focus:shadow-[0_0_16px_rgba(56,189,248,0.22)]'
-    }`;
+  `alpha-form-field ${hasErr ? 'alpha-form-field-error' : ''}`; 
 
   return (
     <div
       dir={isRTL ? 'rtl' : 'ltr'}
-      className="fixed inset-0 z-[999] flex items-center justify-center p-3 sm:p-5 overflow-y-auto"
+      className="fixed inset-0 z-[999] flex items-center justify-center p-3 sm:p-5 overflow-y-auto alpha-no-scrollbar"
     >
-      {/* پس‌زمینه تار شیشه‌ای (کلیک روی آن مودال را می‌بندد) */}
+      {/* پس‌زمینه تار شیشه‌ای */}
       <div
         onClick={handleClose}
         className="fixed inset-0 bg-slate-950/65 dark:bg-[#020617]/80 backdrop-blur-md transition-opacity duration-300"
       />
 
       {/* بدنه اصلی مودال شیشه‌ای */}
-      <div className="relative z-10 w-full max-w-3xl max-h-[92vh] overflow-y-auto rounded-[24px] p-5 sm:p-8 backdrop-blur-2xl bg-gradient-to-br from-white/95 via-sky-50/90 to-blue-100/85 dark:from-[#1e3261]/92 dark:via-[#132042]/95 dark:to-[#0b1224]/95 text-[#213668] dark:text-white border border-sky-400/50 dark:border-sky-200/35 shadow-[0_25px_70px_-12px_rgba(0,0,0,0.65),0_0_30px_-4px_rgba(56,189,248,0.3),inset_0_1px_2px_rgba(255,255,255,0.95)] dark:shadow-[0_25px_70px_-12px_rgba(0,0,0,0.85),0_0_30px_-4px_rgba(56,189,248,0.35),inset_0_1px_1.5px_rgba(255,255,255,0.5)]">
-        
-        {/* خط نوری ظریف لبه بالا */}
-        <div
-          className="absolute inset-x-8 top-0 h-[1.5px] rounded-full opacity-95 pointer-events-none"
-          style={{
-            backgroundImage:
-              'linear-gradient(90deg, transparent, #38bdf8, #2563eb, #38bdf8, transparent)',
-            boxShadow: '0 0 12px #38bdf8',
-          }}
-        />
+      <div className="relative z-10 w-full max-w-3xl max-h-[92vh] overflow-y-auto overscroll-contain alpha-no-scrollbar alpha-glass-bar alpha-form-surface alpha-form-on-dark">
 
         {/* هدر مودال + دکمه بستن */}
-        <div className="flex items-start justify-between gap-4 pb-4 mb-5 border-b border-blue-900/10 dark:border-white/10">
+        <div className="alpha-form-header">
           <div>
-            <span className="text-[11px] font-bold tracking-[0.22em] uppercase text-blue-700 dark:text-sky-400 block mb-1">
+            <span className="alpha-form-eyebrow">
               {isRTL ? 'شروع همکاری با آلفا گلو' : 'START YOUR PROJECT'}
             </span>
-            <h3 className="text-xl sm:text-2xl font-black text-[#213668] dark:text-white tracking-tight">
+            <h3 className="alpha-form-title">
               {isRTL ? 'ثبت درخواست پروژه جدید' : 'Submit Project Request'}
             </h3>
           </div>
@@ -360,7 +404,7 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
             type="button"
             onClick={handleClose}
             aria-label="Close modal"
-            className="w-9 h-9 rounded-xl bg-slate-900/5 hover:bg-rose-500/15 dark:bg-white/10 dark:hover:bg-rose-500/25 border border-blue-900/15 dark:border-white/15 flex items-center justify-center text-[#213668] dark:text-white hover:text-rose-600 dark:hover:text-rose-300 transition-all duration-200 shrink-0 cursor-pointer"
+            className="alpha-form-close-btn"
           >
             <svg
               className="w-4 h-4"
@@ -381,7 +425,7 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
           /* پیام تأیید پس از ثبت موفق سفارش */
           <div className="py-5 text-center flex flex-col items-center justify-center space-y-4">
             <div
-              className="w-16 h-16 rounded-full flex items-center justify-center border border-emerald-500/40 dark:border-emerald-300/50 bg-emerald-500/15 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-300"
+              className="w-16 h-16 rounded-full flex items-center justify-center border border-white/35 dark:border-emerald-300/50 bg-emerald-500/20 text-white dark:text-emerald-300"
               style={{ boxShadow: '0 0 20px rgba(16, 185, 129, 0.3)' }}
             >
               <svg
@@ -397,47 +441,47 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
               </svg>
             </div>
 
-            <span className="px-3.5 py-1 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase bg-blue-600/10 dark:bg-sky-400/15 text-blue-800 dark:text-sky-300 border border-blue-500/25 dark:border-sky-300/30">
+            <span className="alpha-form-success-badge">
               {isRTL
                 ? `شماره پیگیری: ${submittedData.id}`
                 : `Request ID: ${submittedData.id}`}
             </span>
 
-            <h4 className="text-lg sm:text-2xl font-extrabold text-[#213668] dark:text-white">
+            <h4 className="text-lg sm:text-2xl font-extrabold text-white">
               {isRTL
                 ? 'درخواست پروژه شما با موفقیت ثبت شد!'
                 : 'Your Project Request Has Been Received!'}
             </h4>
 
-            <p className="text-sm sm:text-base text-slate-600 dark:text-white/85 max-w-lg leading-relaxed">
+            <p className="text-sm sm:text-base text-white/90 dark:text-white/85 max-w-lg leading-relaxed">
               {isRTL
                 ? `${submittedData.fullName} عزیز، جزئیات سفارش شما در سیستم مدیریت آژانس آلفا گلو ثبت گردید. کارشناسان ما در اسرع وقت از طریق ایمیل یا واتساپ با شما تماس می‌گیرند.`
                 : `Thank you, ${submittedData.fullName}. Your request has been securely logged in Alpha Glow's system. Our team will reach out via Email or WhatsApp shortly.`}
             </p>
 
             {/* خلاصه سفارش */}
-            <div className="w-full max-w-md rounded-[14px] p-4 bg-white/80 dark:bg-slate-950/60 border border-blue-900/15 dark:border-white/15 text-xs sm:text-sm space-y-2 text-start">
-              <div className="flex justify-between gap-4 border-b border-slate-200 dark:border-white/10 pb-2">
-                <span className="text-slate-500 dark:text-white/60 shrink-0">
+            <div className="alpha-form-summary-card">
+              <div className="alpha-form-summary-row">
+                <span className="text-white/75 dark:text-white/60 shrink-0">
                   {isRTL ? 'خدمات انتخابی:' : 'Services:'}
                 </span>
-                <span className="font-bold text-blue-700 dark:text-sky-300 text-end">
+                <span className="font-bold text-white dark:text-sky-300 text-end">
                   {submittedData.service}
                 </span>
               </div>
-              <div className="flex justify-between gap-4 border-b border-slate-200 dark:border-white/10 pb-2">
-                <span className="text-slate-500 dark:text-white/60 shrink-0">
+              <div className="alpha-form-summary-row">
+                <span className="text-white/75 dark:text-white/60 shrink-0">
                   {isRTL ? 'بودجه و زمان:' : 'Budget & Timeline:'}
                 </span>
-                <span dir="ltr" className="font-bold text-slate-900 dark:text-white">
+                <span dir="ltr" className="font-bold text-white">
                   {submittedData.budget} • {submittedData.timeline}
                 </span>
               </div>
               <div className="flex justify-between gap-4">
-                <span className="text-slate-500 dark:text-white/60 shrink-0">
+                <span className="text-white/75 dark:text-white/60 shrink-0">
                   {isRTL ? 'کشور / تماس:' : 'Location / Contact:'}
                 </span>
-                <span dir="ltr" className="font-semibold text-slate-800 dark:text-white/90">
+                <span dir="ltr" className="font-semibold text-white/95 dark:text-white/90">
                   {submittedData.country} ({submittedData.phone})
                 </span>
               </div>
@@ -460,19 +504,11 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
                 </span>
               </a>
 
-              <button
-                type="button"
-                onClick={handleReset}
-                className="py-2.5 px-5 rounded-[10px] text-xs sm:text-sm font-semibold text-[#213668] dark:text-white/90 bg-slate-200/80 hover:bg-slate-300/80 dark:bg-white/10 dark:hover:bg-white/20 border border-slate-300 dark:border-white/20 transition-all duration-300 cursor-pointer"
-              >
+              <button type="button" onClick={handleReset} className="alpha-form-btn-secondary">
                 {isRTL ? 'ثبت درخواست جدید' : 'Submit Another'}
               </button>
 
-              <button
-                type="button"
-                onClick={handleClose}
-                className="py-2.5 px-5 rounded-[10px] text-xs sm:text-sm font-semibold text-slate-600 dark:text-white/75 hover:text-slate-900 dark:hover:text-white cursor-pointer"
-              >
+              <button type="button" onClick={handleClose} className="alpha-form-btn-ghost">
                 {isRTL ? 'بستن پنجره' : 'Close'}
               </button>
             </div>
@@ -480,7 +516,6 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
         ) : (
           /* فرم ۹ فیلدی داخل مودال */
           <form onSubmit={handleSubmit} noValidate className="space-y-4">
-            {/* فیلد مخفی ضد اسپم */}
             <div className="hidden" aria-hidden="true">
               <input
                 type="text"
@@ -492,15 +527,13 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
             </div>
 
             {errors.global && (
-              <div className="p-3 rounded-[10px] bg-rose-500/15 dark:bg-rose-500/20 border border-rose-500/40 text-rose-700 dark:text-rose-200 text-xs sm:text-sm text-center font-medium">
-                {errors.global}
-              </div>
+              <div className="alpha-form-alert-error">{errors.global}</div>
             )}
 
             {/* ۱. نام و نام خانوادگی | ۲. آدرس ایمیل */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs sm:text-sm font-bold text-[#213668] dark:text-sky-300 mb-1.5">
+                <label className="alpha-form-label">
                   {isRTL ? '۱. نام و نام خانوادگی مشتری *' : '1. Full Name *'}
                 </label>
                 <input
@@ -511,15 +544,11 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
                   onChange={(e) => handleFieldChange('fullName', e.target.value)}
                   className={fieldStyle(errors.fullName)}
                 />
-                {errors.fullName && (
-                  <p className="text-xs text-rose-600 dark:text-rose-300 mt-1 font-medium">
-                    {errors.fullName}
-                  </p>
-                )}
+                {errors.fullName && <p className="alpha-form-error">{errors.fullName}</p>}
               </div>
 
               <div>
-                <label className="block text-xs sm:text-sm font-bold text-[#213668] dark:text-sky-300 mb-1.5">
+                <label className="alpha-form-label">
                   {isRTL ? '۲. آدرس ایمیل *' : '2. Email Address *'}
                 </label>
                 <input
@@ -531,18 +560,14 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
                   onChange={(e) => handleFieldChange('email', e.target.value)}
                   className={fieldStyle(errors.email)}
                 />
-                {errors.email && (
-                  <p className="text-xs text-rose-600 dark:text-rose-300 mt-1 font-medium">
-                    {errors.email}
-                  </p>
-                )}
+                {errors.email && <p className="alpha-form-error">{errors.email}</p>}
               </div>
             </div>
 
             {/* ۳. شماره تماس یا واتساپ | ۴. کشور محل فعالیت */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs sm:text-sm font-bold text-[#213668] dark:text-sky-300 mb-1.5">
+                <label className="alpha-form-label">
                   {isRTL ? '۳. شماره تماس یا واتساپ *' : '3. Phone or WhatsApp Number *'}
                 </label>
                 <input
@@ -554,15 +579,11 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
                   onChange={(e) => handleFieldChange('phone', e.target.value)}
                   className={fieldStyle(errors.phone)}
                 />
-                {errors.phone && (
-                  <p className="text-xs text-rose-600 dark:text-rose-300 mt-1 font-medium">
-                    {errors.phone}
-                  </p>
-                )}
+                {errors.phone && <p className="alpha-form-error">{errors.phone}</p>}
               </div>
 
               <div>
-                <label className="block text-xs sm:text-sm font-bold text-[#213668] dark:text-sky-300 mb-1.5">
+                <label className="alpha-form-label">
                   {isRTL ? '۴. کشور محل فعالیت مشتری *' : '4. Country of Operation *'}
                 </label>
                 <input
@@ -575,17 +596,13 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
                   onChange={(e) => handleFieldChange('country', e.target.value)}
                   className={fieldStyle(errors.country)}
                 />
-                {errors.country && (
-                  <p className="text-xs text-rose-600 dark:text-rose-300 mt-1 font-medium">
-                    {errors.country}
-                  </p>
-                )}
+                {errors.country && <p className="alpha-form-error">{errors.country}</p>}
               </div>
             </div>
 
-            {/* ۵. نوع خدمت موردنیاز (Dropdown همراه با Checkbox) */}
+            {/* ۵. نوع خدمت موردنیاز */}
             <div ref={dropdownRef} className="relative">
-              <label className="block text-xs sm:text-sm font-bold text-[#213668] dark:text-sky-300 mb-1.5">
+              <label className="alpha-form-label">
                 {isRTL ? '۵. نوع خدمت موردنیاز *' : '5. Required Service *'}
               </label>
 
@@ -624,24 +641,20 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
               </button>
 
               {isServiceOpen && (
-                <div className="absolute inset-x-0 mt-1.5 rounded-[14px] p-2 z-30 border border-blue-200 dark:border-sky-300/35 shadow-2xl space-y-1 backdrop-blur-2xl bg-white/95 dark:bg-slate-900/95">
+                <div className="alpha-form-dropdown-menu">
                   {SERVICES.map((srv) => {
                     const isChecked = formData.services.includes(srv.id);
                     return (
                       <label
                         key={srv.id}
                         onClick={() => toggleService(srv.id)}
-                        className={`flex items-center gap-3 px-3.5 py-2 rounded-[10px] cursor-pointer transition-all duration-200 select-none ${
-                          isChecked
-                            ? 'bg-blue-600/10 dark:bg-sky-500/25 text-[#213668] dark:text-white font-semibold'
-                            : 'hover:bg-slate-100 dark:hover:bg-white/10 text-slate-700 dark:text-white/85'
+                        className={`alpha-form-dropdown-item ${
+                          isChecked ? 'alpha-form-dropdown-item-active' : ''
                         }`}
                       >
                         <span
-                          className={`w-5 h-5 rounded-[6px] border flex items-center justify-center shrink-0 transition-all duration-200 ${
-                            isChecked
-                              ? 'bg-blue-600 dark:bg-sky-400 border-blue-600 dark:border-sky-300 text-white dark:text-slate-950'
-                              : 'border-slate-300 dark:border-white/35 bg-white dark:bg-slate-950/60'
+                          className={`alpha-form-checkbox ${
+                            isChecked ? 'alpha-form-checkbox-checked' : ''
                           }`}
                         >
                           {isChecked && (
@@ -668,17 +681,13 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
                 </div>
               )}
 
-              {errors.services && (
-                <p className="text-xs text-rose-600 dark:text-rose-300 mt-1 font-medium">
-                  {errors.services}
-                </p>
-              )}
+              {errors.services && <p className="alpha-form-error">{errors.services}</p>}
             </div>
 
             {/* ۶. بودجه موردنظر | ۷. زمان موردنظر برای تکمیل پروژه */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs sm:text-sm font-bold text-[#213668] dark:text-sky-300 mb-1.5">
+                <label className="alpha-form-label">
                   {isRTL
                     ? '۶. بودجه موردنظر (محدوده یا دلخواه) *'
                     : '6. Project Budget (Range or Custom) *'}
@@ -689,11 +698,7 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
                   className={`${fieldStyle(errors.budget)} cursor-pointer`}
                 >
                   {BUDGET_RANGES.map((item) => (
-                    <option
-                      key={item.id}
-                      value={item.id}
-                      className="bg-white text-slate-900 dark:bg-slate-900 dark:text-white"
-                    >
+                    <option key={item.id} value={item.id} className="alpha-form-option">
                       {item.label[detectedLang]}
                     </option>
                   ))}
@@ -712,15 +717,11 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
                     className={`${fieldStyle(errors.budget)} mt-2`}
                   />
                 )}
-                {errors.budget && (
-                  <p className="text-xs text-rose-600 dark:text-rose-300 mt-1 font-medium">
-                    {errors.budget}
-                  </p>
-                )}
+                {errors.budget && <p className="alpha-form-error">{errors.budget}</p>}
               </div>
 
               <div>
-                <label className="block text-xs sm:text-sm font-bold text-[#213668] dark:text-sky-300 mb-1.5">
+                <label className="alpha-form-label">
                   {isRTL
                     ? '۷. زمان موردنظر برای تکمیل پروژه *'
                     : '7. Preferred Completion Timeline *'}
@@ -731,32 +732,24 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
                   className={`${fieldStyle(errors.timeline)} cursor-pointer`}
                 >
                   {TIMELINES.map((item) => (
-                    <option
-                      key={item.id}
-                      value={item.id}
-                      className="bg-white text-slate-900 dark:bg-slate-900 dark:text-white"
-                    >
+                    <option key={item.id} value={item.id} className="alpha-form-option">
                       {item.label[detectedLang]}
                     </option>
                   ))}
                 </select>
-                {errors.timeline && (
-                  <p className="text-xs text-rose-600 dark:text-rose-300 mt-1 font-medium">
-                    {errors.timeline}
-                  </p>
-                )}
+                {errors.timeline && <p className="alpha-form-error">{errors.timeline}</p>}
               </div>
             </div>
 
             {/* ۸. توضیحات پروژه */}
             <div>
               <div className="flex items-center justify-between mb-1.5">
-                <label className="text-xs sm:text-sm font-bold text-[#213668] dark:text-sky-300">
+                <label className="alpha-form-label mb-0">
                   {isRTL
                     ? '۸. توضیحات پروژه (نیازها، ایده‌ها و جزئیات) *'
                     : '8. Project Description (Needs, Ideas & Details) *'}
                 </label>
-                <span className="text-xs text-slate-500 dark:text-white/55">
+                <span className="alpha-form-counter">
                   {formData.description.length}/1000
                 </span>
               </div>
@@ -774,30 +767,37 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
                 className={`${fieldStyle(errors.description)} resize-none leading-relaxed`}
               />
               {errors.description && (
-                <p className="text-xs text-rose-600 dark:text-rose-300 mt-1 font-medium">
-                  {errors.description}
-                </p>
+                <p className="alpha-form-error">{errors.description}</p>
               )}
             </div>
 
-            {/* ۹. دکمه ارسال درخواست */}
-            <div className="pt-3 border-t border-blue-900/10 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
-              <span className="text-xs text-slate-600 dark:text-white/70">
-                {isRTL
-                  ? '🔒 اطلاعات شما با امنیت کامل در سیستم ثبت می‌شود.'
-                  : '🔒 Your details are securely validated and stored.'}
+            {/* ۹. فوتر و دکمه ارسال درخواست */}
+            <div className="alpha-form-footer">
+              <span className="alpha-form-security">
+                <svg
+                  className="alpha-form-security-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+                <span>
+                  {isRTL
+                    ? 'اطلاعات شما با امنیت کامل در سیستم ثبت می‌شود.'
+                    : 'Your details are securely validated and stored.'}
+                </span>
               </span>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full sm:w-auto min-w-[230px] py-2.5 px-6 rounded-[12px] text-sm sm:text-[15px] font-bold text-white transition-all duration-300 hover:brightness-110 hover:-translate-y-0.5 disabled:opacity-60 flex items-center justify-center gap-2 cursor-pointer"
-                style={{
-                  background:
-                    'linear-gradient(135deg, rgba(37, 99, 235, 0.92), rgba(14, 165, 233, 0.85))',
-                  border: '1px solid rgba(255, 255, 255, 0.35)',
-                  boxShadow: '0 8px 20px -4px rgba(14, 165, 233, 0.45)',
-                }}
+                className="group alpha-form-submit-btn"
               >
                 <span>
                   {isSubmitting
@@ -809,13 +809,16 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
                     : 'Submit Project Request'}
                 </span>
                 <svg
-                  className={`w-4 h-4 shrink-0 ${isRTL ? '-scale-x-100' : ''}`}
+                  className={`w-4 h-4 shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 ${
+                    isRTL ? '-scale-x-100' : ''
+                  }`}
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2.3"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  aria-hidden="true"
                 >
                   <path d="M7 17 17 7" />
                   <path d="M7 7h10v10" />
@@ -827,4 +830,5 @@ export default function ProjectRequestModal({ isOpen: controlledOpen, onClose, d
       </div>
     </div>
   );
-}
+
+} 

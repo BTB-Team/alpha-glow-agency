@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
 import gsap from 'gsap';
+import Header from '../Header';
 import db from '../../../db.json';
 import fa from '../../locales/fa.json';
 import en from '../../locales/en.json';
@@ -118,26 +119,25 @@ function buildAlphaGlow3DLogo() {
   const logoGroup = new THREE.Group();
   const disposables = [];
 
-  // مختصات وکتور دقیق لوگوی AG
   const rawPoints = [
-    [500, 174], // قله بالایی مثلث
-    [153, 773], // گوشه بیرونی پایین-چپ پایه A
-    [248, 773], // گوشه داخلی پایین-چپ پایه A
-    [338, 616], // اتصال پایین خط افقی A
-    [411, 616], // نوک پایین-راست خط افقی A
-    [458, 535], // نوک بالا-راست خط افقی A
-    [385, 535], // اتصال بالای خط افقی A
-    [500, 336], // قله داخلی بالای A
-    [550, 422], // چرخش داخلی بالای بازوی میانی
-    [347, 773], // راس پایین-چپ بخش G
-    [847, 773], // گوشه بیرونی پایین-راست G
-    [710, 535], // لبه بیرونی راست-بالای G
-    [592, 535], // لبه بالا-چپ زبانه افقی G
-    [546, 616], // لبه پایین-چپ زبانه افقی G
-    [663, 616], // گوشه داخلی بالا-راست حفره G
-    [708, 692], // گوشه داخلی پایین-راست حفره G
-    [487, 692], // گوشه داخلی پایین-چپ حفره G
-    [643, 422], // لبه بیرونی راست قبل از قله
+    [500, 174],
+    [153, 773],
+    [248, 773],
+    [338, 616],
+    [411, 616],
+    [458, 535],
+    [385, 535],
+    [500, 336],
+    [550, 422],
+    [347, 773],
+    [847, 773],
+    [710, 535],
+    [592, 535],
+    [546, 616],
+    [663, 616],
+    [708, 692],
+    [487, 692],
+    [643, 422],
   ];
 
   const scale = 0.0044;
@@ -154,7 +154,6 @@ function buildAlphaGlow3DLogo() {
   });
   shape.closePath();
 
-  // تنظیمات حجم‌دهی سه‌بعدی (Extrude) با لبه‌های پخ‌خورده صیقلی
   const extrudeSettings = {
     depth: 0.42,
     bevelEnabled: true,
@@ -165,9 +164,8 @@ function buildAlphaGlow3DLogo() {
   };
 
   const logoGeo = new THREE.ExtrudeGeometry(shape, extrudeSettings);
-  logoGeo.center(); // قرار دادن مرکز ثقل دقیق لوگو در نقطه (0,0,0)
+  logoGeo.center();
 
-  // متریال وجه رویی و پشتی (سفید صدفی درخشان)
   const frontMaterial = new THREE.MeshPhysicalMaterial({
     color: '#ffffff',
     emissive: '#bae6fd',
@@ -178,7 +176,6 @@ function buildAlphaGlow3DLogo() {
     clearcoatRoughness: 0.06,
   });
 
-  // متریال دیواره سه‌بعدی و پخ‌های کناری (آبی/سورمه‌ای متالیک برند آلفا گلو)
   const sideMaterial = new THREE.MeshPhysicalMaterial({
     color: '#1e3a8a',
     emissive: '#0284c7',
@@ -193,7 +190,6 @@ function buildAlphaGlow3DLogo() {
   logoGroup.add(logoMesh);
   disposables.push(logoGeo, frontMaterial, sideMaterial);
 
-  // حلقه نوری ظریف دور مدار لوگو برای جلوه فضایی‌تر
   const haloGeo = new THREE.TorusGeometry(1.95, 0.016, 20, 100);
   const haloMat = new THREE.MeshBasicMaterial({
     color: '#38bdf8',
@@ -205,7 +201,6 @@ function buildAlphaGlow3DLogo() {
   logoGroup.add(haloMesh);
   disposables.push(haloGeo, haloMat);
 
-  // انیمیشن حرکت شناور و چرخش نرم لوگوی سه‌بعدی با GSAP
   const tweens = [
     gsap.to(logoMesh.rotation, {
       y: 0.38,
@@ -257,7 +252,6 @@ export default function ContactSocial3D() {
     const container = mountRef.current;
     if (!container) return;
 
-    // ۱. صحنه، دوربین و رندرر
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       38,
@@ -278,7 +272,6 @@ export default function ContactSocial3D() {
     renderer.toneMappingExposure = 1.2;
     container.appendChild(renderer.domElement);
 
-    // ۲. نورپردازی استودیویی برای درخشش لوگوی AG و آیکون‌ها
     const ambientLight = new THREE.AmbientLight('#ffffff', 1.55);
     scene.add(ambientLight);
 
@@ -297,7 +290,6 @@ export default function ContactSocial3D() {
     const rootGroup = new THREE.Group();
     scene.add(rootGroup);
 
-    // ۳. افزودن مدل سه‌بعدی لوگوی Alpha Glow به مرکز صحنه
     const {
       logoGroup,
       disposables: logoDisposables,
@@ -305,7 +297,6 @@ export default function ContactSocial3D() {
     } = buildAlphaGlow3DLogo();
     rootGroup.add(logoGroup);
 
-    // ۴. ساخت ۵ آیکون سه‌بعدی با رنگ واقعی برندها
     const socialItems = [
       {
         id: 'instagram',
@@ -377,7 +368,6 @@ export default function ContactSocial3D() {
       meshes.push(mesh);
     });
 
-    // ۵. تنظیمات مدار چرخش ریسپانسیو به دور لوگوی سه‌بعدی
     const orbitParams = {
       progress: 0,
       radiusX: 3.15,
@@ -406,7 +396,6 @@ export default function ContactSocial3D() {
 
         mesh.position.copy(pos);
 
-        // زاویه سه‌بعدی کاشی‌ها رو به بیننده
         mesh.rotation.set(
           -0.1 + Math.sin(theta) * 0.2,
           Math.cos(theta) * 0.35,
@@ -415,7 +404,6 @@ export default function ContactSocial3D() {
       });
     };
 
-    // انیمیشن چرخش پیوسته مدار با GSAP
     const orbitTween = gsap.to(orbitParams, {
       progress: Math.PI * 2,
       duration: 16,
@@ -424,7 +412,6 @@ export default function ContactSocial3D() {
       onUpdate: updateOrbitPositions,
     });
 
-    // ۶. تابع ریسپانسیو هوشمند برای موبایل، تبلت و دسکتاپ
     const updateResponsiveLayout = () => {
       if (!container) return;
       const width = container.clientWidth;
@@ -435,28 +422,24 @@ export default function ContactSocial3D() {
       camera.aspect = aspect;
 
       if (width < 480) {
-        // موبایل کوچک (عمودی)
         camera.position.z = 11.8;
         rootGroup.scale.setScalar(Math.min(1, aspect * 1.32));
         orbitParams.radiusX = 2.45;
         orbitParams.radiusZ = 1.95;
         orbitParams.tiltZ = 0.52;
       } else if (width < 768) {
-        // موبایل بزرگ و فبلت
         camera.position.z = 11.2;
         rootGroup.scale.setScalar(Math.min(1, aspect * 1.2));
         orbitParams.radiusX = 2.75;
         orbitParams.radiusZ = 2.15;
         orbitParams.tiltZ = 0.48;
       } else if (width < 1024) {
-        // تبلت
         camera.position.z = 10.8;
         rootGroup.scale.setScalar(0.95);
         orbitParams.radiusX = 3.0;
         orbitParams.radiusZ = 2.3;
         orbitParams.tiltZ = 0.45;
       } else {
-        // دسکتاپ
         camera.position.z = 10.4;
         rootGroup.scale.setScalar(1);
         orbitParams.radiusX = 3.2;
@@ -471,14 +454,12 @@ export default function ContactSocial3D() {
 
     updateResponsiveLayout();
 
-    // مشاهده‌گر تغییر سایز کانتینر برای ریسپانسیو آنی
     const resizeObserver = new ResizeObserver(() => {
       updateResponsiveLayout();
     });
     resizeObserver.observe(container);
     window.addEventListener('resize', updateResponsiveLayout);
 
-    // ۷. تعامل موس و لمس موبایل (Raycaster)
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
     let activeMesh = null;
@@ -495,7 +476,6 @@ export default function ContactSocial3D() {
     const handlePointerMove = (e) => {
       const hitMesh = getHitMesh(e.clientX, e.clientY);
 
-      // پارالاکس نرم کل صحنه با حرکت موس
       gsap.to(rootGroup.rotation, {
         y: mouse.x * 0.24,
         x: -mouse.y * 0.14,
@@ -530,7 +510,6 @@ export default function ContactSocial3D() {
       }
     };
 
-    // پشتیبانی همزمان از کلیک دسکتاپ و لمس (Tap) در موبایل
     const handleClick = (e) => {
       const targetMesh = getHitMesh(e.clientX, e.clientY) || activeMesh;
       if (targetMesh && targetMesh.userData.url) {
@@ -568,24 +547,71 @@ export default function ContactSocial3D() {
   }, []);
 
   return (
-    <section className="relative w-full h-[460px] sm:h-[560px] md:h-[660px] flex flex-col justify-end items-center overflow-hidden bg-slate-50 dark:bg-[#030712] transition-colors duration-500 py-8 sm:py-12 select-none">
-      {/* هاله نوری پس‌زمینه برای برجستگی لوگوی سه‌بعدی سفید و سورمه‌ای در هر دو تم */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] sm:w-[440px] h-[260px] sm:h-[440px] bg-blue-600/20 dark:bg-sky-500/20 rounded-full blur-[95px] sm:blur-[120px] pointer-events-none" />
+    <section className="relative w-full pt-28 sm:pt-32 md:pt-36 pb-6 sm:pb-10 bg-slate-50 dark:bg-[#030712] transition-colors duration-500 select-none">
+      {/* هدر شناور در بالای صفحه تماس */}
+      <Header />
 
-      {/* بوم سه‌بعدی Three.js */}
+      {/* لایه‌های پس‌زمینه داخل کانتینر overflow-hidden تا دراپ‌داون هدر بریده نشود */}
       <div
-        ref={mountRef}
-        className="absolute inset-0 w-full h-full z-10 touch-pan-y"
-      />
-      
-      {/* کپسول شیشه‌ای پایین */}
-      {/* <div className="relative z-20 pointer-events-none mt-auto px-4">
-        <div className="alpha-glass-bar px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold font-body text-blue-900 dark:text-sky-300 text-center">
-          {hoveredSocial
-            ? `↗ ${hoveredSocial}`
-            : copy?.hint || 'Click on any 3D icon to connect'}
-        </div>
-      </div> */}
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 overflow-hidden z-0"
+      >
+        {/* پس‌زمینه نقطه‌ای برای لایت‌مود */}
+        <div
+          className="dark:hidden absolute inset-0 opacity-85"
+          style={{
+            backgroundImage:
+              'radial-gradient(rgba(30, 58, 138, 0.28) 1.35px, transparent 1.35px)',
+            backgroundSize: '28px 28px',
+            maskImage:
+              'radial-gradient(ellipse 80% 75% at 50% 48%, #000 45%, transparent 100%)',
+            WebkitMaskImage:
+              'radial-gradient(ellipse 80% 75% at 50% 48%, #000 45%, transparent 100%)',
+          }}
+        />
+
+        {/* گرادیان سرمه‌ای تیره برند زیر هدر (فقط لایت‌مود) برای خوانایی کامل لوگو و آیکون‌های سفید */}
+        <div
+          className="dark:hidden absolute inset-x-0 top-0 h-36 sm:h-40 md:h-44 z-[1]"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(15, 29, 64, 0.94) 0%, rgba(23, 37, 84, 0.84) 46%, rgba(33, 54, 104, 0.42) 70%, rgba(33, 54, 104, 0.1) 86%, rgba(33, 54, 104, 0) 100%)',
+          }}
+        />
+
+        {/* پس‌زمینه نقطه‌ای برای دارک‌مود */}
+        <div
+          className="hidden dark:block absolute inset-0 opacity-55"
+          style={{
+            backgroundImage:
+              'radial-gradient(rgba(56, 189, 248, 0.24) 1px, transparent 1px)',
+            backgroundSize: '28px 28px',
+            maskImage:
+              'radial-gradient(ellipse 75% 70% at 50% 45%, #000 35%, transparent 100%)',
+            WebkitMaskImage:
+              'radial-gradient(ellipse 75% 70% at 50% 45%, #000 35%, transparent 100%)',
+          }}
+        />
+
+        {/* هاله‌های نوری بالای صحنه در دارک‌مود */}
+        <div className="hidden dark:block absolute -top-28 left-1/2 -translate-x-1/2 w-[520px] sm:w-[760px] h-[300px] sm:h-[380px] rounded-full blur-[110px] bg-sky-500/18" />
+        <div className="hidden dark:block absolute top-10 left-1/2 -translate-x-1/2 w-[320px] sm:w-[460px] h-[180px] rounded-full blur-[95px] bg-blue-700/20" />
+      </div>
+
+      {/* کانتینر صحنه سه‌بعدی با فاصله مناسب از هدر */}
+      <div className="relative z-10 w-full h-[400px] sm:h-[500px] md:h-[580px] flex items-center justify-center">
+        {/* هاله نوری مرکزی هم‌مرکز با لوگوی سه‌بعدی */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] sm:w-[440px] h-[260px] sm:h-[440px] bg-blue-600/15 dark:bg-sky-500/20 rounded-full blur-[95px] sm:blur-[120px]"
+        />
+
+        {/* بوم سه‌بعدی Three.js */}
+        <div
+          ref={mountRef}
+          className="relative z-10 w-full h-full touch-pan-y"
+        />
+      </div>
     </section>
   );
 }

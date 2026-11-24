@@ -24,10 +24,6 @@ export default function Contact() {
       dir={isRTL ? 'rtl' : 'ltr'}
       className="relative min-h-screen w-full bg-slate-50 dark:bg-[#030712] transition-colors duration-500 overflow-x-hidden"
     >
-      <div className="absolute inset-x-0 top-0 z-30 w-full">
-        <Header />
-      </div>
-
       <main className="w-full block">
         <div className="w-full relative z-10 isolate">
           <ContactSocial3D />

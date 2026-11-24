@@ -81,7 +81,8 @@ export default function Footer() {
     <footer className="w-full pt-28 pb-12 bg-slate-50 dark:bg-[#030712]">
       <div className="container-custom">
         {/* بدنه فوتر با استایل شیشه‌ای کریستالی هماهنگ با هدر */}
-        <div className="alpha-glass-bar p-8 md:p-12 rounded-[2.5rem] transition-colors duration-300">
+        {/*  rounded-[2.5rem]  */}
+        <div className="alpha-glass-bar p-8 md:p-12 transition-colors duration-300">
           
           {/* ستون‌های فوتر */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-10 border-b border-[#213668]/15 dark:border-white/10">
