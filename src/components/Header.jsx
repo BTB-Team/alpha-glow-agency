@@ -251,7 +251,7 @@ export default function Header() {
       const quickServices = db?.services || [];
       return (
         <div className="p-3.5">
-          <p className="font-body !text-[12px] !leading-tight font-bold uppercase tracking-wider text-blue-900 dark:text-sky-300 mb-2.5 px-1">
+          <p className="font-body !text-[12px] !leading-tight font-bold uppercase tracking-wider text-sky-300 mb-2.5 px-1">
             {ts.quickSuggestions}
           </p>
           <div className="flex flex-wrap gap-2">
@@ -405,7 +405,7 @@ export default function Header() {
                           {title}
                         </p>
                         <div className="flex items-center gap-1.5 mt-0.5 !text-[13px] !leading-snug text-slate-600 dark:text-slate-300 truncate">
-                          <span className="text-blue-800 dark:text-sky-300 font-semibold shrink-0">
+                          <span className="text-sky-300 font-semibold shrink-0">
                             {catLabel}
                           </span>
                           <span>•</span>
@@ -467,7 +467,7 @@ export default function Header() {
           </Link>
 
           {/* ابزارها و کنترل‌ها */}
-          <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5">
             {/* سرچ‌بار دسکتاپ و تبلت */}
             <div
               ref={searchDesktopRef}
@@ -489,13 +489,13 @@ export default function Header() {
                 }}
                 onKeyDown={handleSearchKeyDown}
                 placeholder={t.common?.search || (isRTL ? 'جست‌وجو...' : 'Search...')}
-                className={`alpha-glass-control py-2 !text-[14px] !leading-normal font-medium rounded-full text-alpha-blue dark:text-white placeholder:text-slate-500 dark:placeholder:text-white/75 focus:outline-none focus:border-blue-900/50 dark:focus:border-white/60 transition-all duration-300 ${
+                className={`alpha-glass-control py-2 !text-[14px] !leading-normal font-medium rounded-full text-white placeholder:text-white/75 caret-white focus:outline-none focus:border-white/60 transition-all duration-300 ${
                   isSearchOpen || hasQuery ? 'w-56 lg:w-64' : 'w-36 lg:w-44'
                 } ${isRTL ? 'pr-9 pl-8 text-right' : 'pl-9 pr-8 text-left'}`}
               />
               <Search
                 size={15}
-                className="text-alpha-blue dark:text-white absolute pointer-events-none dark:drop-shadow-[0_0_5px_rgba(255,255,255,0.8)]"
+                className="text-white absolute pointer-events-none drop-shadow-[0_0_5px_rgba(255,255,255,0.65)]"
                 style={isRTL ? { right: '14px' } : { left: '14px' }}
               />
 
@@ -507,18 +507,18 @@ export default function Header() {
                     desktopInputRef.current?.focus();
                   }}
                   aria-label="Clear search"
-                  className="absolute text-slate-600 hover:text-slate-950 dark:text-white/80 dark:hover:text-white transition-colors cursor-pointer"
+                  className="absolute text-white/80 hover:text-white transition-colors cursor-pointer"
                   style={isRTL ? { left: '11px' } : { right: '11px' }}
                 >
                   <X size={14} />
                 </button>
               )}
 
-              {/* پنل نتایج زنده دسکتاپ (هماهنگ با لایت و دارک مود) */}
+              {/* پنل نتایج زنده دسکتاپ (همیشه خوانا با متن سفید در هر دو تم) */}
               <div
                 dir={isRTL ? 'rtl' : 'ltr'}
                 aria-hidden={!isSearchOpen}
-                className={`alpha-glass-dropdown absolute top-full mt-3 w-[350px] lg:w-[400px] rounded-2xl z-50 transition-all duration-200 ease-out bg-white/95 dark:bg-[#091229]/95 backdrop-blur-2xl backdrop-saturate-150 border border-slate-200/90 dark:border-white/20 shadow-[0_20px_50px_rgba(15,23,42,0.18)] dark:shadow-[0_22px_55px_rgba(2,6,23,0.85)] ${
+                className={`alpha-glass-dropdown absolute top-full mt-3 w-[350px] lg:w-[400px] rounded-2xl z-50 transition-all duration-200 ease-out !bg-[#091229]/95 backdrop-blur-2xl backdrop-saturate-150 border border-white/20 shadow-[0_22px_55px_rgba(2,6,23,0.85)] text-white ${
                   isRTL ? 'left-0 origin-top-left' : 'right-0 origin-top-right'
                 } ${
                   isSearchOpen

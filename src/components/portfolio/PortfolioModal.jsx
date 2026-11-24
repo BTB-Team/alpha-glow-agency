@@ -196,10 +196,13 @@ export default function PortfolioModal({ project, currentLang, tp, onClose }) {
             <button
               type="button"
               onClick={handleOrderSimilar}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-950 hover:bg-blue-900 text-white dark:bg-sky-400 dark:hover:bg-sky-300 dark:text-slate-950 font-bold !text-[16px] !leading-snug transition-colors cursor-pointer"
+              className="alpha-glass-bar inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-body font-bold !text-[16px] !leading-snug text-blue-950 dark:text-white hover:border-sky-400/60 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 cursor-pointer group"
             >
               <span>{tp.modal.orderSimilar}</span>
-              <ActionArrow size={17} />
+              <ActionArrow
+                size={17}
+                className="text-blue-800 dark:text-sky-400 transition-transform duration-300 group-hover:-translate-y-0.5"
+              />
             </button>
           </div>
         </div>

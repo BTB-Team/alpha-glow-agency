@@ -1,12 +1,13 @@
+import { useRef } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 import { ArrowUpLeft, ArrowUpRight } from 'lucide-react';
 import { useStore } from '../store/useStore';
 import fa from '../locales/fa.json';
 import en from '../locales/en.json';
-import PortfolioCollageStage from '../components/portfolio/PortfolioCollageStage';
 import Header from '../components/Header';
+import PortfolioHero from '../components/portfolio/PortfolioHero';
+import PortfolioCollageStage from '../components/portfolio/PortfolioCollageStage';
 
-// عکس پس‌زمینه آنلاین موقت برای سیکشن CTA (بعداً قابل جایگزینی با تصویر اختصاصی آلفا گلو)
 const CTA_BG_IMAGE =
   'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=80';
 
@@ -14,6 +15,7 @@ export default function PortfolioPage() {
   const { lang } = useParams();
   const [searchParams] = useSearchParams();
   const openProjectModal = useStore((state) => state.openProjectModal);
+  const worksSectionRef = useRef(null);
 
   const currentLang = lang === 'fa' ? 'fa' : 'en';
   const isRTL = currentLang === 'fa';
@@ -31,33 +33,27 @@ export default function PortfolioPage() {
     );
   };
 
+  const handleScrollToWorks = () => {
+    worksSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <main
       dir={isRTL ? 'rtl' : 'ltr'}
-      className="relative w-full min-h-screen overflow-x-clip bg-slate-100 dark:bg-[#030712] transition-colors duration-500 pt-28 pb-0"
+      className="relative w-full min-h-screen overflow-x-clip bg-slate-100 dark:bg-[#030712] transition-colors duration-500 pb-0"
     >
-      <Header/>
-      {/* ۱. هدر و عنوان اصلی صفحه پورتفولیو */}
-      <section className="container-custom mb-8 md:mb-10 px-4 sm:px-6">
-        <div className="flex flex-col items-center text-center">
+      {/* هدر شناور (اگر Header در لایوت اصلی رندر می‌شود، این خط را حذف کن) */}
+      <Header />
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black font-heading tracking-tight text-slate-900 dark:text-white mb-4">
-            <span>{tp.titlePart1} </span>
-            <span className="bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-950 dark:from-white dark:via-sky-200 dark:to-sky-400 bg-clip-text text-transparent font-heading">
-              {tp.titleHighlight}
-            </span>
-          </h1>
+      {/* ۱. هیروی مینیمال و مدرن صفحه پورتفولیو */}
+      <PortfolioHero onScrollToWorks={handleScrollToWorks} />
 
-          <p className="font-body text-slate-600 dark:text-slate-400 max-w-2xl text-sm md:text-base leading-relaxed">
-            {tp.subtitle}
-          </p>
-        </div>
-      </section>
+      {/* ۲. دراپ‌داون فیلتر + صفحه‌بندی + میز کلاژ تعاملی */}
+      <div ref={worksSectionRef} className="pt-8 md:pt-10 scroll-mt-24">
+        <PortfolioCollageStage />
+      </div>
 
-      {/* ۲. کامپوننت مستقل فیلتر + میز کارت‌های نامتقارن + مودال */}
-      <PortfolioCollageStage />
-
-      {/* ۳. سیکشن تمام‌عرض دعوت به اقدام (CTA) متصل به مودال درخواست پروژه */}
+      {/* ۳. سیکشن تمام‌عرض دعوت به اقدام (CTA) */}
       <section className="relative w-full overflow-hidden mt-12 md:mt-20 py-24 sm:py-28 md:py-36 border-t border-slate-200 dark:border-slate-800">
         <img
           src={CTA_BG_IMAGE}
@@ -97,7 +93,7 @@ export default function PortfolioPage() {
           <button
             type="button"
             onClick={handleOpenProjectModal}
-            className="inline-flex items-center gap-2.5 px-8 py-4  bg-white font-body font-bold text-sm sm:text-base shadow-xl transition-all duration-300 hover:-translate-y-0.5 cursor-pointer group alpha-glass-bar"
+            className="inline-flex items-center gap-2.5 px-8 py-4 text-white font-body font-bold text-sm sm:text-base shadow-xl transition-all duration-300 hover:-translate-y-0.5 cursor-pointer group alpha-glass-bar"
           >
             <span>{tp.cta.button}</span>
             <ActionArrow
@@ -110,3 +106,4 @@ export default function PortfolioPage() {
     </main>
   );
 }
+
