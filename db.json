@@ -37,6 +37,10 @@
         "web-sub-2.webp",
         "web-sub-3.webp"
       ],
+      "heroKeyword": {
+        "en": "WEBSITE",
+        "fa": "وب‌سایت"
+      },
       "title": {
         "en": "Website Design",
         "fa": "طراحی وب‌سایت"
@@ -49,6 +53,44 @@
         "en": "We design and develop custom, high-performance websites tailored to your brand goals. From UI/UX wireframing to responsive front-end and secure back-end architecture, our websites deliver seamless user experiences across all devices and convert visitors into loyal customers.",
         "fa": "ما وب‌سایت‌های اختصاصی، سریع و مدرن را متناسب با اهداف تجاری شما طراحی و پیاده‌سازی می‌کنیم. از طراحی رابط و تجربه کاربری (UI/UX) گرفته تا کدنویسی واکنش‌گرا و بهینه‌سازی سرعت و سئو، وب‌سایت‌های ما تجربه‌ای بی‌نقص در تمامی دستگاه‌ها خلق می‌کنند."
       },
+      "estimatedTimeline": {
+        "en": "2 – 5 Weeks",
+        "fa": "۲ تا ۵ هفته"
+      },
+      "idealFor": {
+        "en": ["Growing Companies", "E-Commerce Brands", "Tech Startups", "Service Agencies"],
+        "fa": ["شرکت‌های در حال رشد", "فروشگاه‌های آنلاین", "استارتاپ‌ها", "کسب‌وکارهای خدماتی"]
+      },
+      "deliverables": [
+        {
+          "title": { "en": "Custom UI/UX Design", "fa": "طراحی اختصاصی UI/UX" },
+          "description": {
+            "en": "Tailored wireframes and pixel-perfect interfaces aligned with your brand identity.",
+            "fa": "طراحی رابط کاربری مدرن و منحصربه‌فرد کاملاً هماهنگ با هویت برند شما."
+          }
+        },
+        {
+          "title": { "en": "Responsive Development", "fa": "پیاده‌سازی کاملاً واکنش‌گرا" },
+          "description": {
+            "en": "Flawless performance across desktop, tablet, and mobile screens.",
+            "fa": "نمایش بی‌نقص و سریع در تمامی نمایشگرها از موبایل تا دسکتاپ."
+          }
+        },
+        {
+          "title": { "en": "Speed & Technical SEO", "fa": "بهینه‌سازی سرعت و سئوی پایه" },
+          "description": {
+            "en": "Clean semantic code, fast load times, and search-engine-ready structure.",
+            "fa": "ساختار استاندارد کدنویسی، سرعت بارگذاری بالا و آمادگی کامل برای موتورهای جست‌وجو."
+          }
+        },
+        {
+          "title": { "en": "Admin Panel & Handover", "fa": "پنل مدیریت و آموزش تحویل" },
+          "description": {
+            "en": "Easy content updates with complete documentation and launch support.",
+            "fa": "مدیریت آسان محتوا همراه با راهنمای کامل و پشتیبانی پس از راه‌اندازی."
+          }
+        }
+      ],
       "samples": [
         {
           "id": "web-sample-1",
@@ -80,6 +122,10 @@
         "graphic-sub-2.webp",
         "graphic-sub-3.webp"
       ],
+      "heroKeyword": {
+        "en": "GRAPHIC",
+        "fa": "گرافیک"
+      },
       "title": {
         "en": "Graphic Design",
         "fa": "طراحی گرافیک"
@@ -92,6 +138,44 @@
         "en": "Our creative graphic design team transforms complex concepts into captivating visual stories. Whether you need social media kits, marketing banners, digital illustrations, or promotional layouts, we craft aesthetics that capture attention instantly.",
         "fa": "تیم خلاق طراحی گرافیک ما مفاهیم و ایده‌های شما را به داستان‌های بصری چشم‌نواز تبدیل می‌کند. از طراحی قالب‌های شبکه‌های اجتماعی و بنرهای تبلیغاتی گرفته تا تصویرسازی‌های دیجیتال و کاتالوگ‌ها، ما طرح‌هایی خلق می‌کنیم که در اولین نگاه مخاطب را جذب می‌کنند."
       },
+      "estimatedTimeline": {
+        "en": "3 – 10 Days",
+        "fa": "۳ تا ۱۰ روز کاری"
+      },
+      "idealFor": {
+        "en": ["Social Media Campaigns", "Product Launches", "Events & Exhibitions", "Digital Marketers"],
+        "fa": ["کمپین‌های شبکه‌های اجتماعی", "معرفی محصولات جدید", "رویدادها و نمایشگاه‌ها", "تیم‌های مارکتینگ"]
+      },
+      "deliverables": [
+        {
+          "title": { "en": "Social Media Visual Kits", "fa": "پکیج بصری شبکه‌های اجتماعی" },
+          "description": {
+            "en": "Cohesive post, story, and ad templates engineered for high engagement.",
+            "fa": "قالب‌های یکپارچه پست، استوری و بنرهای تبلیغاتی برای افزایش تعامل مخاطب."
+          }
+        },
+        {
+          "title": { "en": "Campaign & Ad Key Visuals", "fa": "طراحی کلید بصری کمپین‌ها" },
+          "description": {
+            "en": "Bold promotional posters, banners, and digital campaign assets.",
+            "fa": "پوسترها، بنرهای تبلیغاتی و المان‌های بصری متمایز برای کمپین‌های فروش."
+          }
+        },
+        {
+          "title": { "en": "Catalogs & Presentations", "fa": "کاتالوگ و اسلایدهای ارائه" },
+          "description": {
+            "en": "Structured corporate profiles, pitch decks, and product catalogs.",
+            "fa": "طراحی حرفه‌ای کاتالوگ محصولات، پروفایل شرکتی و اسلایدهای معرفی."
+          }
+        },
+        {
+          "title": { "en": "Editable Source Files", "fa": "فایل‌های استاندارد و لایه‌باز" },
+          "description": {
+            "en": "Organized exports in web-ready and high-resolution formats.",
+            "fa": "تحویل خروجی‌های بهینه‌شده برای وب و شبکه‌های اجتماعی همراه با فایل اصلی."
+          }
+        }
+      ],
       "samples": [
         {
           "id": "graphic-sample-1",
@@ -123,6 +207,10 @@
         "branding-sub-2.webp",
         "branding-sub-3.webp"
       ],
+      "heroKeyword": {
+        "en": "BRANDING",
+        "fa": "برندینگ"
+      },
       "title": {
         "en": "Branding",
         "fa": "برندینگ و هویت بصری"
@@ -135,6 +223,44 @@
         "en": "A strong brand is more than just a logo. We develop comprehensive brand identities including logo systems, typography, color palettes, brand guidelines (Brand Book), and tone of voice that establish trust and set you apart in your industry.",
         "fa": "یک برند قدرتمند فراتر از یک لوگوی ساده است. ما هویت جامع برند شما شامل طراحی لوگو، پالت رنگی، تایپوگرافی، کتابچه راهنمای برند (Brand Book) و لحن ارتباطی را به گونه‌ای خلق می‌کنیم که اعتماد مخاطبان را جلب کرده و شما را در بازار متمایز سازد."
       },
+      "estimatedTimeline": {
+        "en": "2 – 4 Weeks",
+        "fa": "۲ تا ۴ هفته"
+      },
+      "idealFor": {
+        "en": ["New Businesses", "Company Rebranding", "Luxury Products", "Personal Brands"],
+        "fa": ["کسب‌وکارهای نوپا", "ری‌برندینگ شرکت‌ها", "محصولات لوکس", "برندهای شخصی و تخصصی"]
+      },
+      "deliverables": [
+        {
+          "title": { "en": "Primary & Secondary Logo System", "fa": "سیستم کامل لوگو و نشان" },
+          "description": {
+            "en": "Versatile logo marks, monochrome versions, and responsive brand icons.",
+            "fa": "لوگوی اصلی، نسخه‌های تک‌رنگ، مینیمال و آیکون‌های کاربردی برای تمام فضاها."
+          }
+        },
+        {
+          "title": { "en": "Color Palette & Typography", "fa": "پالت رنگی و سیستم تایپوگرافی" },
+          "description": {
+            "en": "Curated brand colors and font pairings for digital and physical touchpoints.",
+            "fa": "تعریف کدهای رنگ اختصاصی و فونت‌های رسمی برای هماهنگی کامل دیجیتال و چاپ."
+          }
+        },
+        {
+          "title": { "en": "Comprehensive Brand Book", "fa": "کتابچه راهنمای برند (Brand Book)" },
+          "description": {
+            "en": "Clear usage rules, spacing guidelines, and visual do's & don'ts.",
+            "fa": "سند جامع اصول استفاده از لوگو، حریم امن، الگوها و قوانین هویت بصری."
+          }
+        },
+        {
+          "title": { "en": "Stationery & Real Mockups", "fa": "ست اداری و پیش‌نمایش واقعی" },
+          "description": {
+            "en": "Business cards, letterheads, and realistic brand application previews.",
+            "fa": "طراحی ست اداری و موکاپ‌های واقعی برای مشاهده جلوه برند در دنیای واقعی."
+          }
+        }
+      ],
       "samples": [
         {
           "id": "branding-sample-1",
@@ -166,6 +292,10 @@
         "print-sub-2.webp",
         "print-sub-3.webp"
       ],
+      "heroKeyword": {
+        "en": "PRINT",
+        "fa": "چاپ"
+      },
       "title": {
         "en": "Print",
         "fa": "چاپ و بسته‌بندی"
@@ -178,6 +308,44 @@
         "en": "Bring your brand into the physical world with our premium print and packaging solutions. From luxury business cards with gold foil and embossed stationery to brochures, packaging boxes, and large-format banners, we ensure flawless color accuracy and material quality.",
         "fa": "با خدمات چاپ و بسته‌بندی ممتاز ما، برند خود را در دنیای واقعی ملموس کنید. از کارت‌های ویزیت لوکس با طلاکوب و ست اداری برجسته گرفته تا بروشورها، جعبه‌های بسته‌بندی و استندهای تبلیغاتی، ما دقت رنگ و کیفیت متریال بی‌نقص را تضمین می‌کنیم."
       },
+      "estimatedTimeline": {
+        "en": "5 – 14 Days",
+        "fa": "۵ تا ۱۴ روز کاری"
+      },
+      "idealFor": {
+        "en": ["Retail & Packaging", "Corporate Offices", "Restaurants & Cafes", "Trade Shows"],
+        "fa": ["بسته‌بندی محصولات", "دفاتر و شرکت‌ها", "کافه‌ها و رستوران‌ها", "غرفه‌های نمایشگاهی"]
+      },
+      "deliverables": [
+        {
+          "title": { "en": "Print-Ready CMYK Files", "fa": "فایل‌های استاندارد و آماده چاپ" },
+          "description": {
+            "en": "Exact bleed margins, color profiles, and high-DPI press specifications.",
+            "fa": "تنظیم دقیق حاشیه برش، پروفایل رنگی CMYK و رزولوشن استاندارد چاپخانه."
+          }
+        },
+        {
+          "title": { "en": "Custom Packaging & Die-Lines", "fa": "طراحی بسته‌بندی و خط تیغ" },
+          "description": {
+            "en": "Structural box designs, labels, and bags tailored to your product.",
+            "fa": "طراحی جعبه، لیبل، ساک دستی و خط تیغ دقیق متناسب با ابعاد محصول."
+          }
+        },
+        {
+          "title": { "en": "Luxury Finishing Specs", "fa": "تنظیمات چاپ ویژه و لوکس" },
+          "description": {
+            "en": "Spot UV, gold/silver foil stamping, and embossing layers prepared accurately.",
+            "fa": "تفکیک لایه‌های طلاکوب، یووی موضعی، برجسته‌سازی و روکش‌های خاص."
+          }
+        },
+        {
+          "title": { "en": "Brochures & Large Format", "fa": "بروشور و سازه‌های تبلیغاتی" },
+          "description": {
+            "en": "Stationery sets, menus, exhibition roll-ups, and outdoor billboards.",
+            "fa": "ست اداری، بروشور، منو، استندهای نمایشگاهی و بنرهای محیطی باکیفیت."
+          }
+        }
+      ],
       "samples": [
         {
           "id": "print-sample-1",
