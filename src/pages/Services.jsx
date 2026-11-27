@@ -6,6 +6,8 @@ import ServicesHero from '../components/services/ServicesHero';
 import ServiceOverviewEditorial from '../components/services/ServiceOverviewEditorial';
 import ServiceDeliverablesSpotlight from '../components/services/ServiceDeliverablesSpotlight';
 import ServicePortfolioSlider from '../components/services/ServicePortfolioSlider';
+import FAQSection from '../components/FAQSection';
+
 
 export default function Services() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -49,6 +51,9 @@ export default function Services() {
       />
 
       <ServicePortfolioSlider activeService={activeServiceSlug} />
+
+      <FAQSection activeService={activeServiceSlug} />
     </div>
   );
 }
+

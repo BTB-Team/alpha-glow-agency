@@ -13,6 +13,7 @@ import {
   Info,
   Briefcase,
   Layers,
+  HelpCircle,
   Mail,
   Languages,
   ArrowUpLeft,
@@ -132,12 +133,12 @@ export default function Header() {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [isMenuOpen, isSearchOpen]);
 
-  // بستن منوها هنگام تغییر مسیر
+  // بستن منوها هنگام تغییر مسیر یا هش
   useEffect(() => {
     setIsMenuOpen(false);
     setIsSearchOpen(false);
     setActiveResultIdx(-1);
-  }, [location.pathname, location.search]);
+  }, [location.pathname, location.search, location.hash]);
 
   useEffect(() => {
     setActiveResultIdx(-1);
@@ -148,7 +149,7 @@ export default function Header() {
     sessionStorage.setItem('preserve_scroll_y', currentScrollY.toString());
 
     const pathWithoutLang = location.pathname.replace(/^\/(fa|en)/, '');
-    navigate(`/${newLang}${pathWithoutLang || ''}${location.search}`);
+    navigate(`/${newLang}${pathWithoutLang || ''}${location.search}${location.hash}`);
     setIsMenuOpen(false);
   };
 
@@ -231,6 +232,13 @@ export default function Header() {
       icon: Layers,
     },
     {
+      id: 'faq',
+      to: `/${currentLang}#faq`,
+      label: t.nav?.faq || (isRTL ? 'سوالات متداول' : 'FAQ'),
+      icon: HelpCircle,
+      isHomeFaq: true,
+    },
+    {
       id: 'contact',
       to: `/${currentLang}/contact`,
       label: t.nav?.contact || (isRTL ? 'تماس با ما' : 'Contact'),
@@ -238,11 +246,40 @@ export default function Header() {
     },
   ];
 
+  const isOnHomePage = () => {
+    const homePath = `/${currentLang}`;
+    return location.pathname === homePath || location.pathname === `${homePath}/`;
+  };
+
   const isItemActive = (item) => {
+    if (item.isHomeFaq) {
+      return isOnHomePage() && location.hash === '#faq';
+    }
     if (item.exact) {
-      return location.pathname === item.to || location.pathname === `${item.to}/`;
+      return isOnHomePage() && location.hash !== '#faq';
     }
     return location.pathname.startsWith(item.to);
+  };
+
+  // هدایت قطعی لینک FAQ هدر به بخش #faq در صفحه اصلی
+  const handleNavItemClick = (e, item) => {
+    setIsMenuOpen(false);
+    if (!item.isHomeFaq) return;
+
+    e.preventDefault();
+    const homePath = `/${currentLang}`;
+
+    if (isOnHomePage()) {
+      if (location.hash !== '#faq') {
+        navigate(`${homePath}#faq`, { replace: true });
+      }
+      document.getElementById('faq')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    } else {
+      navigate(`${homePath}#faq`);
+    }
   };
 
   // بدنه مشترک لیست نتایج با سایز کنترل‌شده و رنگ‌بندی کامل لایت/دارک
@@ -467,7 +504,7 @@ export default function Header() {
           </Link>
 
           {/* ابزارها و کنترل‌ها */}
-              <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2.5">
             {/* سرچ‌بار دسکتاپ و تبلت */}
             <div
               ref={searchDesktopRef}
@@ -514,7 +551,7 @@ export default function Header() {
                 </button>
               )}
 
-              {/* پنل نتایج زنده دسکتاپ (همیشه خوانا با متن سفید در هر دو تم) */}
+              {/* پنل نتایج زنده دسکتاپ */}
               <div
                 dir={isRTL ? 'rtl' : 'ltr'}
                 aria-hidden={!isSearchOpen}
@@ -661,7 +698,7 @@ export default function Header() {
                         <Link
                           to={item.to}
                           tabIndex={isMenuOpen ? 0 : -1}
-                          onClick={() => setIsMenuOpen(false)}
+                          onClick={(e) => handleNavItemClick(e, item)}
                           className={`relative flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm transition-all duration-200 ${
                             active
                               ? 'bg-sky-500/25 text-white font-bold border border-cyan-300/70 shadow-[0_0_18px_rgba(56,189,248,0.35),inset_0_1px_1px_rgba(255,255,255,0.4)]'

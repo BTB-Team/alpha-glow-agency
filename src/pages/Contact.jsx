@@ -1,23 +1,30 @@
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import Header from '../components/Header';
+import { useParams, useLocation } from 'react-router-dom';
 import ContactSocial3D from '../components/contact/ContactSocial3D';
 import ContactSocialCards from '../components/contact/ContactSocialCards';
 import ContactSimpleForm from '../components/contact/ContactSimpleForm';
-// import Header from '../components/Header';
-// import Footer from '../components/Footer';
-// import ContactSocial3D from '../components/ContactSocial3D';
-// import ContactSocialCards from '../components/ContactSocialCards';
-// import ContactSimpleForm from '../components/ContactSimpleForm';
 
 export default function Contact() {
   const { lang } = useParams();
+  const { hash, key } = useLocation();
   const currentLang = lang === 'fa' ? 'fa' : 'en';
   const isRTL = currentLang === 'fa';
 
   useEffect(() => {
+    if (hash) {
+      const targetId = hash.replace('#', '');
+      const timer = setTimeout(() => {
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 150);
+
+      return () => clearTimeout(timer);
+    }
+
     window.scrollTo(0, 0);
-  }, [currentLang]);
+  }, [currentLang, hash, key]);
 
   return (
     <div
@@ -33,7 +40,10 @@ export default function Contact() {
           <ContactSocialCards />
         </div>
 
-        <div className="w-full relative z-20 isolate">
+        <div
+          id="contact-form"
+          className="w-full relative z-20 isolate scroll-mt-24"
+        >
           <ContactSimpleForm />
         </div>
       </main>
