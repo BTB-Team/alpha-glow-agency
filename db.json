@@ -29,91 +29,6 @@
   "services": [
     {
       "id": "service-1",
-      "slug": "website-design",
-      "icon": "code-window",
-      "mainImage": "web-main.webp",
-      "subImages": [
-        "web-sub-1.webp",
-        "web-sub-2.webp",
-        "web-sub-3.webp"
-      ],
-      "heroKeyword": {
-        "en": "WEBSITE",
-        "fa": "وب‌سایت"
-      },
-      "title": {
-        "en": "Website Design",
-        "fa": "طراحی وب‌سایت"
-      },
-      "shortDescription": {
-        "en": "Modern, fast and responsive websites for your business.",
-        "fa": "وب‌سایت‌های مدرن، سریع و واکنش‌گرا برای کسب‌وکار شما."
-      },
-      "fullDescription": {
-        "en": "We design and develop custom, high-performance websites tailored to your brand goals. From UI/UX wireframing to responsive front-end and secure back-end architecture, our websites deliver seamless user experiences across all devices and convert visitors into loyal customers.",
-        "fa": "ما وب‌سایت‌های اختصاصی، سریع و مدرن را متناسب با اهداف تجاری شما طراحی و پیاده‌سازی می‌کنیم. از طراحی رابط و تجربه کاربری (UI/UX) گرفته تا کدنویسی واکنش‌گرا و بهینه‌سازی سرعت و سئو، وب‌سایت‌های ما تجربه‌ای بی‌نقص در تمامی دستگاه‌ها خلق می‌کنند."
-      },
-      "estimatedTimeline": {
-        "en": "2 – 5 Weeks",
-        "fa": "۲ تا ۵ هفته"
-      },
-      "idealFor": {
-        "en": ["Growing Companies", "E-Commerce Brands", "Tech Startups", "Service Agencies"],
-        "fa": ["شرکت‌های در حال رشد", "فروشگاه‌های آنلاین", "استارتاپ‌ها", "کسب‌وکارهای خدماتی"]
-      },
-      "deliverables": [
-        {
-          "title": { "en": "Custom UI/UX Design", "fa": "طراحی اختصاصی UI/UX" },
-          "description": {
-            "en": "Tailored wireframes and pixel-perfect interfaces aligned with your brand identity.",
-            "fa": "طراحی رابط کاربری مدرن و منحصربه‌فرد کاملاً هماهنگ با هویت برند شما."
-          }
-        },
-        {
-          "title": { "en": "Responsive Development", "fa": "پیاده‌سازی کاملاً واکنش‌گرا" },
-          "description": {
-            "en": "Flawless performance across desktop, tablet, and mobile screens.",
-            "fa": "نمایش بی‌نقص و سریع در تمامی نمایشگرها از موبایل تا دسکتاپ."
-          }
-        },
-        {
-          "title": { "en": "Speed & Technical SEO", "fa": "بهینه‌سازی سرعت و سئوی پایه" },
-          "description": {
-            "en": "Clean semantic code, fast load times, and search-engine-ready structure.",
-            "fa": "ساختار استاندارد کدنویسی، سرعت بارگذاری بالا و آمادگی کامل برای موتورهای جست‌وجو."
-          }
-        },
-        {
-          "title": { "en": "Admin Panel & Handover", "fa": "پنل مدیریت و آموزش تحویل" },
-          "description": {
-            "en": "Easy content updates with complete documentation and launch support.",
-            "fa": "مدیریت آسان محتوا همراه با راهنمای کامل و پشتیبانی پس از راه‌اندازی."
-          }
-        }
-      ],
-      "samples": [
-        {
-          "id": "web-sample-1",
-          "title": {
-            "en": "Corporate FinTech Portal",
-            "fa": "پورتال شرکتی فین‌تک"
-          },
-          "image": "web-1.webp",
-          "link": "corporate-fintech-portal"
-        },
-        {
-          "id": "web-sample-2",
-          "title": {
-            "en": "Luxury E-Commerce Store",
-            "fa": "فروشگاه آنلاین محصولات لوکس"
-          },
-          "image": "web-2.webp",
-          "link": "luxury-ecommerce-store"
-        }
-      ]
-    },
-    {
-      "id": "service-2",
       "slug": "graphic-design",
       "icon": "pen-bezier",
       "mainImage": "graphic-main.webp",
@@ -146,6 +61,33 @@
         "en": ["Social Media Campaigns", "Product Launches", "Events & Exhibitions", "Digital Marketers"],
         "fa": ["کمپین‌های شبکه‌های اجتماعی", "معرفی محصولات جدید", "رویدادها و نمایشگاه‌ها", "تیم‌های مارکتینگ"]
       },
+      "roadmap": [
+        {
+          "step": "01",
+          "title": { "fa": "شناخت پیام", "en": "Creative Brief" },
+          "short": { "fa": "تحلیل هدف کمپین و شناخت مخاطب هدف", "en": "Campaign goals & audience insight" }
+        },
+        {
+          "step": "02",
+          "title": { "fa": "ایده‌پردازی بصری", "en": "Concept & Mood" },
+          "short": { "fa": "تهیه مودبورد و مسیر خلاقانه طرح", "en": "Moodboard & visual direction" }
+        },
+        {
+          "step": "03",
+          "title": { "fa": "طراحی و ترکیب‌بندی", "en": "Visual Design" },
+          "short": { "fa": "اجرای دقیق رنگ، تایپوگرافی و فرم", "en": "Color, typography & layout craft" }
+        },
+        {
+          "step": "04",
+          "title": { "fa": "بازبینی و اصلاح", "en": "Refinement" },
+          "short": { "fa": "اعمال نظرات شما و صیقل جزئیات", "en": "Feedback rounds & final polish" }
+        },
+        {
+          "step": "05",
+          "title": { "fa": "خروجی و تحویل", "en": "Final Delivery" },
+          "short": { "fa": "تحویل فایل‌های آماده انتشار و لایه‌باز", "en": "Web-ready assets & source files" }
+        }
+      ],
       "deliverables": [
         {
           "title": { "en": "Social Media Visual Kits", "fa": "پکیج بصری شبکه‌های اجتماعی" },
@@ -198,6 +140,118 @@
       ]
     },
     {
+      "id": "service-2",
+      "slug": "website-design",
+      "icon": "code-window",
+      "mainImage": "web-main.webp",
+      "subImages": [
+        "web-sub-1.webp",
+        "web-sub-2.webp",
+        "web-sub-3.webp"
+      ],
+      "heroKeyword": {
+        "en": "WEBSITE",
+        "fa": "وب‌سایت"
+      },
+      "title": {
+        "en": "Website Design",
+        "fa": "طراحی وب‌سایت"
+      },
+      "shortDescription": {
+        "en": "Modern, fast and responsive websites for your business.",
+        "fa": "وب‌سایت‌های مدرن، سریع و واکنش‌گرا برای کسب‌وکار شما."
+      },
+      "fullDescription": {
+        "en": "We design and develop custom, high-performance websites tailored to your brand goals. From UI/UX wireframing to responsive front-end and secure back-end architecture, our websites deliver seamless user experiences across all devices and convert visitors into loyal customers.",
+        "fa": "ما وب‌سایت‌های اختصاصی، سریع و مدرن را متناسب با اهداف تجاری شما طراحی و پیاده‌سازی می‌کنیم. از طراحی رابط و تجربه کاربری (UI/UX) گرفته تا کدنویسی واکنش‌گرا و بهینه‌سازی سرعت و سئو، وب‌سایت‌های ما تجربه‌ای بی‌نقص در تمامی دستگاه‌ها خلق می‌کنند."
+      },
+      "estimatedTimeline": {
+        "en": "2 – 5 Weeks",
+        "fa": "۲ تا ۵ هفته"
+      },
+      "idealFor": {
+        "en": ["Growing Companies", "E-Commerce Brands", "Tech Startups", "Service Agencies"],
+        "fa": ["شرکت‌های در حال رشد", "فروشگاه‌های آنلاین", "استارتاپ‌ها", "کسب‌وکارهای خدماتی"]
+      },
+      "roadmap": [
+        {
+          "step": "01",
+          "title": { "fa": "تحلیل و معماری", "en": "Discovery & Scope" },
+          "short": { "fa": "بررسی اهداف تجاری، مخاطب و نقشه صفحات", "en": "Business goals, sitemap & user flow" }
+        },
+        {
+          "step": "02",
+          "title": { "fa": "طراحی رابط UI/UX", "en": "UI/UX Design" },
+          "short": { "fa": "وایرفریم و طراحی مدرن واکنش‌گرا", "en": "Modern, conversion-focused interface" }
+        },
+        {
+          "step": "03",
+          "title": { "fa": "توسعه و کدنویسی", "en": "Development" },
+          "short": { "fa": "پیاده‌سازی سریع، امن و استاندارد", "en": "Fast, clean & responsive build" }
+        },
+        {
+          "step": "04",
+          "title": { "fa": "تست و بهینه‌سازی", "en": "QA & SEO" },
+          "short": { "fa": "بهینه‌سازی سرعت، سئو و تست دستگاه‌ها", "en": "Speed tuning, SEO & cross-device QA" }
+        },
+        {
+          "step": "05",
+          "title": { "fa": "انتشار و تحویل", "en": "Launch & Support" },
+          "short": { "fa": "راه‌اندازی نهایی، آموزش پنل و پشتیبانی", "en": "Go-live, admin handover & support" }
+        }
+      ],
+      "deliverables": [
+        {
+          "title": { "en": "Custom UI/UX Design", "fa": "طراحی اختصاصی UI/UX" },
+          "description": {
+            "en": "Tailored wireframes and pixel-perfect interfaces aligned with your brand identity.",
+            "fa": "طراحی رابط کاربری مدرن و منحصربه‌فرد کاملاً هماهنگ با هویت برند شما."
+          }
+        },
+        {
+          "title": { "en": "Responsive Development", "fa": "پیاده‌سازی کاملاً واکنش‌گرا" },
+          "description": {
+            "en": "Flawless performance across desktop, tablet, and mobile screens.",
+            "fa": "نمایش بی‌نقص و سریع در تمامی نمایشگرها از موبایل تا دسکتاپ."
+          }
+        },
+        {
+          "title": { "en": "Speed & Technical SEO", "fa": "بهینه‌سازی سرعت و سئوی پایه" },
+          "description": {
+            "en": "Clean semantic code, fast load times, and search-engine-ready structure.",
+            "fa": "ساختار استاندارد کدنویسی، سرعت بارگذاری بالا و آمادگی کامل برای موتورهای جست‌وجو."
+          }
+        },
+        {
+          "title": { "en": "Admin Panel & Handover", "fa": "پنل مدیریت و آموزش تحویل" },
+          "description": {
+            "en": "Easy content updates with complete documentation and launch support.",
+            "fa": "مدیریت آسان محتوا همراه با راهنمای کامل و پشتیبانی پس از راه‌اندازی."
+          }
+        }
+      ],
+      "samples": [
+        {
+          "id": "web-sample-1",
+          "title": {
+            "en": "Corporate FinTech Portal",
+            "fa": "پورتال شرکتی فین‌تک"
+          },
+          "image": "web-1.webp",
+          "link": "corporate-fintech-portal"
+        },
+        {
+          "id": "web-sample-2",
+          "title": {
+            "en": "Luxury E-Commerce Store",
+            "fa": "فروشگاه آنلاین محصولات لوکس"
+          },
+          "image": "web-2.webp",
+          "link": "luxury-ecommerce-store"
+        }
+      ]
+    },
+    {
       "id": "service-3",
       "slug": "branding",
       "icon": "alpha-logo",
@@ -231,6 +285,33 @@
         "en": ["New Businesses", "Company Rebranding", "Luxury Products", "Personal Brands"],
         "fa": ["کسب‌وکارهای نوپا", "ری‌برندینگ شرکت‌ها", "محصولات لوکس", "برندهای شخصی و تخصصی"]
       },
+      "roadmap": [
+        {
+          "step": "01",
+          "title": { "fa": "کشف و استراتژی", "en": "Brand Discovery" },
+          "short": { "fa": "تحلیل بازار، رقبا و جایگاه برند", "en": "Market audit & brand positioning" }
+        },
+        {
+          "step": "02",
+          "title": { "fa": "طراحی سیستم لوگو", "en": "Logo System" },
+          "short": { "fa": "خلق نشان اصلی، تک‌رنگ و نسخه‌ها", "en": "Primary mark & versatile lockups" }
+        },
+        {
+          "step": "03",
+          "title": { "fa": "زبان بصری برند", "en": "Visual Identity" },
+          "short": { "fa": "تعیین پالت رنگ، فونت و الگوها", "en": "Color palette, fonts & patterns" }
+        },
+        {
+          "step": "04",
+          "title": { "fa": "کاربرد و موکاپ", "en": "Brand Touchpoints" },
+          "short": { "fa": "طراحی ست اداری و پیش‌نمایش واقعی", "en": "Stationery & realistic mockups" }
+        },
+        {
+          "step": "05",
+          "title": { "fa": "تدوین برندبوک", "en": "Brand Book" },
+          "short": { "fa": "سند جامع راهنمای استفاده از برند", "en": "Complete guidelines & master kit" }
+        }
+      ],
       "deliverables": [
         {
           "title": { "en": "Primary & Secondary Logo System", "fa": "سیستم کامل لوگو و نشان" },
@@ -316,6 +397,33 @@
         "en": ["Retail & Packaging", "Corporate Offices", "Restaurants & Cafes", "Trade Shows"],
         "fa": ["بسته‌بندی محصولات", "دفاتر و شرکت‌ها", "کافه‌ها و رستوران‌ها", "غرفه‌های نمایشگاهی"]
       },
+      "roadmap": [
+        {
+          "step": "01",
+          "title": { "fa": "مشخصات و متریال", "en": "Print Specs" },
+          "short": { "fa": "انتخاب قطع، جنس کاغذ و نوع چاپ", "en": "Dimensions, stock & finish type" }
+        },
+        {
+          "step": "02",
+          "title": { "fa": "طراحی و خط تیغ", "en": "Layout & Die-Line" },
+          "short": { "fa": "صفحه‌آرایی دقیق و ساختار برش", "en": "Grid design & structural die-line" }
+        },
+        {
+          "step": "03",
+          "title": { "fa": "آماده‌سازی چاپ", "en": "Pre-Press Setup" },
+          "short": { "fa": "تنظیم CMYK، حاشیه برش و رزولوشن", "en": "CMYK profiles, bleed & 300 DPI" }
+        },
+        {
+          "step": "04",
+          "title": { "fa": "تنظیمات چاپ ویژه", "en": "Special Finishes" },
+          "short": { "fa": "تفکیک لایه طلاکوب، یووی و برجسته", "en": "Foil stamping, spot UV & emboss" }
+        },
+        {
+          "step": "05",
+          "title": { "fa": "کنترل و تحویل", "en": "Press Handover" },
+          "short": { "fa": "تایید رنگ و تحویل فایل چاپخانه", "en": "Final proof & print-ready files" }
+        }
+      ],
       "deliverables": [
         {
           "title": { "en": "Print-Ready CMYK Files", "fa": "فایل‌های استاندارد و آماده چاپ" },
@@ -367,393 +475,393 @@
         }
       ]
     }
-  ],
-"portfolio": [
-  {
-    "id": "port-1",
-    "slug": "alpha-glow-website",
-    "category": "website-design",
-    "icon": "globe",
-    "createdAt": "2026-03-01",
-    "mainImage": "alpha-glow-web.webp",
-    "previewVideo": "https://www.shutterstock.com/shutterstock/videos/4109113279/preview/stock-footage-futuristic-digital-data-network-with-cybersecurity-dashboards-analytics-interfaces-and-high-speed.webm",
-    "subImages": [
-      "alpha-glow-web-1.webp",
-      "alpha-glow-web-2.webp"
-    ],
-    "title": {
-      "en": "Alpha Glow Website",
-      "fa": "وب‌سایت آژانس آلفا گلو"
-    },
-    "client": {
-      "en": "Alpha Glow Agency",
-      "fa": "آژانس دیجیتال آلفا گلو"
-    },
-    "shortDescription": {
-      "en": "Modern glassmorphic agency platform with 3D visual depth.",
-      "fa": "پلتفرم مدرن شیشه‌ای با عمق بصری سه‌بعدی برای آژانس خلاقیت."
-    },
-    "fullDescription": {
-      "en": "Designed and developed the official bilingual web platform for Alpha Glow Agency featuring custom 3D glassmorphism, interactive GSAP animations, and high-speed performance.",
-      "fa": "طراحی و توسعه وب‌سایت رسمی و دوزبانه آژانس آلفا گلو با رابط کاربری شیشه‌ای (Glassmorphism)، انیمیشن‌های تعاملی و سرعت بارگذاری بالا."
-    },
-    "testimonials": [
-      {
-        "id": "t1",
-        "name": { "fa": "سینا کریم‌پور", "en": "Sina Karimpour" },
-        "role": { "fa": "مدیر محصول دیجیتال", "en": "Digital Product Lead" },
-        "comment": {
-          "fa": "سرعت بارگذاری، دقت در جزئیات رابط کاربری و پیاده‌سازی دوزبانه سایت فراتر از انتظار بود.",
-          "en": "The loading speed, UI attention to detail, and bilingual implementation exceeded our expectations."
-        },
-        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgV2A-HdVxt5ydbv5re4yaEIl8DSkcUjR-t8AL3MAUcQ&s=10",
-        "isFeaturedOnHome": true
-      }
-    ]
-  },
-  {
-    "id": "port-2",
-    "slug": "amovi-travel-app",
-    "category": "website-design",
-    "icon": "smartphone",
-    "createdAt": "2026-02-20",
-    "mainImage": "amovi-app.webp",
-    "previewVideo": "https://www.shutterstock.com/shutterstock/videos/3780293109/preview/stock-footage-fast-moving-silver-car-on-the-road.webm",
-    "suImages": [
-      "amovi-app-1.webp",
-      "amovi-app-2.webp"
-    ],
-    "title": {
-      "en": "Amovi Travel App",
-      "fa": "اپلیکیشن و وب‌سایت گردشگری آمووی"
-    },
-    "client": {
-      "en": "Amovi Travel",
-      "fa": "شرکت گردشگری آمووی"
-    },
-    "shortDescription": {
-      "en": "Seamless flight and tour booking experience across devices.",
-      "fa": "تجربه کاربری مدرن برای رزرو آنلاین پرواز و تورهای مسافرتی."
-    },
-    "fullDescription": {
-      "en": "A complete UI/UX design and responsive web application for Amovi Travel, enabling users to explore destinations and book tickets effortlessly.",
-      "fa": "طراحی رابط کاربری و پیاده‌سازی وب‌اپلیکیشن واکنش‌گرا برای جستجوی مقاصد گردشگری و رزرو آنلاین بلیط."
-    },
-    "testimonials": [
-      {
-        "id": "t2",
-        "name": { "fa": "مریم رضایی", "en": "Maryam Rezaei" },
-        "role": { "fa": "مدیر مارکتینگ آمووی", "en": "Marketing Manager at Amovi" },
-        "comment": {
-          "fa": "پروژه طراحی وب‌اپلیکیشن با تسلط کامل و حوصله زیاد پیاده‌سازی شد و نرخ رزرو آنلاین ما رشد چشمگیری داشت.",
-          "en": "The web application was delivered with deep expertise, resulting in a noticeable boost in our online bookings."
-        },
-        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTagYQtNJUh94DmbBRnP2C2UINjhmAU4jnAyrBCf-eSdQ&s=10",
-        "isFeaturedOnHome": true
-      }
-    ]
-  },
-  {
-    "id": "port-3",
-    "slug": "cmx-connect-partnership",
-    "category": "branding",
-    "icon": "fingerprint",
-    "createdAt": "2026-03-02",
-    "mainImage": "cmx-branding.webp",
-    "previewVideo": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-    "subImages": [
-      "cmx-branding-1.webp",
-      "cmx-branding-2.webp"
-    ],
-    "title": {
-      "en": "CMX & AG Brand Identity",
-      "fa": "هویت بصری رویداد CMX Connect"
-    },
-    "client": {
-      "en": "CMX Connect",
-      "fa": "رویداد CMX Connect"
-    },
-    "shortDescription": {
-      "en": "Creative partnership and complete event branding system.",
-      "fa": "همکاری خلاقانه و طراحی جامع هویت بصری رویداد."
-    },
-    "fullDescription": {
-      "en": "Developed the complete visual identity, stage backdrops, badges, and promotional branding for the CMX & Alpha Glow creative partnership.",
-      "fa": "طراحی هویت بصری، استندها، بج‌های شناسایی و اقلام تبلیغاتی در قالب همکاری خلاقانه CMX و آلفا گلو."
-    },
-    "testimonials": [
-      {
-        "id": "t3",
-        "name": { "fa": "دکتر پارسا", "en": "Dr. Parsa" },
-        "role": { "fa": "برگزارکننده رویداد CMX", "en": "Event Director at CMX" },
-        "comment": {
-          "fa": "ترکیب هنر و استراتژی در آلفا گلو دقیقاً همان چیزی بود که برای یکپارچگی بصری رویداد نیاز داشتیم.",
-          "en": "The blend of art and strategy at Alpha Glow was exactly what we needed for a cohesive event identity."
-        },
-        "avatar": "",
-        "isFeaturedOnHome": true
-      }
-    ]
-  },
-  {
-    "id": "port-4",
-    "slug": "ano-apparel-branding",
-    "category": "branding",
-    "icon": "pen-tool",
-    "createdAt": "2026-02-18",
-    "previewVideo": "https://www.shutterstock.com/shutterstock/videos/4039396859/preview/stock-footage-conceptual-image-of-a-group-of-business-people-conversing-in-an-office-and-business-data.webm",
-    "mainImage": "ano-logo.webp",
-    "subImages": [
-      "ano-logo-1.webp",
-      "ano-logo-2.webp"
-    ],
-    "title": {
-      "en": "ANO Apparel & AG Logo",
-      "fa": "برندینگ پوشاک ANO و لوگوی AG"
-    },
-    "client": {
-      "en": "ANO Clothing Brand",
-      "fa": "برند لباس ANO"
-    },
-    "shortDescription": {
-      "en": "Custom monogram logo and woven garment label identity.",
-      "fa": "طراحی لوگو و هویت بصری اتیکت و لیبل برند پوشاک."
-    },
-    "fullDescription": {
-      "en": "Crafted a distinctive brand mark and custom woven clothing labels ('Made in Afghanistan') to establish a premium fashion identity.",
-      "fa": "طراحی نشانه تجاری و لیبل‌های پارچه‌ای اختصاصی برای برندهای پوشاک با استاندارد جهانی."
-    },
-    "testimonials": [
-      {
-        "id": "t4",
-        "name": { "fa": "فرهاد احمدی", "en": "Farhad Ahmadi" },
-        "role": { "fa": "بنیان‌گذار برند ANO", "en": "Founder of ANO Apparel" },
-        "comment": {
-          "fa": "دقت نظر در جزئیات برندینگ و طراحی لیبل‌های پوشاک ما واقعاً بی‌نظیر بود.",
-          "en": "Their attention to branding detail and custom garment label design is truly unmatched."
-        },
-        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPsZV5OIXBwnAT7WM_d2efRh7v0_Y-2TOdJ-lejz644A&s=10",
-        "isFeaturedOnHome": true
-      }
-    ]
-  },
-  {
-    "id": "port-5",
-    "slug": "ag-holographic-labels",
-    "category": "graphic-design",
-    "icon": "sparkles",
-    "createdAt": "2026-03-03",
-    "mainImage": "holographic-labels.webp",
-    "previewVideo": "https://www.shutterstock.com/shutterstock/videos/4017400967/preview/stock-footage-typing-computer-and-programming-with-business-man-for-cybersecurity-firewall-code-and-research.webm",
-    "subImages": [
-      "holographic-labels-1.webp",
-      "holographic-labels-2.webp"
-    ],
-    "title": {
-      "en": "Holographic Die-Cut Labels",
-      "fa": "طراحی لیبل‌های هولوگرامی و تکه‌ای"
-    },
-    "client": {
-      "en": "Alpha Glow Custom Series",
-      "fa": "سفارشات اختصاصی آلفا گلو"
-    },
-    "shortDescription": {
-      "en": "Eye-catching die-cut sticker and QR label graphics.",
-      "fa": "طراحی گرافیکی لیبل‌های تکه‌ای و هولوگرامی برای اولین بار در افغانستان."
-    },
-    "fullDescription": {
-      "en": "Designed precision vector artwork and QR-integrated layouts for holographic and die-cut brand stickers with vibrant light reflection.",
-      "fa": "طراحی وکتور دقیق و صفحه‌آرایی لیبل‌های هولوگرامی و استیکرهای برش‌خاص همراه با بارکد اختصاصی برند."
-    },
-    "testimonials": []
-  },
-  {
-    "id": "port-6",
-    "slug": "zerak-official-invoice",
-    "category": "graphic-design",
-    "icon": "book-open",
-    "createdAt": "2026-02-22",
-    "mainImage": "zerak-catalog.webp",
-    "previewVideo": "https://www.shutterstock.com/shutterstock/videos/3990345743/preview/stock-footage-glowing-cloud-symbol-data-center-server-room-blue-digital-lines-connecting-racks-represents-cloud.webm",
-    "subImages": [
-      "zerak-catalog-1.webp",
-      "zerak-catalog-2.webp"
-    ],
-    "title": {
-      "en": "Zerak Corporate Forms & Catalog",
-      "fa": "طراحی فاکتور حرفه‌ای و کاتالوگ زیرک"
-    },
-    "client": {
-      "en": "Zerak Brand",
-      "fa": "برند زیرک (Zerak)"
-    },
-    "shortDescription": {
-      "en": "Structured corporate invoice layout and editorial catalog.",
-      "fa": "صفحه‌آرایی فاکتور رسمی، کاتالوگ و اوراق اداری اختصاصی."
-    },
-    "fullDescription": {
-      "en": "Created a clean, authoritative layout for Zerak's official invoices, brochures, and corporate documentation to elevate customer trust.",
-      "fa": "طراحی گرافیکی ساختارمند برای بل‌های رسمی، بروشور و فرم‌های اداری که اعتبار برند را در نگاه مشتری دوچندان می‌کند."
-    },
-    "testimonials": [
-      {
-        "id": "t5",
-        "name": { "fa": "امید زیرک", "en": "Omid Zerak" },
-        "role": { "fa": "مدیرعامل برند زیرک", "en": "CEO at Zerak" },
-        "comment": {
-          "fa": "طراحی گرافیک و اوراق رسمی ما با بالاترین نظم و در کوتاه‌ترین زمان انجام شد.",
-          "en": "Our corporate graphics and official layouts were delivered with precision and in record time."
-        },
-        "avatar": "",
-        "isFeaturedOnHome": true
-      }
-    ]
-  },
-  {
-    "id": "port-7",
-    "slug": "bw-embossed-business-card",
-    "category": "print",
-    "icon": "credit-card",
-    "createdAt": "2026-03-04",
-    "mainImage": "bw-card.webp",
-    "previewVideo": "https://www.shutterstock.com/shutterstock/videos/3990345743/preview/stock-footage-glowing-cloud-symbol-data-center-server-room-blue-digital-lines-connecting-racks-represents-cloud.webm",
-    "subImages": [
-      "bw-card-1.webp",
-      "bw-card-2.webp"
-    ],
-    "title": {
-      "en": "BW Embossed Card & Mug",
-      "fa": "ویزیت‌کارت و چاپ برجسته BW"
-    },
-    "client": {
-      "en": "BW Brand",
-      "fa": "مجموعه BW"
-    },
-    "shortDescription": {
-      "en": "First-class business cards and 3D embossed promotional mug.",
-      "fa": "چاپ ویزیت‌کارت کیفیت اول و ماگ با چاپ برجسته طلایی."
-    },
-    "fullDescription": {
-      "en": "Produced premium textured business cards with gold foil accents alongside custom 3D embossed ceramic mugs for executive gifting.",
-      "fa": "تولید و چاپ کارت ویزیت‌های پرطرفدار با متریال درجه یک به همراه چاپ برجسته روی ماگ و هدایای تبلیغاتی."
-    },
-    "testimonials": []
-  },
-  {
-    "id": "port-8",
-    "slug": "hrq-luxury-packaging",
-    "category": "print",
-    "icon": "package",
-    "createdAt": "2026-03-05",
-    "mainImage": "hrq_packaging.webp",
-    "previewVideo": "https://www.shutterstock.com/shutterstock/videos/3990345743/preview/stock-footage-glowing-cloud-symbol-data-center-server-room-blue-digital-lines-connecting-racks-represents-cloud.webm",
-    "subImages": [
-      "hrq-packaging-1.webp",
-      "hrq-packaging-2.webp"
-    ],
-    "title": {
-      "en": "HRQ & Khyber Luxury Packaging",
-      "fa": "جعبه کیبوردی HRQ و بسته‌بندی خیبر"
-    },
-    "client": {
-      "en": "HRQ & Khyber",
-      "fa": "برندهای HRQ و خیبر"
-    },
-    "shortDescription": {
-      "en": "Gold-foiled rigid keyboard boxes and two-color shopping bags.",
-      "fa": "چاپ جعبه کیبوردی طلاکوب و خریطه پلاستیکی دو رنگ."
-    },
-    "fullDescription": {
-      "en": "Engineered durable, luxury keyboard-style packaging boxes with metallic gold foil for HRQ and custom two-color printed carrier bags for Khyber.",
-      "fa": "طراحی و تولید جعبه‌های کیبوردی مقوایی با طلاکوب برجسته برای برند HRQ و چاپ کیسه‌های فروشگاهی اختصاصی."
-    },
-    "testimonials": [
-      {
-        "id": "t6",
-        "name": { "fa": "حامد رحیمی", "en": "Hamed Rahimi" },
-        "role": { "fa": "مدیر فروش مجموعه HRQ", "en": "Sales Director at HRQ" },
-        "comment": {
-          "fa": "کیفیت چاپ و ظرافت طلاکوب جعبه‌ها دقیقاً همان حس لوکسی بود که برای بسته‌بندی محصولاتمان دنبالش بودیم.",
-          "en": "The print finish and gold foil precision gave our product packaging the exact luxury feel we wanted."
-        },
-        "avatar": "",
-        "isFeaturedOnHome": true
-      }
-    ]
-  },
+  ], 
+  "portfolio": [
     {
-    "id": "port-9",
-    "slug": "bw-embossed-business-card",
-    "category": "print",
-    "icon": "credit-card",
-    "createdAt": "2026-03-04",
-    "mainImage": "bw-card.webp",
-    "previewVideo": "https://www.shutterstock.com/shutterstock/videos/3990345743/preview/stock-footage-glowing-cloud-symbol-data-center-server-room-blue-digital-lines-connecting-racks-represents-cloud.webm",
-    "subImages": [
-      "bw-card-1.webp",
-      "bw-card-2.webp"
-    ],
-    "title": {
-      "en": "BW Embossed Card & Mug",
-      "fa": "ویزیت‌کارت و چاپ برجسته BW"
+      "id": "port-1",
+      "slug": "amovi-travel-app",
+      "category": "website-design",
+      "icon": "smartphone",
+      "createdAt": "2026-02-20",
+      "mainImage": "amovi-app.webp",
+      "previewVideo": "https://www.shutterstock.com/shutterstock/videos/3780293109/preview/stock-footage-fast-moving-silver-car-on-the-road.webm",
+      "suImages": [
+        "amovi-app-1.webp",
+        "amovi-app-2.webp"
+      ],
+      "title": {
+        "en": "Amovi Travel App",
+        "fa": "اپلیکیشن و وب‌سایت گردشگری آمووی"
+      },
+      "client": {
+        "en": "Amovi Travel",
+        "fa": "شرکت گردشگری آمووی"
+      },
+      "shortDescription": {
+        "en": "Seamless flight and tour booking experience across devices.",
+        "fa": "تجربه کاربری مدرن برای رزرو آنلاین پرواز و تورهای مسافرتی."
+      },
+      "fullDescription": {
+        "en": "A complete UI/UX design and responsive web application for Amovi Travel, enabling users to explore destinations and book tickets effortlessly.",
+        "fa": "طراحی رابط کاربری و پیاده‌سازی وب‌اپلیکیشن واکنش‌گرا برای جستجوی مقاصد گردشگری و رزرو آنلاین بلیط."
+      },
+      "testimonials": [
+        {
+          "id": "t2",
+          "name": { "fa": "مریم رضایی", "en": "Maryam Rezaei" },
+          "role": { "fa": "مدیر مارکتینگ آمووی", "en": "Marketing Manager at Amovi" },
+          "comment": {
+            "fa": "پروژه طراحی وب‌اپلیکیشن با تسلط کامل و حوصله زیاد پیاده‌سازی شد و نرخ رزرو آنلاین ما رشد چشمگیری داشت.",
+            "en": "The web application was delivered with deep expertise, resulting in a noticeable boost in our online bookings."
+          },
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTagYQtNJUh94DmbBRnP2C2UINjhmAU4jnAyrBCf-eSdQ&s=10",
+          "isFeaturedOnHome": true
+        }
+      ]
     },
-    "client": {
-      "en": "BW Brand",
-      "fa": "مجموعه BW"
+    {
+      "id": "port-2",
+      "slug": "alpha-glow-website",
+      "category": "website-design",
+      "icon": "globe",
+      "createdAt": "2026-03-01",
+      "mainImage": "alpha-glow-web.webp",
+      "previewVideo": "https://www.shutterstock.com/shutterstock/videos/4109113279/preview/stock-footage-futuristic-digital-data-network-with-cybersecurity-dashboards-analytics-interfaces-and-high-speed.webm",
+      "subImages": [
+        "alpha-glow-web-1.webp",
+        "alpha-glow-web-2.webp"
+      ],
+      "title": {
+        "en": "Alpha Glow Website",
+        "fa": "وب‌سایت آژانس آلفا گلو"
+      },
+      "client": {
+        "en": "Alpha Glow Agency",
+        "fa": "آژانس دیجیتال آلفا گلو"
+      },
+      "shortDescription": {
+        "en": "Modern glassmorphic agency platform with 3D visual depth.",
+        "fa": "پلتفرم مدرن شیشه‌ای با عمق بصری سه‌بعدی برای آژانس خلاقیت."
+      },
+      "fullDescription": {
+        "en": "Designed and developed the official bilingual web platform for Alpha Glow Agency featuring custom 3D glassmorphism, interactive GSAP animations, and high-speed performance.",
+        "fa": "طراحی و توسعه وب‌سایت رسمی و دوزبانه آژانس آلفا گلو با رابط کاربری شیشه‌ای (Glassmorphism)، انیمیشن‌های تعاملی و سرعت بارگذاری بالا."
+      },
+      "testimonials": [
+        {
+          "id": "t1",
+          "name": { "fa": "سینا کریم‌پور", "en": "Sina Karimpour" },
+          "role": { "fa": "مدیر محصول دیجیتال", "en": "Digital Product Lead" },
+          "comment": {
+            "fa": "سرعت بارگذاری، دقت در جزئیات رابط کاربری و پیاده‌سازی دوزبانه سایت فراتر از انتظار بود.",
+            "en": "The loading speed, UI attention to detail, and bilingual implementation exceeded our expectations."
+          },
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgV2A-HdVxt5ydbv5re4yaEIl8DSkcUjR-t8AL3MAUcQ&s=10",
+          "isFeaturedOnHome": true
+        }
+      ]
     },
-    "shortDescription": {
-      "en": "First-class business cards and 3D embossed promotional mug.",
-      "fa": "چاپ ویزیت‌کارت کیفیت اول و ماگ با چاپ برجسته طلایی."
+    {
+      "id": "port-3",
+      "slug": "cmx-connect-partnership",
+      "category": "branding",
+      "icon": "fingerprint",
+      "createdAt": "2026-03-02",
+      "mainImage": "cmx-branding.webp",
+      "previewVideo": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+      "subImages": [
+        "cmx-branding-1.webp",
+        "cmx-branding-2.webp"
+      ],
+      "title": {
+        "en": "CMX & AG Brand Identity",
+        "fa": "هویت بصری رویداد CMX Connect"
+      },
+      "client": {
+        "en": "CMX Connect",
+        "fa": "رویداد CMX Connect"
+      },
+      "shortDescription": {
+        "en": "Creative partnership and complete event branding system.",
+        "fa": "همکاری خلاقانه و طراحی جامع هویت بصری رویداد."
+      },
+      "fullDescription": {
+        "en": "Developed the complete visual identity, stage backdrops, badges, and promotional branding for the CMX & Alpha Glow creative partnership.",
+        "fa": "طراحی هویت بصری، استندها، بج‌های شناسایی و اقلام تبلیغاتی در قالب همکاری خلاقانه CMX و آلفا گلو."
+      },
+      "testimonials": [
+        {
+          "id": "t3",
+          "name": { "fa": "دکتر پارسا", "en": "Dr. Parsa" },
+          "role": { "fa": "برگزارکننده رویداد CMX", "en": "Event Director at CMX" },
+          "comment": {
+            "fa": "ترکیب هنر و استراتژی در آلفا گلو دقیقاً همان چیزی بود که برای یکپارچگی بصری رویداد نیاز داشتیم.",
+            "en": "The blend of art and strategy at Alpha Glow was exactly what we needed for a cohesive event identity."
+          },
+          "avatar": "",
+          "isFeaturedOnHome": true
+        }
+      ]
     },
-    "fullDescription": {
-      "en": "Produced premium textured business cards with gold foil accents alongside custom 3D embossed ceramic mugs for executive gifting.",
-      "fa": "تولید و چاپ کارت ویزیت‌های پرطرفدار با متریال درجه یک به همراه چاپ برجسته روی ماگ و هدایای تبلیغاتی."
+    {
+      "id": "port-4",
+      "slug": "ano-apparel-branding",
+      "category": "branding",
+      "icon": "pen-tool",
+      "createdAt": "2026-02-18",
+      "previewVideo": "https://www.shutterstock.com/shutterstock/videos/4039396859/preview/stock-footage-conceptual-image-of-a-group-of-business-people-conversing-in-an-office-and-business-data.webm",
+      "mainImage": "ano-logo.webp",
+      "subImages": [
+        "ano-logo-1.webp",
+        "ano-logo-2.webp"
+      ],
+      "title": {
+        "en": "ANO Apparel & AG Logo",
+        "fa": "برندینگ پوشاک ANO و لوگوی AG"
+      },
+      "client": {
+        "en": "ANO Clothing Brand",
+        "fa": "برند لباس ANO"
+      },
+      "shortDescription": {
+        "en": "Custom monogram logo and woven garment label identity.",
+        "fa": "طراحی لوگو و هویت بصری اتیکت و لیبل برند پوشاک."
+      },
+      "fullDescription": {
+        "en": "Crafted a distinctive brand mark and custom woven clothing labels ('Made in Afghanistan') to establish a premium fashion identity.",
+        "fa": "طراحی نشانه تجاری و لیبل‌های پارچه‌ای اختصاصی برای برندهای پوشاک با استاندارد جهانی."
+      },
+      "testimonials": [
+        {
+          "id": "t4",
+          "name": { "fa": "فرهاد احمدی", "en": "Farhad Ahmadi" },
+          "role": { "fa": "بنیان‌گذار برند ANO", "en": "Founder of ANO Apparel" },
+          "comment": {
+            "fa": "دقت نظر در جزئیات برندینگ و طراحی لیبل‌های پوشاک ما واقعاً بی‌نظیر بود.",
+            "en": "Their attention to branding detail and custom garment label design is truly unmatched."
+          },
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPsZV5OIXBwnAT7WM_d2efRh7v0_Y-2TOdJ-lejz644A&s=10",
+          "isFeaturedOnHome": true
+        }
+      ]
     },
-    "testimonials": []
-  },
-  {
-    "id": "port-10",
-    "slug": "hrq-luxury-packaging",
-    "category": "print",
-    "icon": "package",
-    "createdAt": "2026-03-05",
-    "mainImage": "hrq_packaging.webp",
-    "previewVideo": "https://www.shutterstock.com/shutterstock/videos/3990345743/preview/stock-footage-glowing-cloud-symbol-data-center-server-room-blue-digital-lines-connecting-racks-represents-cloud.webm",
-    "subImages": [
-      "hrq-packaging-1.webp",
-      "hrq-packaging-2.webp"
-    ],
-    "title": {
-      "en": "HRQ & Khyber Luxury Packaging",
-      "fa": "جعبه کیبوردی HRQ و بسته‌بندی خیبر"
+    {
+      "id": "port-5",
+      "slug": "ag-holographic-labels",
+      "category": "graphic-design",
+      "icon": "sparkles",
+      "createdAt": "2026-03-03",
+      "mainImage": "holographic-labels.webp",
+      "previewVideo": "https://www.shutterstock.com/shutterstock/videos/4017400967/preview/stock-footage-typing-computer-and-programming-with-business-man-for-cybersecurity-firewall-code-and-research.webm",
+      "subImages": [
+        "holographic-labels-1.webp",
+        "holographic-labels-2.webp"
+      ],
+      "title": {
+        "en": "Holographic Die-Cut Labels",
+        "fa": "طراحی لیبل‌های هولوگرامی و تکه‌ای"
+      },
+      "client": {
+        "en": "Alpha Glow Custom Series",
+        "fa": "سفارشات اختصاصی آلفا گلو"
+      },
+      "shortDescription": {
+        "en": "Eye-catching die-cut sticker and QR label graphics.",
+        "fa": "طراحی گرافیکی لیبل‌های تکه‌ای و هولوگرامی برای اولین بار در افغانستان."
+      },
+      "fullDescription": {
+        "en": "Designed precision vector artwork and QR-integrated layouts for holographic and die-cut brand stickers with vibrant light reflection.",
+        "fa": "طراحی وکتور دقیق و صفحه‌آرایی لیبل‌های هولوگرامی و استیکرهای برش‌خاص همراه با بارکد اختصاصی برند."
+      },
+      "testimonials": []
     },
-    "client": {
-      "en": "HRQ & Khyber",
-      "fa": "برندهای HRQ و خیبر"
+    {
+      "id": "port-6",
+      "slug": "zerak-official-invoice",
+      "category": "graphic-design",
+      "icon": "book-open",
+      "createdAt": "2026-02-22",
+      "mainImage": "zerak-catalog.webp",
+      "previewVideo": "https://www.shutterstock.com/shutterstock/videos/3990345743/preview/stock-footage-glowing-cloud-symbol-data-center-server-room-blue-digital-lines-connecting-racks-represents-cloud.webm",
+      "subImages": [
+        "zerak-catalog-1.webp",
+        "zerak-catalog-2.webp"
+      ],
+      "title": {
+        "en": "Zerak Corporate Forms & Catalog",
+        "fa": "طراحی فاکتور حرفه‌ای و کاتالوگ زیرک"
+      },
+      "client": {
+        "en": "Zerak Brand",
+        "fa": "برند زیرک (Zerak)"
+      },
+      "shortDescription": {
+        "en": "Structured corporate invoice layout and editorial catalog.",
+        "fa": "صفحه‌آرایی فاکتور رسمی، کاتالوگ و اوراق اداری اختصاصی."
+      },
+      "fullDescription": {
+        "en": "Created a clean, authoritative layout for Zerak's official invoices, brochures, and corporate documentation to elevate customer trust.",
+        "fa": "طراحی گرافیکی ساختارمند برای بل‌های رسمی، بروشور و فرم‌های اداری که اعتبار برند را در نگاه مشتری دوچندان می‌کند."
+      },
+      "testimonials": [
+        {
+          "id": "t5",
+          "name": { "fa": "امید زیرک", "en": "Omid Zerak" },
+          "role": { "fa": "مدیرعامل برند زیرک", "en": "CEO at Zerak" },
+          "comment": {
+            "fa": "طراحی گرافیک و اوراق رسمی ما با بالاترین نظم و در کوتاه‌ترین زمان انجام شد.",
+            "en": "Our corporate graphics and official layouts were delivered with precision and in record time."
+          },
+          "avatar": "",
+          "isFeaturedOnHome": true
+        }
+      ]
     },
-    "shortDescription": {
-      "en": "Gold-foiled rigid keyboard boxes and two-color shopping bags.",
-      "fa": "چاپ جعبه کیبوردی طلاکوب و خریطه پلاستیکی دو رنگ."
+    {
+      "id": "port-7",
+      "slug": "bw-embossed-business-card",
+      "category": "print",
+      "icon": "credit-card",
+      "createdAt": "2026-03-04",
+      "mainImage": "bw-card.webp",
+      "previewVideo": "https://www.shutterstock.com/shutterstock/videos/3990345743/preview/stock-footage-glowing-cloud-symbol-data-center-server-room-blue-digital-lines-connecting-racks-represents-cloud.webm",
+      "subImages": [
+        "bw-card-1.webp",
+        "bw-card-2.webp"
+      ],
+      "title": {
+        "en": "BW Embossed Card & Mug",
+        "fa": "ویزیت‌کارت و چاپ برجسته BW"
+      },
+      "client": {
+        "en": "BW Brand",
+        "fa": "مجموعه BW"
+      },
+      "shortDescription": {
+        "en": "First-class business cards and 3D embossed promotional mug.",
+        "fa": "چاپ ویزیت‌کارت کیفیت اول و ماگ با چاپ برجسته طلایی."
+      },
+      "fullDescription": {
+        "en": "Produced premium textured business cards with gold foil accents alongside custom 3D embossed ceramic mugs for executive gifting.",
+        "fa": "تولید و چاپ کارت ویزیت‌های پرطرفدار با متریال درجه یک به همراه چاپ برجسته روی ماگ و هدایای تبلیغاتی."
+      },
+      "testimonials": []
     },
-    "fullDescription": {
-      "en": "Engineered durable, luxury keyboard-style packaging boxes with metallic gold foil for HRQ and custom two-color printed carrier bags for Khyber.",
-      "fa": "طراحی و تولید جعبه‌های کیبوردی مقوایی با طلاکوب برجسته برای برند HRQ و چاپ کیسه‌های فروشگاهی اختصاصی."
+    {
+      "id": "port-8",
+      "slug": "hrq-luxury-packaging",
+      "category": "print",
+      "icon": "package",
+      "createdAt": "2026-03-05",
+      "mainImage": "hrq_packaging.webp",
+      "previewVideo": "https://www.shutterstock.com/shutterstock/videos/3990345743/preview/stock-footage-glowing-cloud-symbol-data-center-server-room-blue-digital-lines-connecting-racks-represents-cloud.webm",
+      "subImages": [
+        "hrq-packaging-1.webp",
+        "hrq-packaging-2.webp"
+      ],
+      "title": {
+        "en": "HRQ & Khyber Luxury Packaging",
+        "fa": "جعبه کیبوردی HRQ و بسته‌بندی خیبر"
+      },
+      "client": {
+        "en": "HRQ & Khyber",
+        "fa": "برندهای HRQ و خیبر"
+      },
+      "shortDescription": {
+        "en": "Gold-foiled rigid keyboard boxes and two-color shopping bags.",
+        "fa": "چاپ جعبه کیبوردی طلاکوب و خریطه پلاستیکی دو رنگ."
+      },
+      "fullDescription": {
+        "en": "Engineered durable, luxury keyboard-style packaging boxes with metallic gold foil for HRQ and custom two-color printed carrier bags for Khyber.",
+        "fa": "طراحی و تولید جعبه‌های کیبوردی مقوایی با طلاکوب برجسته برای برند HRQ و چاپ کیسه‌های فروشگاهی اختصاصی."
+      },
+      "testimonials": [
+        {
+          "id": "t6",
+          "name": { "fa": "حامد رحیمی", "en": "Hamed Rahimi" },
+          "role": { "fa": "مدیر فروش مجموعه HRQ", "en": "Sales Director at HRQ" },
+          "comment": {
+            "fa": "کیفیت چاپ و ظرافت طلاکوب جعبه‌ها دقیقاً همان حس لوکسی بود که برای بسته‌بندی محصولاتمان دنبالش بودیم.",
+            "en": "The print finish and gold foil precision gave our product packaging the exact luxury feel we wanted."
+          },
+          "avatar": "",
+          "isFeaturedOnHome": true
+        }
+      ]
     },
-    "testimonials": [
       {
-        "id": "t6",
-        "name": { "fa": "حامد رحیمی", "en": "Hamed Rahimi" },
-        "role": { "fa": "مدیر فروش مجموعه HRQ", "en": "Sales Director at HRQ" },
-        "comment": {
-          "fa": "کیفیت چاپ و ظرافت طلاکوب جعبه‌ها دقیقاً همان حس لوکسی بود که برای بسته‌بندی محصولاتمان دنبالش بودیم.",
-          "en": "The print finish and gold foil precision gave our product packaging the exact luxury feel we wanted."
-        },
-        "avatar": "",
-        "isFeaturedOnHome": true
-      }
-    ]
-  }
-],
+      "id": "port-9",
+      "slug": "bw-embossed-business-card",
+      "category": "print",
+      "icon": "credit-card",
+      "createdAt": "2026-03-04",
+      "mainImage": "bw-card.webp",
+      "previewVideo": "https://www.shutterstock.com/shutterstock/videos/3990345743/preview/stock-footage-glowing-cloud-symbol-data-center-server-room-blue-digital-lines-connecting-racks-represents-cloud.webm",
+      "subImages": [
+        "bw-card-1.webp",
+        "bw-card-2.webp"
+      ],
+      "title": {
+        "en": "BW Embossed Card & Mug",
+        "fa": "ویزیت‌کارت و چاپ برجسته BW"
+      },
+      "client": {
+        "en": "BW Brand",
+        "fa": "مجموعه BW"
+      },
+      "shortDescription": {
+        "en": "First-class business cards and 3D embossed promotional mug.",
+        "fa": "چاپ ویزیت‌کارت کیفیت اول و ماگ با چاپ برجسته طلایی."
+      },
+      "fullDescription": {
+        "en": "Produced premium textured business cards with gold foil accents alongside custom 3D embossed ceramic mugs for executive gifting.",
+        "fa": "تولید و چاپ کارت ویزیت‌های پرطرفدار با متریال درجه یک به همراه چاپ برجسته روی ماگ و هدایای تبلیغاتی."
+      },
+      "testimonials": []
+    },
+    {
+      "id": "port-10",
+      "slug": "hrq-luxury-packaging",
+      "category": "print",
+      "icon": "package",
+      "createdAt": "2026-03-05",
+      "mainImage": "hrq_packaging.webp",
+      "previewVideo": "https://www.shutterstock.com/shutterstock/videos/3990345743/preview/stock-footage-glowing-cloud-symbol-data-center-server-room-blue-digital-lines-connecting-racks-represents-cloud.webm",
+      "subImages": [
+        "hrq-packaging-1.webp",
+        "hrq-packaging-2.webp"
+      ],
+      "title": {
+        "en": "HRQ & Khyber Luxury Packaging",
+        "fa": "جعبه کیبوردی HRQ و بسته‌بندی خیبر"
+      },
+      "client": {
+        "en": "HRQ & Khyber",
+        "fa": "برندهای HRQ و خیبر"
+      },
+      "shortDescription": {
+        "en": "Gold-foiled rigid keyboard boxes and two-color shopping bags.",
+        "fa": "چاپ جعبه کیبوردی طلاکوب و خریطه پلاستیکی دو رنگ."
+      },
+      "fullDescription": {
+        "en": "Engineered durable, luxury keyboard-style packaging boxes with metallic gold foil for HRQ and custom two-color printed carrier bags for Khyber.",
+        "fa": "طراحی و تولید جعبه‌های کیبوردی مقوایی با طلاکوب برجسته برای برند HRQ و چاپ کیسه‌های فروشگاهی اختصاصی."
+      },
+      "testimonials": [
+        {
+          "id": "t6",
+          "name": { "fa": "حامد رحیمی", "en": "Hamed Rahimi" },
+          "role": { "fa": "مدیر فروش مجموعه HRQ", "en": "Sales Director at HRQ" },
+          "comment": {
+            "fa": "کیفیت چاپ و ظرافت طلاکوب جعبه‌ها دقیقاً همان حس لوکسی بود که برای بسته‌بندی محصولاتمان دنبالش بودیم.",
+            "en": "The print finish and gold foil precision gave our product packaging the exact luxury feel we wanted."
+          },
+          "avatar": "",
+          "isFeaturedOnHome": true
+        }
+      ]
+    }
+  ],
   "about": {
      "logoImage": "home-about.webp",
     "stats": [
@@ -828,220 +936,220 @@
     "fa": "نگاه او به طراحی، فراتر از زیبایی بصری است؛ هدف، خلق راهکارهایی است که هویت هر برند را به درستی بازتاب دهند، پیام آن را روشن تر منتقل کنند و تجربه ای حرفه ای برای مخاطبان بسازند.",
     "en": "Her approach to design goes beyond visual aesthetics; the goal is to craft solutions that accurately reflect each brand's identity, communicate its message more clearly, and create a professional experience for the audience."
   }
- },
+  },
  "contactSocials": {
   "instagram": "https://instagram.com/alphaglow",
   "facebook": "https://facebook.com/alphaglow",
   "linkedin": "https://linkedin.com/company/alphaglow",
   "telegram": "https://t.me/alphaglow",
   "whatsapp": "https://wa.me/93700000000"
-},
-"socialProfiles": [
-  {
-    "id": "instagram",
-    "platform": "Instagram",
-    "handle": "@alpha.glow_agency",
-    "verified": true,
-    "accentFrom": "#f59e0b",
-    "accentVia": "#ec4899",
-    "accentTo": "#8b5cf6",
-    "url": "https://instagram.com/alpha.glow_agency",
-    "messageUrl": "https://ig.me/m/alpha.glow_agency",
-    "title": {
-      "fa": "alpha.glow_agency",
-      "en": "alpha.glow_agency"
-    },
-    "subtitle": {
-      "fa": "وبسایت | گرافیک | چاپ و تبلیغات",
-      "en": "Website | Graphic | Printing & Ads"
-    },
-    "stats": [
-      { "value": "124", "label": { "fa": "پست", "en": "posts" } },
-      { "value": "3,491", "label": { "fa": "دنبال‌کننده", "en": "followers" } },
-      { "value": "11", "label": { "fa": "دنبال‌شونده", "en": "following" } }
-    ],
-    "bio": {
-      "fa": [
-        "⚡ | « الفا گلو » محل درخشش برند ها",
-        "AF | دیجیتال اجنسی در افغانستان",
-        "📌 | از طراحی تا چاپ | ارسال سفارش به سراسر جهان"
-      ],
-      "en": [
-        "⚡ | \"Alpha Glow\" Where Brands Shine",
-        "AF | Digital Agency in Afghanistan",
-        "📌 | From Design to Print | Worldwide Delivery"
-      ]
-    },
-    "tags": {
-      "fa": ["جریان کار", "وبسایت ما", "ایونت", "لیبل", "بسته بندی"],
-      "en": ["Workflow", "Website", "Events", "Labels", "Packaging"]
-    },
-    "primaryBtn": { "fa": "دنبال کردن", "en": "Follow" },
-    "secondaryBtn": { "fa": "ارسال پیام", "en": "Message" }
   },
-  {
-    "id": "telegram",
-    "platform": "Telegram",
-    "handle": "Alpha Glow Agency",
-    "verified": true,
-    "accentFrom": "#38bdf8",
-    "accentVia": "#0284c7",
-    "accentTo": "#1d4ed8",
-    "url": "https://t.me/alphaglow",
-    "messageUrl": "https://t.me/alphaglow",
-    "title": {
-      "fa": "Alpha Glow Agency",
-      "en": "Alpha Glow Agency"
-    },
-    "subtitle": {
-      "fa": "کانال رسمی تلگرام آلفا گلو",
-      "en": "Official Telegram Channel"
-    },
-    "stats": [
-      { "value": "220", "label": { "fa": "مشترک", "en": "subscribers" } },
-      { "value": "AF", "label": { "fa": "اولین اجنسی", "en": "1st Agency" } },
-      { "value": "24/7", "label": { "fa": "ثبت سفارش", "en": "Orders" } }
-    ],
-    "bio": {
-      "fa": [
-        "⚡ | « الـــفا گـــلو » محل درخشش برند ها",
-        "AF | اولین دیجیتال اجنسی در افغانستان",
-        "📩 | ثبت سفارش از طریق واتساپ و تلگرام"
+  "socialProfiles": [
+    {
+      "id": "instagram",
+      "platform": "Instagram",
+      "handle": "@alpha.glow_agency",
+      "verified": true,
+      "accentFrom": "#f59e0b",
+      "accentVia": "#ec4899",
+      "accentTo": "#8b5cf6",
+      "url": "https://instagram.com/alpha.glow_agency",
+      "messageUrl": "https://ig.me/m/alpha.glow_agency",
+      "title": {
+        "fa": "alpha.glow_agency",
+        "en": "alpha.glow_agency"
+      },
+      "subtitle": {
+        "fa": "وبسایت | گرافیک | چاپ و تبلیغات",
+        "en": "Website | Graphic | Printing & Ads"
+      },
+      "stats": [
+        { "value": "124", "label": { "fa": "پست", "en": "posts" } },
+        { "value": "3,491", "label": { "fa": "دنبال‌کننده", "en": "followers" } },
+        { "value": "11", "label": { "fa": "دنبال‌شونده", "en": "following" } }
       ],
-      "en": [
-        "⚡ | \"Alpha Glow\" Where Brands Shine",
-        "AF | Premier Digital Agency in Afghanistan",
-        "📩 | Direct project orders via WhatsApp & Telegram"
-      ]
+      "bio": {
+        "fa": [
+          "⚡ | « الفا گلو » محل درخشش برند ها",
+          "AF | دیجیتال اجنسی در افغانستان",
+          "📌 | از طراحی تا چاپ | ارسال سفارش به سراسر جهان"
+        ],
+        "en": [
+          "⚡ | \"Alpha Glow\" Where Brands Shine",
+          "AF | Digital Agency in Afghanistan",
+          "📌 | From Design to Print | Worldwide Delivery"
+        ]
+      },
+      "tags": {
+        "fa": ["جریان کار", "وبسایت ما", "ایونت", "لیبل", "بسته بندی"],
+        "en": ["Workflow", "Website", "Events", "Labels", "Packaging"]
+      },
+      "primaryBtn": { "fa": "دنبال کردن", "en": "Follow" },
+      "secondaryBtn": { "fa": "ارسال پیام", "en": "Message" }
     },
-    "tags": {
-      "fa": ["نمونه‌کارها", "ثبت سفارش", "اخبار آژانس"],
-      "en": ["Portfolio", "Order Now", "Agency News"]
-    },
-    "primaryBtn": { "fa": "مشاهده در تلگرام", "en": "View in Telegram" },
-    "secondaryBtn": { "fa": "پیام مستقیم", "en": "Direct Message" }
-  },
-  {
-    "id": "linkedin",
-    "platform": "LinkedIn",
-    "handle": "Alpha Glow Agency",
-    "verified": true,
-    "accentFrom": "#60a5fa",
-    "accentVia": "#2563eb",
-    "accentTo": "#1e3a8a",
-    "url": "https://linkedin.com/company/alphaglow",
-    "messageUrl": "https://linkedin.com/company/alphaglow",
-    "title": {
-      "fa": "Alpha Glow Agency",
-      "en": "Alpha Glow Agency"
-    },
-    "subtitle": {
-      "fa": "خدمات طراحی • کابل، افغانستان",
-      "en": "Design Services • Kabul, Afghanistan"
-    },
-    "stats": [
-      { "value": "14", "label": { "fa": "دنبال‌کننده", "en": "followers" } },
-      { "value": "2-10", "label": { "fa": "اعضای تیم", "en": "employees" } },
-      { "value": "B2B", "label": { "fa": "همکاری корпораتی", "en": "Corporate" } }
-    ],
-    "bio": {
-      "fa": [
-        "آژانس خلاقیت در افغانستان برای طراحی وبسایت، برندینگ، گرافیک و چاپ",
-        "📍 کابل | شبکه رسمی ارتباطات حرفه‌ای و سازمانی آلفا گلو"
+    {
+      "id": "telegram",
+      "platform": "Telegram",
+      "handle": "Alpha Glow Agency",
+      "verified": true,
+      "accentFrom": "#38bdf8",
+      "accentVia": "#0284c7",
+      "accentTo": "#1d4ed8",
+      "url": "https://t.me/alphaglow",
+      "messageUrl": "https://t.me/alphaglow",
+      "title": {
+        "fa": "Alpha Glow Agency",
+        "en": "Alpha Glow Agency"
+      },
+      "subtitle": {
+        "fa": "کانال رسمی تلگرام آلفا گلو",
+        "en": "Official Telegram Channel"
+      },
+      "stats": [
+        { "value": "220", "label": { "fa": "مشترک", "en": "subscribers" } },
+        { "value": "AF", "label": { "fa": "اولین اجنسی", "en": "1st Agency" } },
+        { "value": "24/7", "label": { "fa": "ثبت سفارش", "en": "Orders" } }
       ],
-      "en": [
-        "A creative agency in Afghanistan for design Website, Branding, Graphic and printing",
-        "📍 Kabul | Official corporate network & B2B partnerships"
-      ]
+      "bio": {
+        "fa": [
+          "⚡ | « الـــفا گـــلو » محل درخشش برند ها",
+          "AF | اولین دیجیتال اجنسی در افغانستان",
+          "📩 | ثبت سفارش از طریق واتساپ و تلگرام"
+        ],
+        "en": [
+          "⚡ | \"Alpha Glow\" Where Brands Shine",
+          "AF | Premier Digital Agency in Afghanistan",
+          "📩 | Direct project orders via WhatsApp & Telegram"
+        ]
+      },
+      "tags": {
+        "fa": ["نمونه‌کارها", "ثبت سفارش", "اخبار آژانس"],
+        "en": ["Portfolio", "Order Now", "Agency News"]
+      },
+      "primaryBtn": { "fa": "مشاهده در تلگرام", "en": "View in Telegram" },
+      "secondaryBtn": { "fa": "پیام مستقیم", "en": "Direct Message" }
     },
-    "tags": {
-      "fa": ["طراحی وبسایت", "برندینگ", "گرافیک", "چاپ"],
-      "en": ["Website", "Branding", "Graphic", "Printing"]
-    },
-    "primaryBtn": { "fa": "+ دنبال کردن", "en": "+ Follow" },
-    "secondaryBtn": { "fa": "ارسال پیام", "en": "Message" }
-  },
-  {
-    "id": "facebook",
-    "platform": "Facebook",
-    "handle": "Alpha Glow",
-    "verified": true,
-    "accentFrom": "#3b82f6",
-    "accentVia": "#1d4ed8",
-    "accentTo": "#1e40af",
-    "url": "https://facebook.com/alphaglow",
-    "messageUrl": "https://m.me/alphaglow",
-    "title": {
-      "fa": "Alpha Glow",
-      "en": "Alpha Glow"
-    },
-    "subtitle": {
-      "fa": "جایی که برندها می‌درخشند",
-      "en": "Where Brands Glow"
-    },
-    "stats": [
-      { "value": "58", "label": { "fa": "دنبال‌کننده", "en": "followers" } },
-      { "value": "0", "label": { "fa": "دنبال‌شونده", "en": "following" } },
-      { "value": "7+", "label": { "fa": "خدمات تخصصی", "en": "services" } }
-    ],
-    "bio": {
-      "fa": [
-        "✨ طراحی پوستر، لوگو، پروفایل کمپنی و بنر تبلیغاتی",
-        "🎯 برندینگ کامل، طراحی بزنس کارت و ادیت تخصصی ویدیو"
+    {
+      "id": "linkedin",
+      "platform": "LinkedIn",
+      "handle": "Alpha Glow Agency",
+      "verified": true,
+      "accentFrom": "#60a5fa",
+      "accentVia": "#2563eb",
+      "accentTo": "#1e3a8a",
+      "url": "https://linkedin.com/company/alphaglow",
+      "messageUrl": "https://linkedin.com/company/alphaglow",
+      "title": {
+        "fa": "Alpha Glow Agency",
+        "en": "Alpha Glow Agency"
+      },
+      "subtitle": {
+        "fa": "خدمات طراحی • کابل، افغانستان",
+        "en": "Design Services • Kabul, Afghanistan"
+      },
+      "stats": [
+        { "value": "14", "label": { "fa": "دنبال‌کننده", "en": "followers" } },
+        { "value": "2-10", "label": { "fa": "اعضای تیم", "en": "employees" } },
+        { "value": "B2B", "label": { "fa": "همکاری корпораتی", "en": "Corporate" } }
       ],
-      "en": [
-        "✨ Poster Design, Logo, Company Profile & Advertising Banners",
-        "🎯 Complete Branding, Business Cards & Video Editing"
-      ]
+      "bio": {
+        "fa": [
+          "آژانس خلاقیت در افغانستان برای طراحی وبسایت، برندینگ، گرافیک و چاپ",
+          "📍 کابل | شبکه رسمی ارتباطات حرفه‌ای و سازمانی آلفا گلو"
+        ],
+        "en": [
+          "A creative agency in Afghanistan for design Website, Branding, Graphic and printing",
+          "📍 Kabul | Official corporate network & B2B partnerships"
+        ]
+      },
+      "tags": {
+        "fa": ["طراحی وبسایت", "برندینگ", "گرافیک", "چاپ"],
+        "en": ["Website", "Branding", "Graphic", "Printing"]
+      },
+      "primaryBtn": { "fa": "+ دنبال کردن", "en": "+ Follow" },
+      "secondaryBtn": { "fa": "ارسال پیام", "en": "Message" }
     },
-    "tags": {
-      "fa": ["طراحی لوگو", "پروفایل کمپنی", "برندینگ", "ادیت ویدیو"],
-      "en": ["Logo Design", "Company Profile", "Branding", "Video Edit"]
-    },
-    "primaryBtn": { "fa": "دنبال کردن صفحه", "en": "Follow Page" },
-    "secondaryBtn": { "fa": "ارسال پیام", "en": "Message" }
-  },
-  {
-    "id": "whatsapp",
-    "platform": "WhatsApp",
-    "handle": "WhatsApp Business",
-    "verified": true,
-    "accentFrom": "#4ade80",
-    "accentVia": "#22c55e",
-    "accentTo": "#15803d",
-    "url": "https://wa.me/93700000000",
-    "messageUrl": "https://wa.me/93700000000",
-    "title": {
-      "fa": "Alpha Glow Direct",
-      "en": "Alpha Glow Direct"
-    },
-    "subtitle": {
-      "fa": "مشاوره و ثبت سفارش مستقیم",
-      "en": "Direct Consultation & Orders"
-    },
-    "stats": [
-      { "value": "Online", "label": { "fa": "وضعیت", "en": "status" } },
-      { "value": "< 15m", "label": { "fa": "زمان پاسخ", "en": "response" } },
-      { "value": "Global", "label": { "fa": "ارسال سفارش", "en": "delivery" } }
-    ],
-    "bio": {
-      "fa": [
-        "💬 ارتباط مستقیم و سریع با تیم مدیریت پروژه آلفا گلو",
-        "🚀 استعلام قیمت، مشاوره رایگان و پیگیری لحظه‌ای سفارش‌ها",
-        "📦 پذیرش سفارش‌های طراحی، وب و چاپ از سراسر جهان"
+    {
+      "id": "facebook",
+      "platform": "Facebook",
+      "handle": "Alpha Glow",
+      "verified": true,
+      "accentFrom": "#3b82f6",
+      "accentVia": "#1d4ed8",
+      "accentTo": "#1e40af",
+      "url": "https://facebook.com/alphaglow",
+      "messageUrl": "https://m.me/alphaglow",
+      "title": {
+        "fa": "Alpha Glow",
+        "en": "Alpha Glow"
+      },
+      "subtitle": {
+        "fa": "جایی که برندها می‌درخشند",
+        "en": "Where Brands Glow"
+      },
+      "stats": [
+        { "value": "58", "label": { "fa": "دنبال‌کننده", "en": "followers" } },
+        { "value": "0", "label": { "fa": "دنبال‌شونده", "en": "following" } },
+        { "value": "7+", "label": { "fa": "خدمات تخصصی", "en": "services" } }
       ],
-      "en": [
-        "💬 Direct & fast communication with Alpha Glow project managers",
-        "🚀 Instant quotes, free consultation & live order tracking",
-        "📦 Accepting Web, Design & Print orders worldwide"
-      ]
+      "bio": {
+        "fa": [
+          "✨ طراحی پوستر، لوگو، پروفایل کمپنی و بنر تبلیغاتی",
+          "🎯 برندینگ کامل، طراحی بزنس کارت و ادیت تخصصی ویدیو"
+        ],
+        "en": [
+          "✨ Poster Design, Logo, Company Profile & Advertising Banners",
+          "🎯 Complete Branding, Business Cards & Video Editing"
+        ]
+      },
+      "tags": {
+        "fa": ["طراحی لوگو", "پروفایل کمپنی", "برندینگ", "ادیت ویدیو"],
+        "en": ["Logo Design", "Company Profile", "Branding", "Video Edit"]
+      },
+      "primaryBtn": { "fa": "دنبال کردن صفحه", "en": "Follow Page" },
+      "secondaryBtn": { "fa": "ارسال پیام", "en": "Message" }
     },
-    "tags": {
-      "fa": ["مشاوره رایگان", "استعلام قیمت", "ثبت سفارش سریع"],
-      "en": ["Free Consult", "Get a Quote", "Fast Order"]
-    },
-    "primaryBtn": { "fa": "شروع گفتگو در واتساپ", "en": "Chat on WhatsApp" },
-    "secondaryBtn": { "fa": "تماس مستقیم", "en": "Direct Call" }
-  }
-]
+    {
+      "id": "whatsapp",
+      "platform": "WhatsApp",
+      "handle": "WhatsApp Business",
+      "verified": true,
+      "accentFrom": "#4ade80",
+      "accentVia": "#22c55e",
+      "accentTo": "#15803d",
+      "url": "https://wa.me/93700000000",
+      "messageUrl": "https://wa.me/93700000000",
+      "title": {
+        "fa": "Alpha Glow Direct",
+        "en": "Alpha Glow Direct"
+      },
+      "subtitle": {
+        "fa": "مشاوره و ثبت سفارش مستقیم",
+        "en": "Direct Consultation & Orders"
+      },
+      "stats": [
+        { "value": "Online", "label": { "fa": "وضعیت", "en": "status" } },
+        { "value": "< 15m", "label": { "fa": "زمان پاسخ", "en": "response" } },
+        { "value": "Global", "label": { "fa": "ارسال سفارش", "en": "delivery" } }
+      ],
+      "bio": {
+        "fa": [
+          "💬 ارتباط مستقیم و سریع با تیم مدیریت پروژه آلفا گلو",
+          "🚀 استعلام قیمت، مشاوره رایگان و پیگیری لحظه‌ای سفارش‌ها",
+          "📦 پذیرش سفارش‌های طراحی، وب و چاپ از سراسر جهان"
+        ],
+        "en": [
+          "💬 Direct & fast communication with Alpha Glow project managers",
+          "🚀 Instant quotes, free consultation & live order tracking",
+          "📦 Accepting Web, Design & Print orders worldwide"
+        ]
+      },
+      "tags": {
+        "fa": ["مشاوره رایگان", "استعلام قیمت", "ثبت سفارش سریع"],
+        "en": ["Free Consult", "Get a Quote", "Fast Order"]
+      },
+      "primaryBtn": { "fa": "شروع گفتگو در واتساپ", "en": "Chat on WhatsApp" },
+      "secondaryBtn": { "fa": "تماس مستقیم", "en": "Direct Call" }
+    }
+  ]
 }
