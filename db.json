@@ -1151,5 +1151,150 @@
       "primaryBtn": { "fa": "شروع گفتگو در واتساپ", "en": "Chat on WhatsApp" },
       "secondaryBtn": { "fa": "تماس مستقیم", "en": "Direct Call" }
     }
+  ],
+  "faqs": [
+    {
+      "id": "faq-1",
+      "category": "general",
+      "showOnHome": true,
+      "question": {
+        "fa": "هزینه پروژه‌ها چگونه محاسبه می‌شود و نحوه پرداخت به چه صورت است؟",
+        "en": "How is project pricing calculated and what are the payment terms?"
+      },
+      "answer": {
+        "fa": "هزینه هر پروژه پس از بررسی دقیق نیازها، ابعاد کار و زمان‌بندی به‌صورت شفاف در پیش‌فاکتور اعلام می‌شود. معمولاً ۵۰٪ مبلغ در شروع کار به‌عنوان پیش‌پرداخت و ۵۰٪ باقی‌مانده پس از تایید نهایی و پیش از تحویل فایل‌های اصلی تسویه می‌گردد.",
+        "en": "Pricing is tailored to your exact scope, features, and timeline, presented in a transparent proposal. Typically, 50% is paid upfront to kick off the project and the remaining 50% upon final approval before master file handover."
+      }
+    },
+    {
+      "id": "faq-2",
+      "category": "general",
+      "showOnHome": true,
+      "question": {
+        "fa": "آیا در طول پروژه امکان بازبینی و اعمال تغییرات وجود دارد؟",
+        "en": "Are revisions included during the design and development process?"
+      },
+      "answer": {
+        "fa": "بله، در تمامی خدمات ما مراحل بازبینی هدفمند در نظر گرفته شده است. در هر مرحله پیش‌نمایش کار در اختیار شما قرار می‌گیرد تا پس از اعمال اصلاحات و تایید کامل، وارد مرحله بعدی شویم.",
+        "en": "Yes, structured revision rounds are built into every service. You review milestones at each stage so we refine every detail and secure your approval before moving forward."
+      }
+    },
+    {
+      "id": "faq-3",
+      "category": "general",
+      "showOnHome": true,
+      "question": {
+        "fa": "آیا با مشتریان خارج از کشور و به‌صورت کاملاً آنلاین هم همکاری می‌کنید؟",
+        "en": "Do you work remotely with international clients?"
+      },
+      "answer": {
+        "fa": "بله، تمام مراحل از جلسه مشاوره اولیه تا ارائه گزارش‌های پیشرفت، تایید مراحل و تحویل نهایی پروژه به‌صورت کاملاً ساختارمند و آنلاین برای مشتریان داخلی و بین‌المللی انجام می‌شود.",
+        "en": "Absolutely. From initial discovery calls to milestone reviews and final delivery, our workflow is streamlined for seamless remote collaboration with clients worldwide."
+      }
+    },
+    {
+      "id": "faq-4",
+      "category": "website-design",
+      "showOnHome": true,
+      "question": {
+        "fa": "آیا پس از تحویل وب‌سایت می‌توانیم محتوا و محصولات را خودمان مدیریت کنیم؟",
+        "en": "Will we be able to update website content and projects ourselves?"
+      },
+      "answer": {
+        "fa": "بله، وب‌سایت‌ها همراه با پنل مدیریت ساده و اختصاصی و آموزش کامل تحویل داده می‌شوند تا بدون نیاز به دانش کدنویسی بتوانید متن‌ها، تصاویر و نمونه‌کارها را به‌راحتی ویرایش کنید.",
+        "en": "Yes, we deliver websites with a clean admin dashboard and handover guide so your team can effortlessly update copy, images, and portfolio items without touching code."
+      }
+    },
+    {
+      "id": "faq-5",
+      "category": "website-design",
+      "showOnHome": false,
+      "question": {
+        "fa": "آیا وب‌سایت‌های طراحی‌شده برای موبایل و موتورهای جست‌وجو (سئو) بهینه هستند؟",
+        "en": "Are the websites mobile-responsive and optimized for SEO?"
+      },
+      "answer": {
+        "fa": "تمامی وب‌سایت‌ها با رویکرد Mobile-First، سرعت بارگذاری بالا و ساختار کدنویسی استاندارد و سئوپسند پیاده‌سازی می‌شوند تا در تمامی نمایشگرها بهترین عملکرد را داشته باشند.",
+        "en": "Every website is built mobile-first with high loading speed, semantic HTML structure, and technical SEO best practices for optimal performance across all devices."
+      }
+    },
+    {
+      "id": "faq-6",
+      "category": "branding",
+      "showOnHome": true,
+      "question": {
+        "fa": "تفاوت طراحی لوگو با پکیج کامل برندینگ و هویت بصری چیست؟",
+        "en": "What is the difference between a logo design and full brand identity?"
+      },
+      "answer": {
+        "fa": "لوگو تنها یک نشانه است، اما در پکیج برندینگ یک سیستم یکپارچه شامل نسخه‌های مختلف لوگو، پالت رنگی، تایپوگرافی، الگوهای بصری، ست اداری و کتابچه راهنمای برند (Brand Book) خلق می‌شود تا برند شما در همه جا حرفه‌ای و قابل تشخیص باشد.",
+        "en": "A logo is a single mark, whereas full branding builds a complete visual system—logo variations, color palettes, typography, motifs, stationery, and a Brand Book—ensuring consistent recognition everywhere."
+      }
+    },
+    {
+      "id": "faq-7",
+      "category": "branding",
+      "showOnHome": false,
+      "question": {
+        "fa": "فایل‌های نهایی برندینگ با چه فرمت‌هایی تحویل داده می‌شوند؟",
+        "en": "What file formats are delivered for branding projects?"
+      },
+      "answer": {
+        "fa": "تمامی فایل‌های وکتور و لایه‌باز (AI, EPS, SVG, PDF) همراه با نسخه‌های آماده وب و شبکه‌های اجتماعی (PNG, WebP) با پس‌زمینه شفاف و کتابچه PDF راهنمای برند تحویل داده می‌شوند.",
+        "en": "You receive full vector master files (AI, EPS, SVG, PDF), high-resolution transparent web assets (PNG, WebP), and a comprehensive PDF Brand Book."
+      }
+    },
+    {
+      "id": "faq-8",
+      "category": "graphic-design",
+      "showOnHome": true,
+      "question": {
+        "fa": "آیا فایل‌های لایه‌باز و قابل ویرایش طرح‌های گرافیکی هم تحویل داده می‌شود؟",
+        "en": "Do we receive editable source files for graphic design projects?"
+      },
+      "answer": {
+        "fa": "بله، بسته به نوع سفارش، علاوه بر خروجی‌های آماده انتشار با کیفیت بالا، فایل‌های اصلی و لایه‌باز نیز به‌صورت دسته‌بندی‌شده در اختیار تیم شما قرار می‌گیرد.",
+        "en": "Yes, alongside publish-ready high-resolution exports, organized editable source files can be included in your final handover package."
+      }
+    },
+    {
+      "id": "faq-9",
+      "category": "graphic-design",
+      "showOnHome": false,
+      "question": {
+        "fa": "طراحی قالب‌های شبکه‌های اجتماعی به‌صورت تک‌سفارش است یا پکیج ماهانه؟",
+        "en": "Can we order one-off social media designs or ongoing packages?"
+      },
+      "answer": {
+        "fa": "هر دو حالت امکان‌پذیر است؛ می‌توانید برای یک کمپین مشخص سفارش دهید یا یک سیستم قالب یکپارچه برای کل فصل و تولید محتوای مستمر برندتان دریافت کنید.",
+        "en": "Both options are available—you can commission visuals for a specific campaign or a cohesive template system designed for ongoing content production."
+      }
+    },
+    {
+      "id": "faq-10",
+      "category": "print",
+      "showOnHome": true,
+      "question": {
+        "fa": "آیا خدمات چاپ و بسته‌بندی فقط شامل طراحی است یا اجرای چاپ هم انجام می‌شود؟",
+        "en": "Do your print services cover only design or physical printing as well?"
+      },
+      "answer": {
+        "fa": "ما هر دو را پوشش می‌دهیم: از طراحی تخصصی، خط تیغ و آماده‌سازی فایل‌های دقیق CMYK تا نظارت و اجرای چاپ با متریال درجه یک، طلاکوب، یووی موضعی و برجسته‌سازی.",
+        "en": "We handle both—from structural die-lines and CMYK pre-press design to supervised production with premium paper stocks, gold foil stamping, spot UV, and embossing."
+      }
+    },
+    {
+      "id": "faq-11",
+      "category": "print",
+      "showOnHome": false,
+      "question": {
+        "fa": "چگونه از تطابق رنگ چاپ نهایی با طرح تاییدشده مطمئن می‌شوید؟",
+        "en": "How do you ensure color accuracy between design and final print?"
+      },
+      "answer": {
+        "fa": "تمامی فایل‌ها از ابتدا در فضای رنگی استاندارد CMYK با پروفایل چاپخانه تنظیم شده و پیش از چاپ تیراژ اصلی، کنترل کیفیت رنگ و نمونه اولیه بررسی می‌شود.",
+        "en": "All artwork is engineered natively in CMYK with press-calibrated color profiles, bleed margins, and proof checks prior to full production runs."
+      }
+    }
   ]
 }
