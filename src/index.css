@@ -1,6 +1,7 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Vazirmatn:wght@100..900&display=swap');
-@variant dark (&:where(.dark, .dark *)); 
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+@custom-variant hover (&:hover);
 
 /* ۱. تعریف فونت‌های محلی متغیر */
 @font-face {
@@ -117,16 +118,67 @@ html[dir="ltr"],
     linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(8, 12, 28, 0.12) 100%);
   backdrop-filter: blur(12px) saturate(180%) brightness(105%);
   -webkit-backdrop-filter: blur(12px) saturate(180%) brightness(105%);
-  
-  /* اضافه شدن خط ظریف پایینی (border-bottom-color) درست مثل دکمه‌ها */
+
   border: 1px solid rgba(255, 255, 255, 0.35);
   border-bottom-color: rgba(147, 197, 253, 0.85);
-  
+
   box-shadow:
     inset 0 1px 0.5px 0 rgba(255, 255, 255, 0.8),
     inset 0 0 0 1px rgba(6, 10, 24, 0.3),
     inset 0 -2px 3px 0 rgba(191, 219, 254, 0.6),
     0 8px 24px -6px rgba(2, 6, 23, 0.35);
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.3s ease;
+}
+
+/* افکت هاور: نور دنبال‌کننده موس + تابش نور از لبه پایین */
+.alpha-glass-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), rgba(33, 54, 104, 0.14), transparent 65%),
+    radial-gradient(85% 75% at 50% 105%, rgba(56, 189, 248, 0.38) 0%, rgba(14, 165, 233, 0.14) 45%, transparent 80%),
+    linear-gradient(90deg, transparent 15%, #38bdf8 35%, #bae6fd 50%, #38bdf8 65%, transparent 85%) bottom / 100% 2.5px no-repeat;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.dark .alpha-glass-bar::before {
+  background:
+    radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(56, 189, 248, 0.24), transparent 65%),
+    radial-gradient(85% 75% at 50% 105%, rgba(56, 189, 248, 0.42) 0%, rgba(14, 165, 233, 0.16) 45%, transparent 80%),
+    linear-gradient(90deg, transparent 15%, #38bdf8 35%, #bae6fd 50%, #38bdf8 65%, transparent 85%) bottom / 100% 2.5px no-repeat;
+}
+
+.alpha-glass-bar:hover {
+  border-color: rgba(56, 189, 248, 0.55);
+  border-bottom-color: #7dd3fc;
+  box-shadow:
+    inset 0 1px 0.5px 0 rgba(255, 255, 255, 0.9),
+    inset 0 0 0 1px rgba(6, 10, 24, 0.3),
+    inset 0 -3px 10px 0 rgba(56, 189, 248, 0.55),
+    0 20px 50px -14px rgba(14, 165, 233, 0.28);
+}
+
+.alpha-glass-bar:hover::before {
+  opacity: 1;
+}
+
+/* سبک ملایم انحنای بالای شیشه */
+.alpha-glass-bar::after {
+  content: "";
+  position: absolute;
+  inset: 1px 16px 65% 16px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
 }
 
 /* سبک ملایم انحنای بالای شیشه */
